@@ -1,0 +1,607 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CEA507EA-898A-44A5-BFE1-866B87C91E28}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FM.TruckPlanning</RootNamespace>
+    <AssemblyName>TR_TRKPlanningUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>918c99b3</NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>0219;0162;0168;0169;0414</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <NoWarn>0219;0162;0168;0169;0414</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\DevExpress.Data.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\DevExpress.Utils.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v15.1.UI, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\DevExpress.Utils.v15.1.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\DevExpress.XtraEditors.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\DevExpress.XtraScheduler.v15.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\DevExpress.XtraScheduler.v15.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.Core">
+      <HintPath>..\Release\GMap.NET.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="GMap.NET.WindowsForms">
+      <HintPath>..\Release\GMap.NET.WindowsForms.dll</HintPath>
+    </Reference>
+    <Reference Include="GoogleMaps.LocationServices">
+      <HintPath>..\Release\GoogleMaps.LocationServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="Skybound.Gecko">
+      <HintPath>D:\Samples\WinForm\New folder\bin\Skybound.Gecko.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TR_FMSystemDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_FMSystemDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_FormBaseLibrary, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_FormBaseLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_HLBookBLL, Version=80.0.1000.8, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_HLBookBLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_HLPlanDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_HLPlanDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_LanguageResource, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_LanguageResource.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_MaintenanceDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_MaintenanceDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_MaintenanceUI, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_MaintenanceUI.exe</HintPath>
+    </Reference>
+    <Reference Include="TR_MessageDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_MessageDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_TRKBookDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_TRKBookDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_TRKPlanDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_TRKPlanDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="UIAutomationClient" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DstCompletedJobs.cs">
+      <DependentUpon>DstCompletedJobs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DstCompletedJobs.Designer.cs">
+      <DependentUpon>DstCompletedJobs.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\DstDeliveryCollectionNotes.cs">
+      <DependentUpon>DstDeliveryCollectionNotes.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DstDeliverySchedules.cs">
+      <DependentUpon>DstDeliverySchedules.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DstSpecialData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DstSpecialData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DstTransportSpecialData.cs">
+      <DependentUpon>DstTransportSpecialData.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmActualQuantity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmActualQuantity.Designer.cs">
+      <DependentUpon>FrmActualQuantity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAddRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAddRoute.Designer.cs">
+      <DependentUpon>FrmAddRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FrmAutoCreateRoute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAutoCreateRoute.Designer.cs">
+      <DependentUpon>FrmAutoCreateRoute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmMessageConversations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmMessageConversations.Designer.cs">
+      <DependentUpon>FrmMessageConversations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmMessaging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmMessaging.Designer.cs">
+      <DependentUpon>FrmMessaging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTruckSetStatusfrmBookedToReady.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckSetStatusfrmBookedToReady.Designer.cs">
+      <DependentUpon>FrmTruckSetStatusfrmBookedToReady.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmVisualPlanningGMAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmVisualPlanningGMAP.Designer.cs">
+      <DependentUpon>FrmVisualPlanningGMAP.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmActualQuantity.resx">
+      <DependentUpon>FrmActualQuantity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAddRoute.resx">
+      <DependentUpon>FrmAddRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RptCollectionNote.rdlc" />
+    <EmbeddedResource Include="Reports\RptCompletedJobByDateAndDriver.rdlc" />
+    <EmbeddedResource Include="Reports\RptCompletedJobByDateAndCustomer.rdlc" />
+    <EmbeddedResource Include="Reports\RptCompletedJobTripByDateAndDriver.rdlc" />
+    <EmbeddedResource Include="Reports\RptDeliveryNote.rdlc" />
+    <EmbeddedResource Include="Reports\RptDeliverySchedule.rdlc" />
+    <EmbeddedResource Include="UI\FrmAddPlanTruckSubTrip.resx">
+      <DependentUpon>FrmAddPlanTruckSubTrip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAddTripPlan.resx">
+      <DependentUpon>FrmAddTripPlan.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAutoCreateRoute.resx">
+      <DependentUpon>FrmAutoCreateRoute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmChangeDriver.resx">
+      <DependentUpon>FrmChangeDriver.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmChangeJobTripStatusSubCon.resx">
+      <DependentUpon>FrmChangeJobTripStatusSubCon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmChooseDate.resx">
+      <DependentUpon>FrmChooseDate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmMessageConversations.resx">
+      <DependentUpon>FrmMessageConversations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmMessaging.resx">
+      <DependentUpon>FrmMessaging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPlanTruckSubTrip.resx">
+      <DependentUpon>FrmPlanTruckSubTrip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPrintOptions.resx">
+      <DependentUpon>FrmPrintOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptCompletedJobByDateAndCustomer.resx">
+      <DependentUpon>FrmRptCompletedJobByDateAndCustomer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptCompletedJobByDateAndDriver.resx">
+      <DependentUpon>FrmRptCompletedJobByDateAndDriver.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptPlanCollectionNote.resx">
+      <DependentUpon>FrmRptPlanCollectionNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptPlanDeliveryOrder.resx">
+      <DependentUpon>FrmRptPlanDeliveryOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptPlanDeliverySchedule.resx">
+      <DependentUpon>FrmRptPlanDeliverySchedule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSelectSubContractor.resx">
+      <DependentUpon>FrmSelectSubContractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTrailer.resx">
+      <DependentUpon>FrmTrailer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSetTrailerLocation.resx">
+      <DependentUpon>FrmSetTrailerLocation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckChangeTripStatus.resx">
+      <DependentUpon>FrmTruckChangeTripStatus.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckJobTrips.resx">
+      <DependentUpon>FrmTruckJobTrips.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckPlanningEntry.resx">
+      <DependentUpon>FrmTruckPlanningEntry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckPlanningMain.resx">
+      <DependentUpon>FrmTruckPlanningMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptCompleteTripsByDateAndDriver.resx">
+      <DependentUpon>FrmRptCompleteTripsByDateAndDriver.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckSetStatusfrmBookedToReady.resx">
+      <DependentUpon>FrmTruckSetStatusfrmBookedToReady.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmVisualPlanningGMAP.resx">
+      <DependentUpon>FrmVisualPlanningGMAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\FM.TruckPlanDLL.BLL.DestinationRoute.datasource" />
+    <None Include="Properties\DataSources\FM.TruckPlanDLL.BLL.PlanTruckSubTripJobDetail.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DstCompletedJobs.xsc">
+      <DependentUpon>DstCompletedJobs.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DstCompletedJobs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstCompletedJobs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DstCompletedJobs.xss">
+      <DependentUpon>DstCompletedJobs.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DstDeliveryCollectionNotes.xsc">
+      <DependentUpon>DstDeliveryCollectionNotes.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DstDeliveryCollectionNotes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstDeliveryCollectionNotes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DstDeliveryCollectionNotes.xss">
+      <DependentUpon>DstDeliveryCollectionNotes.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DstDeliverySchedules.xsc">
+      <DependentUpon>DstDeliverySchedules.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DstDeliverySchedules.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstDeliverySchedules.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DstDeliverySchedules.xss">
+      <DependentUpon>DstDeliverySchedules.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DstSpecialData.xsc">
+      <DependentUpon>DstSpecialData.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DstSpecialData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstSpecialData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Reports\DstSpecialData.xss">
+      <DependentUpon>DstSpecialData.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DstTransportSpecialData.xsc">
+      <DependentUpon>DstTransportSpecialData.xsd</DependentUpon>
+    </None>
+    <None Include="Reports\DstTransportSpecialData.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstTransportSpecialData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reports\DstTransportSpecialData.xss">
+      <DependentUpon>DstTransportSpecialData.xsd</DependentUpon>
+    </None>
+    <Compile Include="Reports\DstDeliveryCollectionNotes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DstDeliveryCollectionNotes.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DstDeliverySchedules.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DstDeliverySchedules.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\DstTransportSpecialData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DstTransportSpecialData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAddPlanTruckSubTrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAddPlanTruckSubTrip.Designer.cs">
+      <DependentUpon>FrmAddPlanTruckSubTrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAddTripPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAddTripPlan.Designer.cs">
+      <DependentUpon>FrmAddTripPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmChangeDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmChangeDriver.Designer.cs">
+      <DependentUpon>FrmChangeDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmChangeJobTripStatusSubCon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmChangeJobTripStatusSubCon.Designer.cs">
+      <DependentUpon>FrmChangeJobTripStatusSubCon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmChooseDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmChooseDate.Designer.cs">
+      <DependentUpon>FrmChooseDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPlanTruckSubTrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPlanTruckSubTrip.Designer.cs">
+      <DependentUpon>FrmPlanTruckSubTrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPrintOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPrintOptions.Designer.cs">
+      <DependentUpon>FrmPrintOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptCompletedJobByDateAndCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptCompletedJobByDateAndCustomer.Designer.cs">
+      <DependentUpon>FrmRptCompletedJobByDateAndCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptCompletedJobByDateAndDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptCompletedJobByDateAndDriver.designer.cs">
+      <DependentUpon>FrmRptCompletedJobByDateAndDriver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptPlanCollectionNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptPlanCollectionNote.Designer.cs">
+      <DependentUpon>FrmRptPlanCollectionNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptPlanDeliveryOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptPlanDeliveryOrder.Designer.cs">
+      <DependentUpon>FrmRptPlanDeliveryOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptPlanDeliverySchedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptPlanDeliverySchedule.Designer.cs">
+      <DependentUpon>FrmRptPlanDeliverySchedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSelectSubContractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSelectSubContractor.Designer.cs">
+      <DependentUpon>FrmSelectSubContractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTrailer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTrailer.Designer.cs">
+      <DependentUpon>FrmTrailer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSetTrailerLocation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSetTrailerLocation.Designer.cs">
+      <DependentUpon>FrmSetTrailerLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTruckChangeTripStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckChangeTripStatus.Designer.cs">
+      <DependentUpon>FrmTruckChangeTripStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobTrips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobTrips.Designer.cs">
+      <DependentUpon>FrmTruckJobTrips.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTruckPlanningEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckPlanningEntry.Designer.cs">
+      <DependentUpon>FrmTruckPlanningEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTruckPlanningMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckPlanningMain.Designer.cs">
+      <DependentUpon>FrmTruckPlanningMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptCompleteTripsByDateAndDriver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptCompleteTripsByDateAndDriver.Designer.cs">
+      <DependentUpon>FrmRptCompleteTripsByDateAndDriver.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets'))" />
+  </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.103\build\net45\System.Data.SQLite.Core.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

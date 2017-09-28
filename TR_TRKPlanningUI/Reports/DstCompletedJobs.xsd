@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DstCompletedJobs" targetNamespace="http://tempuri.org/DstCompletedJobs.xsd" xmlns:mstns="http://tempuri.org/DstCompletedJobs.xsd" xmlns="http://tempuri.org/DstCompletedJobs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM72_JE_TestingConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM72_JE_TestingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TR_TRKPlanningUI.Properties.Settings.GlobalReference.Default.FM72_JE_TestingConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_SG_WYN2K_LIVEConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_SG_WYN2K_LIVEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TR_TRKPlanningUI.Properties.Settings.GlobalReference.Default.FM80_SG_WYN2K_LIVEConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_VIETNAM_HAN_LIVEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_VIETNAM_HAN_LIVEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TR_TRKPlanningUI.Properties.Settings.GlobalReference.Default.FM80_VIETNAM_HAN_LIVEConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_SG_DemoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_SG_DemoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TR_TRKPlanningUI.Properties.Settings.GlobalReference.Default.FM80_SG_DemoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FM80_SG_DemoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByDateCompletedAndCustomer" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetDataByDateCompletedAndCustomer" GeneratorSourceName="FillByDateCompletedAndCustomer" GetMethodModifier="Public" GetMethodName="GetDataByDateCompletedAndCustomer" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetDataByDateCompletedAndCustomer" UserSourceName="FillByDateCompletedAndCustomer">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     pl.SCHEDULE_DATE AS DateCompleted, ma.CUST_CODE, ma.JOB_NUMBER, ma.JOB_ID, ma.TRIP_TYPE as JOB_TYPE, ma.BOOKING_NUMBER, 
+                      ma.Booked_DateTime as BOOKING_DATE, de.JOBTRIP_SEQ_NO, de.FROM_STOP, de.TO_STOP, de.BILLING_UOM, de.BOOK_VOLUME AS Booked_VOLUME, 
+                      de.BOOK_WEIGHT AS Booked_WEIGHT, pl.VOLUME AS ActualCBM, pl.WEIGHT AS ActualMT, pl.DRIVER_NO, pl.PLANTRIP_NO, pl.PLANSUBTRIPJOB_SEQNO as JOBTRIP_PLAN_SEQ,  
+                      pl.VEHICLE_NO, dr.Driver_Name, cu.CustVend_Name,
+                 --201010 -gerry added 5 more columns more jupiter report
+                      saInfo.MAWB,
+                      saInfo.HAWB,
+                      saInfo.OBL_NO,
+                      saInfo.HBL_NO,
+                      ma.COMMERCIAL_INVOICE_NO,
+                      ma.CUSTOM_DECLARATION_NO,
+                      ma.YOUR_REF_NO
+                      --end 201010
+                      
+                      
+FROM         TRK_JOB_DETAIL_TRIP_Tbl AS de INNER JOIN
+                      TRK_JOB_MAIN_Tbl AS ma ON ma.JOB_ID = de.JOB_ID INNER JOIN
+                      TRK_JOB_DETAIL_TRIP_PLAN_TBL AS pl ON (pl.JOB_ID = de.JOB_ID  and  pl.JOBTRIP_SEQ_NO = de.JOBTRIP_SEQ_NO)
+ INNER JOIN
+                      ACT_CustVend_Master_Tbl AS cu ON cu.CustVend_Code = ma.CUST_CODE INNER JOIN
+                      TPT_Driver_Tbl AS dr ON dr.Driver_Code = pl.DRIVER_NO
+           INNER JOIN TRK_JOB_SHIP_AIR_INFO_Tbl as saInfo
+           ON saInfo.JOB_ID = ma.JOB_ID  
+WHERE     (de.STATUS = 4) AND (pl.SCHEDULE_DATE &gt;= @startCompletionDate) AND (pl.SCHEDULE_DATE &lt;= @endCompletionDate)
+ORDER BY DateCompleted, ma.CUST_CODE, ma.JOB_NUMBER, de.JOBTRIP_SEQ_NO, pl.DRIVER_NO</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="startCompletionDate" ColumnName="SCHEDULE_DATE" DataSourceName="FM80_SG_Demo.dbo.TRK_JOB_DETAIL_TRIP_PLAN_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@startCompletionDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateCompleted" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="endCompletionDate" ColumnName="SCHEDULE_DATE" DataSourceName="FM80_SG_Demo.dbo.TRK_JOB_DETAIL_TRIP_PLAN_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@endCompletionDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateCompleted" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="DateCompleted" DataSetColumn="DateCompleted" />
+              <Mapping SourceColumn="ActualCBM" DataSetColumn="ActualCBM" />
+              <Mapping SourceColumn="ActualMT" DataSetColumn="ActualMT" />
+              <Mapping SourceColumn="CUST_CODE" DataSetColumn="CUST_CODE" />
+              <Mapping SourceColumn="JOB_NUMBER" DataSetColumn="JOB_NUMBER" />
+              <Mapping SourceColumn="JOB_ID" DataSetColumn="JOB_ID" />
+              <Mapping SourceColumn="JOB_TYPE" DataSetColumn="JOB_TYPE" />
+              <Mapping SourceColumn="BOOKING_NUMBER" DataSetColumn="BOOKING_NUMBER" />
+              <Mapping SourceColumn="BOOKING_DATE" DataSetColumn="BOOKING_DATE" />
+              <Mapping SourceColumn="JOBTRIP_SEQ_NO" DataSetColumn="JOBTRIP_SEQ_NO" />
+              <Mapping SourceColumn="FROM_STOP" DataSetColumn="FROM_STOP" />
+              <Mapping SourceColumn="TO_STOP" DataSetColumn="TO_STOP" />
+              <Mapping SourceColumn="BILLING_UOM" DataSetColumn="BILLING_UOM" />
+              <Mapping SourceColumn="DRIVER_NO" DataSetColumn="DRIVER_NO" />
+              <Mapping SourceColumn="PLANTRIP_NO" DataSetColumn="PLANTRIP_NO" />
+              <Mapping SourceColumn="JOBTRIP_PLAN_SEQ" DataSetColumn="JOBTRIP_PLAN_SEQ" />
+              <Mapping SourceColumn="VEHICLE_NO" DataSetColumn="VEHICLE_NO" />
+              <Mapping SourceColumn="Driver_Name" DataSetColumn="Driver_Name" />
+              <Mapping SourceColumn="CustVend_Name" DataSetColumn="CustVend_Name" />
+              <Mapping SourceColumn="Booked_VOLUME" DataSetColumn="Booked_VOLUME" />
+              <Mapping SourceColumn="Booked_WEIGHT" DataSetColumn="Booked_WEIGHT" />
+              <Mapping SourceColumn="COMMERCIAL_INVOICE_NO" DataSetColumn="COMMERCIAL_INVOICE_NO" />
+              <Mapping SourceColumn="CUSTOM_DECLARATION_NO" DataSetColumn="CUSTOM_DECLARATION_NO" />
+              <Mapping SourceColumn="YOUR_REF_NO" DataSetColumn="YOUR_REF_NO" />
+              <Mapping SourceColumn="MAWB" DataSetColumn="MAWB" />
+              <Mapping SourceColumn="HAWB" DataSetColumn="HAWB" />
+              <Mapping SourceColumn="OBL_NO" DataSetColumn="OBL_NO" />
+              <Mapping SourceColumn="HBL_NO" DataSetColumn="HBL_NO" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="FM80_SG_DemoConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByDateCompletedAndDriver" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDateCompletedAndDriver" GeneratorSourceName="FillByDateCompletedAndDriver" GetMethodModifier="Public" GetMethodName="GetDataByDateCompletedAndDriver" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDateCompletedAndDriver" UserSourceName="FillByDateCompletedAndDriver">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     pl.SCHEDULE_DATE AS DateCompleted, ma.CUST_CODE, ma.JOB_NUMBER, ma.JOB_ID, ma.TRIP_TYPE as JOB_TYPE, ma.BOOKING_NUMBER, 
+                      ma.Booked_DateTime as BOOKING_DATE, de.JOBTRIP_SEQ_NO, de.FROM_STOP, de.TO_STOP, de.BILLING_UOM, de.BOOK_VOLUME AS Booked_VOLUME, 
+                      de.BOOK_WEIGHT AS Booked_WEIGHT, pl.VOLUME AS ActualCBM, pl.WEIGHT AS ActualMT, pl.DRIVER_NO, pl.PLANTRIP_NO, pl.PLANSUBTRIPJOB_SEQNO as JOBTRIP_PLAN_SEQ,  
+                      pl.VEHICLE_NO, dr.Driver_Name, cu.CustVend_Name,
+                 --201010 -gerry added 5 more columns more jupiter report
+                      saInfo.MAWB,
+                      saInfo.HAWB,
+                      saInfo.OBL_NO,
+                      saInfo.HBL_NO,
+                      ma.COMMERCIAL_INVOICE_NO,
+                      ma.CUSTOM_DECLARATION_NO,
+                      ma.YOUR_REF_NO
+                      --end 201010
+                      
+                      
+FROM         TRK_JOB_DETAIL_TRIP_Tbl AS de INNER JOIN
+                      TRK_JOB_MAIN_Tbl AS ma ON ma.JOB_ID = de.JOB_ID INNER JOIN
+                      TRK_JOB_DETAIL_TRIP_PLAN_TBL AS pl ON (pl.JOB_ID = de.JOB_ID  and  pl.JOBTRIP_SEQ_NO = de.JOBTRIP_SEQ_NO)
+ INNER JOIN
+                      ACT_CustVend_Master_Tbl AS cu ON cu.CustVend_Code = ma.CUST_CODE INNER JOIN
+                      TPT_Driver_Tbl AS dr ON dr.Driver_Code = pl.DRIVER_NO
+           INNER JOIN TRK_JOB_SHIP_AIR_INFO_Tbl as saInfo
+           ON saInfo.JOB_ID = ma.JOB_ID  
+WHERE     (de.STATUS = 4) AND (pl.SCHEDULE_DATE &gt;= @startCompletionDate) AND (pl.SCHEDULE_DATE &lt;= @endCompletionDate) AND 
+                      (pl.DRIVER_NO &gt;= @startDriver) AND (pl.DRIVER_NO &lt;= @endDriver)
+ORDER BY pl.DRIVER_NO, DateCompleted, ma.JOB_NUMBER, de.JOBTRIP_SEQ_NO, pl.PLANTRIP_NO</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="startCompletionDate" ColumnName="SCHEDULE_DATE" DataSourceName="FM80_SG_Demo.dbo.TRK_JOB_DETAIL_TRIP_PLAN_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@startCompletionDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateCompleted" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="endCompletionDate" ColumnName="SCHEDULE_DATE" DataSourceName="FM80_SG_Demo.dbo.TRK_JOB_DETAIL_TRIP_PLAN_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@endCompletionDate" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="DateCompleted" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="startDriver" ColumnName="DRIVER_NO" DataSourceName="FM80_SG_Demo.dbo.TRK_JOB_DETAIL_TRIP_PLAN_TBL" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@startDriver" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="DRIVER_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="endDriver" ColumnName="DRIVER_NO" DataSourceName="FM80_SG_Demo.dbo.TRK_JOB_DETAIL_TRIP_PLAN_TBL" DataTypeServer="varchar(10)" DbType="AnsiString" Direction="Input" ParameterName="@endDriver" Precision="0" ProviderType="VarChar" Scale="0" Size="10" SourceColumn="DRIVER_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DstCompletedJobs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DstCompletedJobs" msprop:Generator_UserDSName="DstCompletedJobs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DateCompleted" msprop:Generator_ColumnVarNameInTable="columnDateCompleted" msprop:Generator_ColumnPropNameInRow="DateCompleted" msprop:Generator_ColumnPropNameInTable="DateCompletedColumn" msprop:Generator_UserColumnName="DateCompleted" type="xs:dateTime" />
+              <xs:element name="ActualCBM" msprop:Generator_ColumnVarNameInTable="columnActualCBM" msprop:Generator_ColumnPropNameInRow="ActualCBM" msprop:Generator_ColumnPropNameInTable="ActualCBMColumn" msprop:Generator_UserColumnName="ActualCBM" type="xs:decimal" />
+              <xs:element name="ActualMT" msprop:Generator_ColumnVarNameInTable="columnActualMT" msprop:Generator_ColumnPropNameInRow="ActualMT" msprop:Generator_ColumnPropNameInTable="ActualMTColumn" msprop:Generator_UserColumnName="ActualMT" type="xs:decimal" />
+              <xs:element name="CUST_CODE" msprop:Generator_ColumnVarNameInTable="columnCUST_CODE" msprop:Generator_ColumnPropNameInRow="CUST_CODE" msprop:Generator_ColumnPropNameInTable="CUST_CODEColumn" msprop:Generator_UserColumnName="CUST_CODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JOB_NUMBER" msprop:Generator_ColumnVarNameInTable="columnJOB_NUMBER" msprop:Generator_ColumnPropNameInRow="JOB_NUMBER" msprop:Generator_ColumnPropNameInTable="JOB_NUMBERColumn" msprop:Generator_UserColumnName="JOB_NUMBER">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JOB_ID" msprop:Generator_ColumnVarNameInTable="columnJOB_ID" msprop:Generator_ColumnPropNameInRow="JOB_ID" msprop:Generator_ColumnPropNameInTable="JOB_IDColumn" msprop:Generator_UserColumnName="JOB_ID" type="xs:int" />
+              <xs:element name="JOB_TYPE" msprop:Generator_ColumnVarNameInTable="columnJOB_TYPE" msprop:Generator_ColumnPropNameInRow="JOB_TYPE" msprop:Generator_ColumnPropNameInTable="JOB_TYPEColumn" msprop:Generator_UserColumnName="JOB_TYPE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BOOKING_NUMBER" msprop:Generator_ColumnVarNameInTable="columnBOOKING_NUMBER" msprop:Generator_ColumnPropNameInRow="BOOKING_NUMBER" msprop:Generator_ColumnPropNameInTable="BOOKING_NUMBERColumn" msprop:Generator_UserColumnName="BOOKING_NUMBER">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BOOKING_DATE" msprop:Generator_ColumnVarNameInTable="columnBOOKING_DATE" msprop:Generator_ColumnPropNameInRow="BOOKING_DATE" msprop:Generator_ColumnPropNameInTable="BOOKING_DATEColumn" msprop:Generator_UserColumnName="BOOKING_DATE" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="JOBTRIP_SEQ_NO" msprop:Generator_ColumnVarNameInTable="columnJOBTRIP_SEQ_NO" msprop:Generator_ColumnPropNameInRow="JOBTRIP_SEQ_NO" msprop:Generator_ColumnPropNameInTable="JOBTRIP_SEQ_NOColumn" msprop:Generator_UserColumnName="JOBTRIP_SEQ_NO" type="xs:int" />
+              <xs:element name="FROM_STOP" msprop:Generator_ColumnVarNameInTable="columnFROM_STOP" msprop:Generator_ColumnPropNameInRow="FROM_STOP" msprop:Generator_ColumnPropNameInTable="FROM_STOPColumn" msprop:Generator_UserColumnName="FROM_STOP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TO_STOP" msprop:Generator_ColumnVarNameInTable="columnTO_STOP" msprop:Generator_ColumnPropNameInRow="TO_STOP" msprop:Generator_ColumnPropNameInTable="TO_STOPColumn" msprop:Generator_UserColumnName="TO_STOP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BILLING_UOM" msprop:Generator_ColumnVarNameInTable="columnBILLING_UOM" msprop:Generator_ColumnPropNameInRow="BILLING_UOM" msprop:Generator_ColumnPropNameInTable="BILLING_UOMColumn" msprop:Generator_UserColumnName="BILLING_UOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DRIVER_NO" msprop:Generator_ColumnVarNameInTable="columnDRIVER_NO" msprop:Generator_ColumnPropNameInRow="DRIVER_NO" msprop:Generator_ColumnPropNameInTable="DRIVER_NOColumn" msprop:Generator_UserColumnName="DRIVER_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PLANTRIP_NO" msprop:Generator_ColumnVarNameInTable="columnPLANTRIP_NO" msprop:Generator_ColumnPropNameInRow="PLANTRIP_NO" msprop:Generator_ColumnPropNameInTable="PLANTRIP_NOColumn" msprop:Generator_UserColumnName="PLANTRIP_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JOBTRIP_PLAN_SEQ" msprop:Generator_ColumnVarNameInTable="columnJOBTRIP_PLAN_SEQ" msprop:Generator_ColumnPropNameInRow="JOBTRIP_PLAN_SEQ" msprop:Generator_ColumnPropNameInTable="JOBTRIP_PLAN_SEQColumn" msprop:Generator_UserColumnName="JOBTRIP_PLAN_SEQ" type="xs:int" />
+              <xs:element name="VEHICLE_NO" msprop:Generator_ColumnVarNameInTable="columnVEHICLE_NO" msprop:Generator_ColumnPropNameInRow="VEHICLE_NO" msprop:Generator_ColumnPropNameInTable="VEHICLE_NOColumn" msprop:Generator_UserColumnName="VEHICLE_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Driver_Name" msprop:Generator_ColumnVarNameInTable="columnDriver_Name" msprop:Generator_ColumnPropNameInRow="Driver_Name" msprop:Generator_ColumnPropNameInTable="Driver_NameColumn" msprop:Generator_UserColumnName="Driver_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustVend_Name" msprop:Generator_ColumnVarNameInTable="columnCustVend_Name" msprop:Generator_ColumnPropNameInRow="CustVend_Name" msprop:Generator_ColumnPropNameInTable="CustVend_NameColumn" msprop:Generator_UserColumnName="CustVend_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Booked_VOLUME" msprop:Generator_ColumnVarNameInTable="columnBooked_VOLUME" msprop:Generator_ColumnPropNameInRow="Booked_VOLUME" msprop:Generator_ColumnPropNameInTable="Booked_VOLUMEColumn" msprop:Generator_UserColumnName="Booked_VOLUME" type="xs:decimal" />
+              <xs:element name="Booked_WEIGHT" msprop:Generator_ColumnVarNameInTable="columnBooked_WEIGHT" msprop:Generator_ColumnPropNameInRow="Booked_WEIGHT" msprop:Generator_ColumnPropNameInTable="Booked_WEIGHTColumn" msprop:Generator_UserColumnName="Booked_WEIGHT" type="xs:decimal" />
+              <xs:element name="COMMERCIAL_INVOICE_NO" msprop:Generator_ColumnVarNameInTable="columnCOMMERCIAL_INVOICE_NO" msprop:Generator_ColumnPropNameInRow="COMMERCIAL_INVOICE_NO" msprop:Generator_ColumnPropNameInTable="COMMERCIAL_INVOICE_NOColumn" msprop:Generator_UserColumnName="COMMERCIAL_INVOICE_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSTOM_DECLARATION_NO" msprop:Generator_ColumnVarNameInTable="columnCUSTOM_DECLARATION_NO" msprop:Generator_ColumnPropNameInRow="CUSTOM_DECLARATION_NO" msprop:Generator_ColumnPropNameInTable="CUSTOM_DECLARATION_NOColumn" msprop:Generator_UserColumnName="CUSTOM_DECLARATION_NO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="YOUR_REF_NO" msprop:Generator_ColumnVarNameInTable="columnYOUR_REF_NO" msprop:Generator_ColumnPropNameInRow="YOUR_REF_NO" msprop:Generator_ColumnPropNameInTable="YOUR_REF_NOColumn" msprop:Generator_UserColumnName="YOUR_REF_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MAWB" msprop:Generator_ColumnVarNameInTable="columnMAWB" msprop:Generator_ColumnPropNameInRow="MAWB" msprop:Generator_ColumnPropNameInTable="MAWBColumn" msprop:Generator_UserColumnName="MAWB">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HAWB" msprop:Generator_ColumnVarNameInTable="columnHAWB" msprop:Generator_ColumnPropNameInRow="HAWB" msprop:Generator_ColumnPropNameInTable="HAWBColumn" msprop:Generator_UserColumnName="HAWB">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="14" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OBL_NO" msprop:Generator_ColumnVarNameInTable="columnOBL_NO" msprop:Generator_ColumnPropNameInRow="OBL_NO" msprop:Generator_ColumnPropNameInTable="OBL_NOColumn" msprop:Generator_UserColumnName="OBL_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HBL_NO" msprop:Generator_ColumnVarNameInTable="columnHBL_NO" msprop:Generator_ColumnPropNameInRow="HBL_NO" msprop:Generator_ColumnPropNameInTable="HBL_NOColumn" msprop:Generator_UserColumnName="HBL_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

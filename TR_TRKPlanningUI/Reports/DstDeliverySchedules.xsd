@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DstDeliverySchedules" targetNamespace="http://tempuri.org/DstDeliverySchedules.xsd" xmlns:mstns="http://tempuri.org/DstDeliverySchedules.xsd" xmlns="http://tempuri.org/DstDeliverySchedules.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_TestingConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_TestingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TR_TRKPlanningUI.Properties.Settings.GlobalReference.Default.FM80_TestingConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_SG_WYN2K_LIVEConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_SG_WYN2K_LIVEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TR_TRKPlanningUI.Properties.Settings.GlobalReference.Default.FM80_SG_WYN2K_LIVEConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_VIETNAM_TEST_USD_VND_ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_VIETNAM_TEST_USD_VND_ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TR_TRKPlanningUI.Properties.Settings.GlobalReference.Default.FM80_VIETNAM_TEST_USD_VND_ConnectionString" Provider="System.Data.SqlClient" />
+   
