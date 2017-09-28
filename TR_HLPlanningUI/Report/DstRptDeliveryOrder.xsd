@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DstRptDeliveryOrder" targetNamespace="http://tempuri.org/DstRptDeliveryOrder.xsd" xmlns:mstns="http://tempuri.org/DstRptDeliveryOrder.xsd" xmlns="http://tempuri.org/DstRptDeliveryOrder.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM72_TestingConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM72_TestingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TransportPlanning.Properties.Settings.GlobalReference.Default.FM72_TestingConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_TestingConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_TestingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TransportPlanning.Properties.Settings.GlobalReference.Default.FM80_TestingConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM72_JE_TESTING_supportsrv_innosqlmaster" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM72_JE_TESTING_supportsrv_innosqlmaster (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TransportPlanning.Properties.Settings.GlobalReference.Default.FM72_JE_TESTING_supportsrv_innosqlmaster" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtbRptDeliveryOrderTableAdapter" GeneratorDataComponentClassName="dtbRptDeliveryOrderTableAdapter" Name="dtbRptDeliveryOrder" UserDataComponentName="dtbRptDeliveryOrderTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FM72_JE_TESTING_supportsrv_innosqlmaster (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TPT_JOB_MAIN_Tbl.JOB_NUMBER, TPT_PLAN_TRIP_TBL.SCHEDULE_DATE, TPT_Driver_Tbl.Driver_Name, TPT_PLAN_TRIP_TBL.VEHICLE_NO, 
+                      TPT_JOB_MAIN_Tbl.JOB_TYPE, TPT_PLAN_SUBTRIP_TBL.END_STOP, CRT_Operation_Database_Tbl.Operation_Code, 
+                      CRT_Operation_Database_Tbl.Operation_Name, CRT_Operation_Database_Tbl.Op_Add1, CRT_Operation_Database_Tbl.Op_Add2, 
+                      CRT_Operation_Database_Tbl.Op_Add3, CRT_Operation_Database_Tbl.Op_Add4, TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.SEAL_NUMBER, TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE, TPT_JOB_DETAIL_CARGO_Tbl.GROSS_WEIGHT, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.CARGO_DESCRIPTION, TPT_JOB_DETAIL_CARGO_Tbl.REMARKS, TPT_JOB_DETAIL_CARGO_Tbl.CHARGE_CODE, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.IS_LADEN, TPT_JOB_DETAIL_CARGO_Tbl.SEQUENCE_NO, TPT_PLAN_SUBTRIP_JOB_TBL.PLANTRIP_NO, 
+                      TPT_PLAN_SUBTRIP_JOB_TBL.SEQ_NO, TPT_PLAN_SUBTRIP_TBL.TRAILER_NO
+FROM         TPT_PLAN_TRIP_TBL INNER JOIN
+                      TPT_Driver_Tbl ON TPT_PLAN_TRIP_TBL.DRIVER_NO = TPT_Driver_Tbl.Driver_Code INNER JOIN
+                      TPT_JOB_MAIN_Tbl INNER JOIN
+                      TPT_JOB_DETAIL_CARGO_Tbl ON TPT_JOB_MAIN_Tbl.JOB_ID = TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID INNER JOIN
+                      TPT_PLAN_SUBTRIP_JOB_TBL ON TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID = TPT_PLAN_SUBTRIP_JOB_TBL.JOB_ID AND 
+                      TPT_JOB_DETAIL_CARGO_Tbl.SEQUENCE_NO = TPT_PLAN_SUBTRIP_JOB_TBL.SEQUENCE_NO INNER JOIN
+                      TPT_PLAN_SUBTRIP_TBL ON TPT_PLAN_SUBTRIP_JOB_TBL.PLANTRIP_NO = TPT_PLAN_SUBTRIP_TBL.PLANTRIP_NO AND 
+                      TPT_PLAN_SUBTRIP_JOB_TBL.SEQ_NO = TPT_PLAN_SUBTRIP_TBL.SEQ_NO ON 
+                      TPT_PLAN_TRIP_TBL.PLANTRIP_NO = TPT_PLAN_SUBTRIP_TBL.PLANTRIP_NO INNER JOIN
+                      CRT_Operation_Database_Tbl ON TPT_PLAN_SUBTRIP_TBL.END_STOP = CRT_Operation_Database_Tbl.Operation_Code
+WHERE
+ ( (DRIVER_CODE &gt;= @START_DRIVER_CODE) 
+AND (DRIVER_CODE &lt;= @END_DRIVER_CODE)) 
+AND ((SCHEDULE_DATE &gt;= @START_SCHEDULE_DATE) 
+AND (SCHEDULE_DATE &lt;= @END_SCHEDULE_DATE)) </CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_DRIVER_CODE" ColumnName="Driver_Code" DataSourceName="FM72_Testing.dbo.TPT_Driver_Tbl" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@START_DRIVER_CODE" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="Driver_Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="END_DRIVER_CODE" ColumnName="Driver_Code" DataSourceName="FM72_Testing.dbo.TPT_Driver_Tbl" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@END_DRIVER_CODE" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="Driver_Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_SCHEDULE_DATE" ColumnName="SCHEDULE_DATE" DataSourceName="FM72_Testing.dbo.TPT_PLAN_TRIP_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@START_SCHEDULE_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="SCHEDULE_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="END_SCHEDULE_DATE" ColumnName="SCHEDULE_DATE" DataSourceName="FM72_Testing.dbo.TPT_PLAN_TRIP_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@END_SCHEDULE_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="SCHEDULE_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="JOB_NUMBER" DataSetColumn="JOB_NUMBER" />
+              <Mapping SourceColumn="SCHEDULE_DATE" DataSetColumn="SCHEDULE_DATE" />
+              <Mapping SourceColumn="Driver_Name" DataSetColumn="Driver_Name" />
+              <Mapping SourceColumn="VEHICLE_NO" DataSetColumn="VEHICLE_NO" />
+              <Mapping SourceColumn="JOB_TYPE" DataSetColumn="JOB_TYPE" />
+              <Mapping SourceColumn="END_STOP" DataSetColumn="END_STOP" />
+              <Mapping SourceColumn="Operation_Code" DataSetColumn="Operation_Code" />
+              <Mapping SourceColumn="Operation_Name" DataSetColumn="Operation_Name" />
+              <Mapping SourceColumn="Op_Add1" DataSetColumn="Op_Add1" />
+              <Mapping SourceColumn="Op_Add2" DataSetColumn="Op_Add2" />
+              <Mapping SourceColumn="Op_Add3" DataSetColumn="Op_Add3" />
+              <Mapping SourceColumn="Op_Add4" DataSetColumn="Op_Add4" />
+              <Mapping SourceColumn="CONTAINER_NUMBER" DataSetColumn="CONTAINER_NUMBER" />
+              <Mapping SourceColumn="SEAL_NUMBER" DataSetColumn="SEAL_NUMBER" />
+              <Mapping SourceColumn="CONTAINER_CODE" DataSetColumn="CONTAINER_CODE" />
+              <Mapping SourceColumn="GROSS_WEIGHT" DataSetColumn="GROSS_WEIGHT" />
+              <Mapping SourceColumn="CARGO_DESCRIPTION" DataSetColumn="CARGO_DESCRIPTION" />
+              <Mapping SourceColumn="REMARKS" DataSetColumn="REMARKS" />
+              <Mapping SourceColumn="CHARGE_CODE" DataSetColumn="CHARGE_CODE" />
+              <Mapping SourceColumn="IS_LADEN" DataSetColumn="IS_LADEN" />
+              <Mapping SourceColumn="SEQUENCE_NO" DataSetColumn="SEQUENCE_NO" />
+              <Mapping SourceColumn="PLANTRIP_NO" DataSetColumn="PLANTRIP_NO" />
+              <Mapping SourceColumn="SEQ_NO" DataSetColumn="SEQ_NO" />
+              <Mapping SourceColumn="TRAILER_NO" DataSetColumn="TRAILER_NO" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="FM72_JE_TESTING_supportsrv_innosqlmaster (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDate" GeneratorSourceName="FillByDate" GetMethodModifier="Public" GetMethodName="GetDataByDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDate" UserSourceName="FillByDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TPT_JOB_MAIN_Tbl.JOB_NUMBER, TPT_PLAN_TRIP_TBL.SCHEDULE_DATE, TPT_Driver_Tbl.Driver_Name, TPT_PLAN_TRIP_TBL.VEHICLE_NO, 
+                      TPT_JOB_MAIN_Tbl.JOB_TYPE, TPT_PLAN_SUBTRIP_TBL.END_STOP, CRT_Operation_Database_Tbl.Operation_Code, 
+                      CRT_Operation_Database_Tbl.Operation_Name, CRT_Operation_Database_Tbl.Op_Add1, CRT_Operation_Database_Tbl.Op_Add2, 
+                      CRT_Operation_Database_Tbl.Op_Add3, CRT_Operation_Database_Tbl.Op_Add4, TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.SEAL_NUMBER, TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE, TPT_JOB_DETAIL_CARGO_Tbl.GROSS_WEIGHT, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.CARGO_DESCRIPTION, TPT_JOB_DETAIL_CARGO_Tbl.REMARKS, TPT_JOB_DETAIL_CARGO_Tbl.CHARGE_CODE, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.IS_LADEN, TPT_JOB_DETAIL_CARGO_Tbl.SEQUENCE_NO, TPT_PLAN_SUBTRIP_JOB_TBL.PLANTRIP_NO, 
+                      TPT_PLAN_SUBTRIP_JOB_TBL.SEQ_NO, TPT_PLAN_SUBTRIP_TBL.TRAILER_NO
+FROM         TPT_PLAN_TRIP_TBL INNER JOIN
+                      TPT_Driver_Tbl ON TPT_PLAN_TRIP_TBL.DRIVER_NO = TPT_Driver_Tbl.Driver_Code INNER JOIN
+                      TPT_JOB_MAIN_Tbl INNER JOIN
+                      TPT_JOB_DETAIL_CARGO_Tbl ON TPT_JOB_MAIN_Tbl.JOB_ID = TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID INNER JOIN
+                      TPT_PLAN_SUBTRIP_JOB_TBL ON TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID = TPT_PLAN_SUBTRIP_JOB_TBL.JOB_ID AND 
+                      TPT_JOB_DETAIL_CARGO_Tbl.SEQUENCE_NO = TPT_PLAN_SUBTRIP_JOB_TBL.SEQUENCE_NO INNER JOIN
+                      TPT_PLAN_SUBTRIP_TBL ON TPT_PLAN_SUBTRIP_JOB_TBL.PLANTRIP_NO = TPT_PLAN_SUBTRIP_TBL.PLANTRIP_NO AND 
+                      TPT_PLAN_SUBTRIP_JOB_TBL.SEQ_NO = TPT_PLAN_SUBTRIP_TBL.SEQ_NO ON 
+                      TPT_PLAN_TRIP_TBL.PLANTRIP_NO = TPT_PLAN_SUBTRIP_TBL.PLANTRIP_NO INNER JOIN
+                      CRT_Operation_Database_Tbl ON TPT_PLAN_SUBTRIP_TBL.END_STOP = CRT_Operation_Database_Tbl.Operation_Code
+WHERE
+(SCHEDULE_DATE &gt;= @START_SCHEDULE_DATE) 
+AND (SCHEDULE_DATE &lt;= @END_SCHEDULE_DATE)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_SCHEDULE_DATE" ColumnName="SCHEDULE_DATE" DataSourceName="FM72_Testing.dbo.TPT_PLAN_TRIP_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@START_SCHEDULE_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="SCHEDULE_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="END_SCHEDULE_DATE" ColumnName="SCHEDULE_DATE" DataSourceName="FM72_Testing.dbo.TPT_PLAN_TRIP_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@END_SCHEDULE_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="SCHEDULE_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="FM72_JE_TESTING_supportsrv_innosqlmaster (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByDriverAndDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDriverAndDate" GeneratorSourceName="FillByDriverAndDate" GetMethodModifier="Public" GetMethodName="GetDataByDriverAndDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDriverAndDate" UserSourceName="FillByDriverAndDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TPT_JOB_MAIN_Tbl.JOB_NUMBER, TPT_PLAN_TRIP_TBL.SCHEDULE_DATE, TPT_Driver_Tbl.Driver_Name, TPT_PLAN_TRIP_TBL.VEHICLE_NO, 
+                      TPT_JOB_MAIN_Tbl.JOB_TYPE, TPT_PLAN_SUBTRIP_TBL.END_STOP, CRT_Operation_Database_Tbl.Operation_Code, 
+                      CRT_Operation_Database_Tbl.Operation_Name, CRT_Operation_Database_Tbl.Op_Add1, CRT_Operation_Database_Tbl.Op_Add2, 
+                      CRT_Operation_Database_Tbl.Op_Add3, CRT_Operation_Database_Tbl.Op_Add4, TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.SEAL_NUMBER, TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE, TPT_JOB_DETAIL_CARGO_Tbl.GROSS_WEIGHT, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.CARGO_DESCRIPTION, TPT_JOB_DETAIL_CARGO_Tbl.REMARKS, TPT_JOB_DETAIL_CARGO_Tbl.CHARGE_CODE, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.IS_LADEN, TPT_JOB_DETAIL_CARGO_Tbl.SEQUENCE_NO, TPT_PLAN_SUBTRIP_JOB_TBL.PLANTRIP_NO, 
+                      TPT_PLAN_SUBTRIP_JOB_TBL.SEQ_NO, TPT_PLAN_SUBTRIP_TBL.TRAILER_NO
+FROM         TPT_PLAN_TRIP_TBL INNER JOIN
+                      TPT_Driver_Tbl ON TPT_PLAN_TRIP_TBL.DRIVER_NO = TPT_Driver_Tbl.Driver_Code INNER JOIN
+                      TPT_JOB_MAIN_Tbl INNER JOIN
+                      TPT_JOB_DETAIL_CARGO_Tbl ON TPT_JOB_MAIN_Tbl.JOB_ID = TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID INNER JOIN
+                      TPT_PLAN_SUBTRIP_JOB_TBL ON TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID = TPT_PLAN_SUBTRIP_JOB_TBL.JOB_ID AND 
+                      TPT_JOB_DETAIL_CARGO_Tbl.SEQUENCE_NO = TPT_PLAN_SUBTRIP_JOB_TBL.SEQUENCE_NO INNER JOIN
+                      TPT_PLAN_SUBTRIP_TBL ON TPT_PLAN_SUBTRIP_JOB_TBL.PLANTRIP_NO = TPT_PLAN_SUBTRIP_TBL.PLANTRIP_NO AND 
+                      TPT_PLAN_SUBTRIP_JOB_TBL.SEQ_NO = TPT_PLAN_SUBTRIP_TBL.SEQ_NO ON 
+                      TPT_PLAN_TRIP_TBL.PLANTRIP_NO = TPT_PLAN_SUBTRIP_TBL.PLANTRIP_NO INNER JOIN
+                      CRT_Operation_Database_Tbl ON TPT_PLAN_SUBTRIP_TBL.END_STOP = CRT_Operation_Database_Tbl.Operation_Code
+WHERE
+ DRIVER_CODE = @DRIVER_CODE
+AND SCHEDULE_DATE = @SCHEDULE_DATE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="DRIVER_CODE" ColumnName="Driver_Code" DataSourceName="FM72_Testing.dbo.TPT_Driver_Tbl" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@DRIVER_CODE" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="Driver_Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="SCHEDULE_DATE" ColumnName="SCHEDULE_DATE" DataSourceName="FM72_Testing.dbo.TPT_PLAN_TRIP_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@SCHEDULE_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="SCHEDULE_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="FM72_JE_TESTING_supportsrv_innosqlmaster (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByJobNoDriverAndDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByJobNoDriverAndDate" GeneratorSourceName="FillByJobNoDriverAndDate" GetMethodModifier="Public" GetMethodName="GetDataByJobNoDriverAndDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByJobNoDriverAndDate" UserSourceName="FillByJobNoDriverAndDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     TPT_JOB_MAIN_Tbl.JOB_NUMBER, TPT_PLAN_TRIP_TBL.SCHEDULE_DATE, TPT_Driver_Tbl.Driver_Name, TPT_PLAN_TRIP_TBL.VEHICLE_NO, 
+                      TPT_JOB_MAIN_Tbl.JOB_TYPE, TPT_PLAN_SUBTRIP_TBL.END_STOP, CRT_Operation_Database_Tbl.Operation_Code, 
+                      CRT_Operation_Database_Tbl.Operation_Name, CRT_Operation_Database_Tbl.Op_Add1, CRT_Operation_Database_Tbl.Op_Add2, 
+                      CRT_Operation_Database_Tbl.Op_Add3, CRT_Operation_Database_Tbl.Op_Add4, TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.SEAL_NUMBER, TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE, TPT_JOB_DETAIL_CARGO_Tbl.GROSS_WEIGHT, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.CARGO_DESCRIPTION, TPT_JOB_DETAIL_CARGO_Tbl.REMARKS, TPT_JOB_DETAIL_CARGO_Tbl.CHARGE_CODE, 
+                      TPT_JOB_DETAIL_CARGO_Tbl.IS_LADEN, TPT_JOB_DETAIL_CARGO_Tbl.SEQUENCE_NO, TPT_PLAN_SUBTRIP_JOB_TBL.PLANTRIP_NO, 
+                      TPT_PLAN_SUBTRIP_JOB_TBL.SEQ_NO, TPT_PLAN_SUBTRIP_TBL.TRAILER_NO
+FROM         TPT_PLAN_TRIP_TBL INNER JOIN
+                      TPT_Driver_Tbl ON TPT_PLAN_TRIP_TBL.DRIVER_NO = TPT_Driver_Tbl.Driver_Code INNER JOIN
+                      TPT_JOB_MAIN_Tbl INNER JOIN
+                      TPT_JOB_DETAIL_CARGO_Tbl ON TPT_JOB_MAIN_Tbl.JOB_ID = TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID INNER JOIN
+                      TPT_PLAN_SUBTRIP_JOB_TBL ON TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID = TPT_PLAN_SUBTRIP_JOB_TBL.JOB_ID AND 
+                      TPT_JOB_DETAIL_CARGO_Tbl.SEQUENCE_NO = TPT_PLAN_SUBTRIP_JOB_TBL.SEQUENCE_NO INNER JOIN
+                      TPT_PLAN_SUBTRIP_TBL ON TPT_PLAN_SUBTRIP_JOB_TBL.PLANTRIP_NO = TPT_PLAN_SUBTRIP_TBL.PLANTRIP_NO AND 
+                      TPT_PLAN_SUBTRIP_JOB_TBL.SEQ_NO = TPT_PLAN_SUBTRIP_TBL.SEQ_NO ON 
+                      TPT_PLAN_TRIP_TBL.PLANTRIP_NO = TPT_PLAN_SUBTRIP_TBL.PLANTRIP_NO INNER JOIN
+                      CRT_Operation_Database_Tbl ON TPT_PLAN_SUBTRIP_TBL.END_STOP = CRT_Operation_Database_Tbl.Operation_Code
+WHERE
+ DRIVER_CODE = @START_DRIVER_CODE
+AND SCHEDULE_DATE = @START_SCHEDULE_DATE
+AND TPT_JOB_MAIN_Tbl.JOB_NUMBER &gt;= @STARTJOBNO
+AND TPT_JOB_MAIN_Tbl.JOB_NUMBER &lt;= @ENDJOBNO</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_DRIVER_CODE" ColumnName="Driver_Code" DataSourceName="FM72_Testing.dbo.TPT_Driver_Tbl" DataTypeServer="nvarchar(10)" DbType="String" Direction="Input" ParameterName="@START_DRIVER_CODE" Precision="0" ProviderType="NVarChar" Scale="0" Size="10" SourceColumn="Driver_Code" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_SCHEDULE_DATE" ColumnName="SCHEDULE_DATE" DataSourceName="FM72_Testing.dbo.TPT_PLAN_TRIP_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@START_SCHEDULE_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="SCHEDULE_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="STARTJOBNO" ColumnName="JOB_NUMBER" DataSourceName="FM72_Testing.dbo.TPT_JOB_MAIN_Tbl" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@STARTJOBNO" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="JOB_NUMBER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="ENDJOBNO" ColumnName="JOB_NUMBER" DataSourceName="FM72_Testing.dbo.TPT_JOB_MAIN_Tbl" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@ENDJOBNO" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="JOB_NUMBER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DstRptDeliveryOrder" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DstRptDeliveryOrder" msprop:Generator_DataSetName="DstRptDeliveryOrder" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtbRptDeliveryOrder" msprop:Generator_UserTableName="dtbRptDeliveryOrder" msprop:Generator_RowDeletedName="dtbRptDeliveryOrderRowDeleted" msprop:Generator_RowChangedName="dtbRptDeliveryOrderRowChanged" msprop:Generator_RowClassName="dtbRptDeliveryOrderRow" msprop:Generator_RowChangingName="dtbRptDeliveryOrderRowChanging" msprop:Generator_RowEvArgName="dtbRptDeliveryOrderRowChangeEvent" msprop:Generator_RowEvHandlerName="dtbRptDeliveryOrderRowChangeEventHandler" msprop:Generator_TableClassName="dtbRptDeliveryOrderDataTable" msprop:Generator_TableVarName="tabledtbRptDeliveryOrder" msprop:Generator_RowDeletingName="dtbRptDeliveryOrderRowDeleting" msprop:Generator_TablePropName="dtbRptDeliveryOrder">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="JOB_NUMBER" msprop:Generator_UserColumnName="JOB_NUMBER" msprop:Generator_ColumnVarNameInTable="columnJOB_NUMBER" msprop:Generator_ColumnPropNameInRow="JOB_NUMBER" msprop:Generator_ColumnPropNameInTable="JOB_NUMBERColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SCHEDULE_DATE" msprop:Generator_UserColumnName="SCHEDULE_DATE" msprop:Generator_ColumnVarNameInTable="columnSCHEDULE_DATE" msprop:Generator_ColumnPropNameInRow="SCHEDULE_DATE" msprop:Generator_ColumnPropNameInTable="SCHEDULE_DATEColumn" type="xs:dateTime" />
+              <xs:element name="Driver_Name" msprop:Generator_UserColumnName="Driver_Name" msprop:Generator_ColumnVarNameInTable="columnDriver_Name" msprop:Generator_ColumnPropNameInRow="Driver_Name" msprop:Generator_ColumnPropNameInTable="Driver_NameColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VEHICLE_NO" msprop:Generator_UserColumnName="VEHICLE_NO" msprop:Generator_ColumnVarNameInTable="columnVEHICLE_NO" msprop:Generator_ColumnPropNameInRow="VEHICLE_NO" msprop:Generator_ColumnPropNameInTable="VEHICLE_NOColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JOB_TYPE" msprop:Generator_UserColumnName="JOB_TYPE" msprop:Generator_ColumnVarNameInTable="columnJOB_TYPE" msprop:Generator_ColumnPropNameInRow="JOB_TYPE" msprop:Generator_ColumnPropNameInTable="JOB_TYPEColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="END_STOP" msprop:Generator_UserColumnName="END_STOP" msprop:Generator_ColumnVarNameInTable="columnEND_STOP" msprop:Generator_ColumnPropNameInRow="END_STOP" msprop:Generator_ColumnPropNameInTable="END_STOPColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Operation_Code" msprop:Generator_UserColumnName="Operation_Code" msprop:Generator_ColumnVarNameInTable="columnOperation_Code" msprop:Generator_ColumnPropNameInRow="Operation_Code" msprop:Generator_ColumnPropNameInTable="Operation_CodeColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Operation_Name" msprop:Generator_UserColumnName="Operation_Name" msprop:Generator_ColumnVarNameInTable="columnOperation_Name" msprop:Generator_ColumnPropNameInRow="Operation_Name" msprop:Generator_ColumnPropNameInTable="Operation_NameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Op_Add1" msprop:Generator_UserColumnName="Op_Add1" msprop:Generator_ColumnVarNameInTable="columnOp_Add1" msprop:Generator_ColumnPropNameInRow="Op_Add1" msprop:Generator_ColumnPropNameInTable="Op_Add1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Op_Add2" msprop:Generator_UserColumnName="Op_Add2" msprop:Generator_ColumnVarNameInTable="columnOp_Add2" msprop:Generator_ColumnPropNameInRow="Op_Add2" msprop:Generator_ColumnPropNameInTable="Op_Add2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Op_Add3" msprop:Generator_UserColumnName="Op_Add3" msprop:Generator_ColumnVarNameInTable="columnOp_Add3" msprop:Generator_ColumnPropNameInRow="Op_Add3" msprop:Generator_ColumnPropNameInTable="Op_Add3Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Op_Add4" msprop:Generator_UserColumnName="Op_Add4" msprop:Generator_ColumnVarNameInTable="columnOp_Add4" msprop:Generator_ColumnPropNameInRow="Op_Add4" msprop:Generator_ColumnPropNameInTable="Op_Add4Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONTAINER_NUMBER" msprop:Generator_UserColumnName="CONTAINER_NUMBER" msprop:Generator_ColumnVarNameInTable="columnCONTAINER_NUMBER" msprop:Generator_ColumnPropNameInRow="CONTAINER_NUMBER" msprop:Generator_ColumnPropNameInTable="CONTAINER_NUMBERColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEAL_NUMBER" msprop:Generator_UserColumnName="SEAL_NUMBER" msprop:Generator_ColumnVarNameInTable="columnSEAL_NUMBER" msprop:Generator_ColumnPropNameInRow="SEAL_NUMBER" msprop:Generator_ColumnPropNameInTable="SEAL_NUMBERColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONTAINER_CODE" msprop:Generator_UserColumnName="CONTAINER_CODE" msprop:Generator_ColumnVarNameInTable="columnCONTAINER_CODE" msprop:Generator_ColumnPropNameInRow="CONTAINER_CODE" msprop:Generator_ColumnPropNameInTable="CONTAINER_CODEColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="GROSS_WEIGHT" msprop:Generator_UserColumnName="GROSS_WEIGHT" msprop:Generator_ColumnVarNameInTable="columnGROSS_WEIGHT" msprop:Generator_ColumnPropNameInRow="GROSS_WEIGHT" msprop:Generator_ColumnPropNameInTable="GROSS_WEIGHTColumn" type="xs:decimal" />
+              <xs:element name="CARGO_DESCRIPTION" msprop:Generator_UserColumnName="CARGO_DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnCARGO_DESCRIPTION" msprop:Generator_ColumnPropNameInRow="CARGO_DESCRIPTION" msprop:Generator_ColumnPropNameInTable="CARGO_DESCRIPTIONColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMARKS" msprop:Generator_UserColumnName="REMARKS" msprop:Generator_ColumnVarNameInTable="columnREMARKS" msprop:Generator_ColumnPropNameInRow="REMARKS" msprop:Generator_ColumnPropNameInTable="REMARKSColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CHARGE_CODE" msprop:Generator_UserColumnName="CHARGE_CODE" msprop:Generator_ColumnVarNameInTable="columnCHARGE_CODE" msprop:Generator_ColumnPropNameInRow="CHARGE_CODE" msprop:Generator_ColumnPropNameInTable="CHARGE_CODEColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IS_LADEN" msprop:Generator_UserColumnName="IS_LADEN" msprop:Generator_ColumnVarNameInTable="columnIS_LADEN" msprop:Generator_ColumnPropNameInRow="IS_LADEN" msprop:Generator_ColumnPropNameInTable="IS_LADENColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEQUENCE_NO" msprop:Generator_UserColumnName="SEQUENCE_NO" msprop:Generator_ColumnVarNameInTable="columnSEQUENCE_NO" msprop:Generator_ColumnPropNameInRow="SEQUENCE_NO" msprop:Generator_ColumnPropNameInTable="SEQUENCE_NOColumn" type="xs:int" />
+              <xs:element name="PLANTRIP_NO" msprop:Generator_UserColumnName="PLANTRIP_NO" msprop:Generator_ColumnVarNameInTable="columnPLANTRIP_NO" msprop:Generator_ColumnPropNameInRow="PLANTRIP_NO" msprop:Generator_ColumnPropNameInTable="PLANTRIP_NOColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEQ_NO" msprop:Generator_UserColumnName="SEQ_NO" msprop:Generator_ColumnVarNameInTable="columnSEQ_NO" msprop:Generator_ColumnPropNameInRow="SEQ_NO" msprop:Generator_ColumnPropNameInTable="SEQ_NOColumn" type="xs:int" />
+              <xs:element name="TRAILER_NO" msprop:Generator_UserColumnName="TRAILER_NO" msprop:Generator_ColumnVarNameInTable="columnTRAILER_NO" msprop:Generator_ColumnPropNameInRow="TRAILER_NO" msprop:Generator_ColumnPropNameInTable="TRAILER_NOColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
