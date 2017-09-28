@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DstQuotation" targetNamespace="http://tempuri.org/DstQuotation.xsd" xmlns:mstns="http://tempuri.org/DstQuotation.xsd" xmlns="http://tempuri.org/DstQuotation.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="4" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM72_TestingConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM72_TestingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TransportMarket.Properties.Settings.GlobalReference.Default.FM72_TestingConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_SG_WYN2KConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_SG_WYN2KConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TransportMarket.Properties.Settings.GlobalReference.Default.FM80_SG_WYN2KConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_SG_WYN2KConnectionString1" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_SG_WYN2KConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TransportMarket.Properties.Settings.GlobalReference.Default.FM80_SG_WYN2KConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_VIETNAM_TEST_USD_VND_ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_VIETNAM_TEST_USD_VND_ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TransportMarket.Properties.Settings.GlobalReference.Default.FM80_VIETNAM_TEST_USD_VND_ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_VIETNAM_HAN_LIVEConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_VIETNAM_HAN_LIVEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TransportMarket.Properties.Settings.GlobalReference.Default.FM80_VIETNAM_HAN_LIVEConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTable1TableAdapter" GeneratorDataComponentClassName="DataTable1TableAdapter" Name="DataTable1" UserDataComponentName="DataTable1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FM80_VIETNAM_HAN_LIVEConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     a.CUST_CODE, a.CUSTOMER_GROUP_NO, 
+	a.SALESMAN_NO, a.QUOTATION_DATE, 
+	a.DATE_VALID_TO, a.PAYMENT_TERMS, 
+	a.CONDITIONS, a.REMARKS, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.DESCRIPTION, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.UOM, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CURRENCY_CODE, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.IS_CONTAINER_MOVEMENT, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CONTAINER_CODE, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.IS_OVERWEIGHT, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.BREAK_CEILING, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.IS_LUMP_SUM,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.UNIT_RATE,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.LUMP_SUM_VALUE,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.REMARKS AS PriceBreakRemarks, ACT_CustVend_Master_Tbl.CustVend_Name, 
+	ACT_CustVend_Master_Tbl.Address1, ACT_CustVend_Master_Tbl.Address2, ACT_CustVend_Master_Tbl.Address3, 
+	ACT_CustVend_Master_Tbl.Address4, a.QUOTATION_ID, a.QUOTATION_NO, 
+	a.DATE_VALID_FROM, a.REMARKS2, 
+	a.REMARKS3, a.REMARKS4, 
+	a.REMARKS5, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.RATE_TYPE,
+	ACT_CustVend_Master_Tbl.Credit_Limit as CUSTOMER_CREDIT_LIMIT,
+	ACT_CustVend_Master_Tbl.Term_Code as CCUSTOMER_TERMS,
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.MINIMUM_VALUE,
+	--20131010 - gerry update show display for package
+	(Select case ch.INVOICE_CHARGE_TYPE
+			when 4 then (Select convert(varchar,convert(decimal,packUOM.LENGTH,2))
+								+' x '+convert(varchar,convert(decimal,packUOM.WIDTH,2))
+								+' x '+convert(varchar,convert(decimal,packUOM.HEIGHT,2))+'(M) / '
+								+convert(varchar,convert(decimal,packUOM.UNIT_WEIGHT,2))+'(KGM)'					
+						from TPT_PACK_UOM as packUOM where packUOM.PACK_TYPE = ch.PACK_TYPE
+								and packUOM.PACK_UOM = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.UOM) 
+			else ''					
+			end 
+	from TPT_CHARGE_TBL as ch 
+	where ch.CHARGE_CODE =  TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE) as PackageRemark
+	--end 20131010		
+
+FROM         ACT_CustVend_Master_Tbl RIGHT OUTER JOIN
+                      TPT_MKT_QUOTATION_HEADER_TBL AS a ON 
+                      ACT_CustVend_Master_Tbl.CustVend_Code = a.CUST_CODE LEFT OUTER JOIN
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL LEFT OUTER JOIN
+                      TPT_MKT_QUOTATION_DETAIL_RATE_TBL ON 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.QUOTATION_ID = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.QUOTATION_ID AND 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.SEQUENCE_NO_RATE = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO ON 
+                      a.QUOTATION_ID = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.QUOTATION_ID
+
+
+WHERE    (a.CUST_CODE &gt;= @START_CUST_CODE) AND 
+                      (a.CUST_CODE &lt;= @END_CUST_CODE)
+                      AND a.QUOTATION_DATE &gt;= @START_QUOTATION_DATE
+                      AND a.QUOTATION_DATE &lt;= @END_QUOTATION_DATE
+   
+                      
+ORDER BY TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO, a.CUST_CODE, 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_CUST_CODE" ColumnName="CUST_CODE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@START_CUST_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="CUST_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="END_CUST_CODE" ColumnName="CUST_CODE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@END_CUST_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="CUST_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_QUOTATION_DATE" ColumnName="QUOTATION_DATE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@START_QUOTATION_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="QUOTATION_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="END_QUOTATION_DATE" ColumnName="QUOTATION_DATE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@END_QUOTATION_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="QUOTATION_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CUST_CODE" DataSetColumn="CUST_CODE" />
+              <Mapping SourceColumn="CUSTOMER_GROUP_NO" DataSetColumn="CUSTOMER_GROUP_NO" />
+              <Mapping SourceColumn="SALESMAN_NO" DataSetColumn="SALESMAN_NO" />
+              <Mapping SourceColumn="QUOTATION_DATE" DataSetColumn="QUOTATION_DATE" />
+              <Mapping SourceColumn="DATE_VALID_TO" DataSetColumn="DATE_VALID_TO" />
+              <Mapping SourceColumn="PAYMENT_TERMS" DataSetColumn="PAYMENT_TERMS" />
+              <Mapping SourceColumn="CONDITIONS" DataSetColumn="CONDITIONS" />
+              <Mapping SourceColumn="REMARKS" DataSetColumn="REMARKS" />
+              <Mapping SourceColumn="SEQUENCE_NO" DataSetColumn="SEQUENCE_NO" />
+              <Mapping SourceColumn="CHARGE_CODE" DataSetColumn="CHARGE_CODE" />
+              <Mapping SourceColumn="DESCRIPTION" DataSetColumn="DESCRIPTION" />
+              <Mapping SourceColumn="UOM" DataSetColumn="UOM" />
+              <Mapping SourceColumn="CURRENCY_CODE" DataSetColumn="CURRENCY_CODE" />
+              <Mapping SourceColumn="IS_CONTAINER_MOVEMENT" DataSetColumn="IS_CONTAINER_MOVEMENT" />
+              <Mapping SourceColumn="CONTAINER_CODE" DataSetColumn="CONTAINER_CODE" />
+              <Mapping SourceColumn="IS_OVERWEIGHT" DataSetColumn="IS_OVERWEIGHT" />
+              <Mapping SourceColumn="BREAK_CEILING" DataSetColumn="BREAK_CEILING" />
+              <Mapping SourceColumn="UNIT_RATE" DataSetColumn="UNIT_RATE" />
+              <Mapping SourceColumn="QUOTATION_ID" DataSetColumn="QUOTATION_ID" />
+              <Mapping SourceColumn="QUOTATION_NO" DataSetColumn="QUOTATION_NO" />
+              <Mapping SourceColumn="DATE_VALID_FROM" DataSetColumn="DATE_VALID_FROM" />
+              <Mapping SourceColumn="REMARKS2" DataSetColumn="REMARKS2" />
+              <Mapping SourceColumn="REMARKS3" DataSetColumn="REMARKS3" />
+              <Mapping SourceColumn="REMARKS4" DataSetColumn="REMARKS4" />
+              <Mapping SourceColumn="REMARKS5" DataSetColumn="REMARKS5" />
+              <Mapping SourceColumn="CustVend_Name" DataSetColumn="CustVend_Name" />
+              <Mapping SourceColumn="Address1" DataSetColumn="Address1" />
+              <Mapping SourceColumn="Address2" DataSetColumn="Address2" />
+              <Mapping SourceColumn="Address3" DataSetColumn="Address3" />
+              <Mapping SourceColumn="Address4" DataSetColumn="Address4" />
+              <Mapping SourceColumn="RATE_TYPE" DataSetColumn="RATE_TYPE" />
+              <Mapping SourceColumn="CUSTOMER_CREDIT_LIMIT" DataSetColumn="CUSTOMER_CREDIT_LIMIT" />
+              <Mapping SourceColumn="CCUSTOMER_TERMS" DataSetColumn="CCUSTOMER_TERMS" />
+              <Mapping SourceColumn="IS_LUMP_SUM" DataSetColumn="IS_LUMP_SUM" />
+              <Mapping SourceColumn="LUMP_SUM_VALUE" DataSetColumn="LUMP_SUM_VALUE" />
+              <Mapping SourceColumn="PriceBreakRemarks" DataSetColumn="PriceBreakRemarks" />
+              <Mapping SourceColumn="MINIMUM_VALUE" DataSetColumn="MINIMUM_VALUE" />
+              <Mapping SourceColumn="PackageRemark" DataSetColumn="PackageRemark" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="FM80_VIETNAM_HAN_LIVEConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     a.CUST_CODE, a.CUSTOMER_GROUP_NO, 
+	a.SALESMAN_NO, a.QUOTATION_DATE, 
+	a.DATE_VALID_TO, a.PAYMENT_TERMS, 
+	a.CONDITIONS, a.REMARKS, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.DESCRIPTION, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.UOM, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CURRENCY_CODE, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.IS_CONTAINER_MOVEMENT, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CONTAINER_CODE, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.IS_OVERWEIGHT, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.BREAK_CEILING, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.IS_LUMP_SUM,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.UNIT_RATE,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.LUMP_SUM_VALUE,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.REMARKS AS PriceBreakRemarks, ACT_CustVend_Master_Tbl.CustVend_Name, 
+	ACT_CustVend_Master_Tbl.Address1, ACT_CustVend_Master_Tbl.Address2, ACT_CustVend_Master_Tbl.Address3, 
+	ACT_CustVend_Master_Tbl.Address4, a.QUOTATION_ID, a.QUOTATION_NO, 
+	a.DATE_VALID_FROM, a.REMARKS2, 
+	a.REMARKS3, a.REMARKS4, 
+	a.REMARKS5, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.RATE_TYPE,
+	ACT_CustVend_Master_Tbl.Credit_Limit as CUSTOMER_CREDIT_LIMIT,
+	ACT_CustVend_Master_Tbl.Term_Code as CCUSTOMER_TERMS,
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.MINIMUM_VALUE,
+	--20131010 - gerry update show display for package
+	(Select case ch.INVOICE_CHARGE_TYPE
+			when 4 then (Select convert(varchar,convert(decimal,packUOM.LENGTH,2))
+								+' x '+convert(varchar,convert(decimal,packUOM.WIDTH,2))
+								+' x '+convert(varchar,convert(decimal,packUOM.HEIGHT,2))+'(M) / '
+								+convert(varchar,convert(decimal,packUOM.UNIT_WEIGHT,2))+'(KGM)'					
+						from TPT_PACK_UOM as packUOM where packUOM.PACK_TYPE = ch.PACK_TYPE
+								and packUOM.PACK_UOM = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.UOM) 
+			else ''					
+			end 
+	from TPT_CHARGE_TBL as ch 
+	where ch.CHARGE_CODE =  TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE) as PackageRemark
+	--end 20131010		
+
+FROM         ACT_CustVend_Master_Tbl RIGHT OUTER JOIN
+                      TPT_MKT_QUOTATION_HEADER_TBL AS a ON 
+                      ACT_CustVend_Master_Tbl.CustVend_Code = a.CUST_CODE LEFT OUTER JOIN
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL LEFT OUTER JOIN
+                      TPT_MKT_QUOTATION_DETAIL_RATE_TBL ON 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.QUOTATION_ID = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.QUOTATION_ID AND 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.SEQUENCE_NO_RATE = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO ON 
+                      a.QUOTATION_ID = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.QUOTATION_ID
+
+WHERE     (a.QUOTATION_NO = @QUOTATIONNO)
+                      
+ORDER BY TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO, a.CUST_CODE, 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="QUOTATIONNO" ColumnName="QUOTATION_NO" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="varchar(23)" DbType="AnsiString" Direction="Input" ParameterName="@QUOTATIONNO" Precision="0" ProviderType="VarChar" Scale="0" Size="23" SourceColumn="QUOTATION_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="FM80_VIETNAM_HAN_LIVEConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByLatestAndQuotDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByLatestAndQuotDate" GeneratorSourceName="FillByLatestAndQuotDate" GetMethodModifier="Public" GetMethodName="GetDataByLatestAndQuotDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByLatestAndQuotDate" UserSourceName="FillByLatestAndQuotDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     a.CUST_CODE, a.CUSTOMER_GROUP_NO, 
+	a.SALESMAN_NO, a.QUOTATION_DATE, 
+	a.DATE_VALID_TO, a.PAYMENT_TERMS, 
+	a.CONDITIONS, a.REMARKS, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.DESCRIPTION, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.UOM, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CURRENCY_CODE, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.IS_CONTAINER_MOVEMENT, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CONTAINER_CODE, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.IS_OVERWEIGHT, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.BREAK_CEILING, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.IS_LUMP_SUM,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.UNIT_RATE,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.LUMP_SUM_VALUE,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.REMARKS AS PriceBreakRemarks, ACT_CustVend_Master_Tbl.CustVend_Name, 
+	ACT_CustVend_Master_Tbl.Address1, ACT_CustVend_Master_Tbl.Address2, ACT_CustVend_Master_Tbl.Address3, 
+	ACT_CustVend_Master_Tbl.Address4, a.QUOTATION_ID, a.QUOTATION_NO, 
+	a.DATE_VALID_FROM, a.REMARKS2, 
+	a.REMARKS3, a.REMARKS4, 
+	a.REMARKS5, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.RATE_TYPE,
+	ACT_CustVend_Master_Tbl.Credit_Limit as CUSTOMER_CREDIT_LIMIT,
+	ACT_CustVend_Master_Tbl.Term_Code as CCUSTOMER_TERMS,
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.MINIMUM_VALUE,
+	--20131010 - gerry update show display for package
+	(Select case ch.INVOICE_CHARGE_TYPE
+			when 4 then (Select convert(varchar,convert(decimal,packUOM.LENGTH,2))
+								+' x '+convert(varchar,convert(decimal,packUOM.WIDTH,2))
+								+' x '+convert(varchar,convert(decimal,packUOM.HEIGHT,2))+'(M) / '
+								+convert(varchar,convert(decimal,packUOM.UNIT_WEIGHT,2))+'(KGM)'					
+						from TPT_PACK_UOM as packUOM where packUOM.PACK_TYPE = ch.PACK_TYPE
+								and packUOM.PACK_UOM = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.UOM) 
+			else ''					
+			end 
+	from TPT_CHARGE_TBL as ch 
+	where ch.CHARGE_CODE =  TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE) as PackageRemark
+	--end 20131010		
+
+FROM         ACT_CustVend_Master_Tbl RIGHT OUTER JOIN
+                      TPT_MKT_QUOTATION_HEADER_TBL AS a ON 
+                      ACT_CustVend_Master_Tbl.CustVend_Code = a.CUST_CODE LEFT OUTER JOIN
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL LEFT OUTER JOIN
+                      TPT_MKT_QUOTATION_DETAIL_RATE_TBL ON 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.QUOTATION_ID = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.QUOTATION_ID AND 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.SEQUENCE_NO_RATE = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO ON 
+                      a.QUOTATION_ID = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.QUOTATION_ID
+
+WHERE  a.QUOTATION_DATE &gt;= @START_QUOTATION_DATE
+                      AND a.QUOTATION_DATE &lt;= @END_QUOTATION_DATE
+AND (select count(*) from TPT_MKT_QUOTATION_HEADER_TBL
+                                   where CUST_CODE = a.CUST_CODE
+	                                 and DATE_VALID_FROM &gt; a.DATE_VALID_FROM) &lt; 1
+   
+                      
+ORDER BY TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO, a.CUST_CODE, 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_QUOTATION_DATE" ColumnName="QUOTATION_DATE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@START_QUOTATION_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="QUOTATION_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="END_QUOTATION_DATE" ColumnName="QUOTATION_DATE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@END_QUOTATION_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="QUOTATION_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="FM80_VIETNAM_HAN_LIVEConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByQuotationDate" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByQuotationDate" GeneratorSourceName="FillByQuotationDate" GetMethodModifier="Public" GetMethodName="GetDataByQuotationDate" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByQuotationDate" UserSourceName="FillByQuotationDate">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     a.CUST_CODE, a.CUSTOMER_GROUP_NO, 
+	a.SALESMAN_NO, a.QUOTATION_DATE, 
+	a.DATE_VALID_TO, a.PAYMENT_TERMS, 
+	a.CONDITIONS, a.REMARKS, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.DESCRIPTION, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.UOM, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CURRENCY_CODE, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.IS_CONTAINER_MOVEMENT, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CONTAINER_CODE, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.IS_OVERWEIGHT, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.BREAK_CEILING, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.IS_LUMP_SUM,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.UNIT_RATE,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.LUMP_SUM_VALUE,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.REMARKS AS PriceBreakRemarks, ACT_CustVend_Master_Tbl.CustVend_Name, 
+	ACT_CustVend_Master_Tbl.Address1, ACT_CustVend_Master_Tbl.Address2, ACT_CustVend_Master_Tbl.Address3, 
+	ACT_CustVend_Master_Tbl.Address4, a.QUOTATION_ID, a.QUOTATION_NO, 
+	a.DATE_VALID_FROM, a.REMARKS2, 
+	a.REMARKS3, a.REMARKS4, 
+	a.REMARKS5, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.RATE_TYPE,
+	ACT_CustVend_Master_Tbl.Credit_Limit as CUSTOMER_CREDIT_LIMIT,
+	ACT_CustVend_Master_Tbl.Term_Code as CCUSTOMER_TERMS,
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.MINIMUM_VALUE,
+	--20131010 - gerry update show display for package
+	(Select case ch.INVOICE_CHARGE_TYPE
+			when 4 then (Select convert(varchar,convert(decimal,packUOM.LENGTH,2))
+								+' x '+convert(varchar,convert(decimal,packUOM.WIDTH,2))
+								+' x '+convert(varchar,convert(decimal,packUOM.HEIGHT,2))+'(M) / '
+								+convert(varchar,convert(decimal,packUOM.UNIT_WEIGHT,2))+'(KGM)'					
+						from TPT_PACK_UOM as packUOM where packUOM.PACK_TYPE = ch.PACK_TYPE
+								and packUOM.PACK_UOM = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.UOM) 
+			else ''					
+			end 
+	from TPT_CHARGE_TBL as ch 
+	where ch.CHARGE_CODE =  TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE) as PackageRemark
+	--end 20131010		
+
+FROM         ACT_CustVend_Master_Tbl RIGHT OUTER JOIN
+                      TPT_MKT_QUOTATION_HEADER_TBL AS a ON 
+                      ACT_CustVend_Master_Tbl.CustVend_Code = a.CUST_CODE LEFT OUTER JOIN
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL LEFT OUTER JOIN
+                      TPT_MKT_QUOTATION_DETAIL_RATE_TBL ON 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.QUOTATION_ID = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.QUOTATION_ID AND 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.SEQUENCE_NO_RATE = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO ON 
+                      a.QUOTATION_ID = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.QUOTATION_ID
+
+
+WHERE   a.QUOTATION_DATE &gt;= @START_QUOTATION_DATE
+                      AND a.QUOTATION_DATE &lt;= @END_QUOTATION_DATE
+   
+                      
+ORDER BY TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO, a.CUST_CODE, 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_QUOTATION_DATE" ColumnName="QUOTATION_DATE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@START_QUOTATION_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="QUOTATION_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="END_QUOTATION_DATE" ColumnName="QUOTATION_DATE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@END_QUOTATION_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="QUOTATION_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="FM80_VIETNAM_HAN_LIVEConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillLatestQuotation" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataLatestQuotation" GeneratorSourceName="FillLatestQuotation" GetMethodModifier="Public" GetMethodName="GetDataLatestQuotation" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataLatestQuotation" UserSourceName="FillLatestQuotation">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT     a.CUST_CODE, a.CUSTOMER_GROUP_NO, 
+	a.SALESMAN_NO, a.QUOTATION_DATE, 
+	a.DATE_VALID_TO, a.PAYMENT_TERMS, 
+	a.CONDITIONS, a.REMARKS, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.DESCRIPTION, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.UOM, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CURRENCY_CODE, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.IS_CONTAINER_MOVEMENT, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CONTAINER_CODE, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.IS_OVERWEIGHT, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.BREAK_CEILING, 
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.IS_LUMP_SUM,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.UNIT_RATE,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.LUMP_SUM_VALUE,
+	TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.REMARKS AS PriceBreakRemarks, ACT_CustVend_Master_Tbl.CustVend_Name, 
+	ACT_CustVend_Master_Tbl.Address1, ACT_CustVend_Master_Tbl.Address2, ACT_CustVend_Master_Tbl.Address3, 
+	ACT_CustVend_Master_Tbl.Address4, a.QUOTATION_ID, a.QUOTATION_NO, 
+	a.DATE_VALID_FROM, a.REMARKS2, 
+	a.REMARKS3, a.REMARKS4, 
+	a.REMARKS5, TPT_MKT_QUOTATION_DETAIL_RATE_TBL.RATE_TYPE,
+	ACT_CustVend_Master_Tbl.Credit_Limit as CUSTOMER_CREDIT_LIMIT,
+	ACT_CustVend_Master_Tbl.Term_Code as CCUSTOMER_TERMS,
+	TPT_MKT_QUOTATION_DETAIL_RATE_TBL.MINIMUM_VALUE,
+	--20131010 - gerry update show display for package
+	(Select case ch.INVOICE_CHARGE_TYPE
+			when 4 then (Select convert(varchar,convert(decimal,packUOM.LENGTH,2))
+								+' x '+convert(varchar,convert(decimal,packUOM.WIDTH,2))
+								+' x '+convert(varchar,convert(decimal,packUOM.HEIGHT,2))+'(M) / '
+								+convert(varchar,convert(decimal,packUOM.UNIT_WEIGHT,2))+'(KGM)'					
+						from TPT_PACK_UOM as packUOM where packUOM.PACK_TYPE = ch.PACK_TYPE
+								and packUOM.PACK_UOM = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.UOM) 
+			else ''					
+			end 
+	from TPT_CHARGE_TBL as ch 
+	where ch.CHARGE_CODE =  TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE) as PackageRemark
+	--end 20131010		
+
+FROM         ACT_CustVend_Master_Tbl RIGHT OUTER JOIN
+                      TPT_MKT_QUOTATION_HEADER_TBL AS a ON 
+                      ACT_CustVend_Master_Tbl.CustVend_Code = a.CUST_CODE LEFT OUTER JOIN
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL LEFT OUTER JOIN
+                      TPT_MKT_QUOTATION_DETAIL_RATE_TBL ON 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.QUOTATION_ID = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.QUOTATION_ID AND 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_PRICE_BREAKS_TBL.SEQUENCE_NO_RATE = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO ON 
+                      a.QUOTATION_ID = TPT_MKT_QUOTATION_DETAIL_RATE_TBL.QUOTATION_ID
+
+
+
+WHERE    (a.CUST_CODE &gt;= @START_CUST_CODE) AND 
+                      (a.CUST_CODE &lt;= @END_CUST_CODE)
+                      AND a.QUOTATION_DATE &gt;= @START_QUOTATION_DATE
+                      AND a.QUOTATION_DATE &lt;= @END_QUOTATION_DATE
+   AND (select count(*) from TPT_MKT_QUOTATION_HEADER_TBL
+                                   where CUST_CODE = a.CUST_CODE
+	                                 and DATE_VALID_FROM &gt; a.DATE_VALID_FROM) &lt; 1
+                      
+ORDER BY TPT_MKT_QUOTATION_DETAIL_RATE_TBL.SEQUENCE_NO, a.CUST_CODE, 
+                      TPT_MKT_QUOTATION_DETAIL_RATE_TBL.CHARGE_CODE</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_CUST_CODE" ColumnName="CUST_CODE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@START_CUST_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="CUST_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="END_CUST_CODE" ColumnName="CUST_CODE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@END_CUST_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="CUST_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_QUOTATION_DATE" ColumnName="QUOTATION_DATE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@START_QUOTATION_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="QUOTATION_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="END_QUOTATION_DATE" ColumnName="QUOTATION_DATE" DataSourceName="FM80_VIETNAM_HAN_LIVE.dbo.TPT_MKT_QUOTATION_HEADER_TBL" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@END_QUOTATION_DATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="QUOTATION_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DstQuotation" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DstQuotation" msprop:Generator_DataSetName="DstQuotation" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_TablePropName="DataTable1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CUST_CODE" msprop:Generator_UserColumnName="CUST_CODE" msprop:Generator_ColumnPropNameInRow="CUST_CODE" msprop:Generator_ColumnVarNameInTable="columnCUST_CODE" msprop:Generator_ColumnPropNameInTable="CUST_CODEColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSTOMER_GROUP_NO" msprop:Generator_UserColumnName="CUSTOMER_GROUP_NO" msprop:Generator_ColumnPropNameInRow="CUSTOMER_GROUP_NO" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_GROUP_NO" msprop:Generator_ColumnPropNameInTable="CUSTOMER_GROUP_NOColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SALESMAN_NO" msprop:Generator_UserColumnName="SALESMAN_NO" msprop:Generator_ColumnPropNameInRow="SALESMAN_NO" msprop:Generator_ColumnVarNameInTable="columnSALESMAN_NO" msprop:Generator_ColumnPropNameInTable="SALESMAN_NOColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="QUOTATION_DATE" msprop:Generator_UserColumnName="QUOTATION_DATE" msprop:Generator_ColumnPropNameInRow="QUOTATION_DATE" msprop:Generator_ColumnVarNameInTable="columnQUOTATION_DATE" msprop:Generator_ColumnPropNameInTable="QUOTATION_DATEColumn" type="xs:dateTime" />
+              <xs:element name="DATE_VALID_TO" msprop:Generator_UserColumnName="DATE_VALID_TO" msprop:Generator_ColumnPropNameInRow="DATE_VALID_TO" msprop:Generator_ColumnVarNameInTable="columnDATE_VALID_TO" msprop:Generator_ColumnPropNameInTable="DATE_VALID_TOColumn" type="xs:dateTime" />
+              <xs:element name="PAYMENT_TERMS" msprop:Generator_UserColumnName="PAYMENT_TERMS" msprop:Generator_ColumnPropNameInRow="PAYMENT_TERMS" msprop:Generator_ColumnVarNameInTable="columnPAYMENT_TERMS" msprop:Generator_ColumnPropNameInTable="PAYMENT_TERMSColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONDITIONS" msprop:Generator_UserColumnName="CONDITIONS" msprop:Generator_ColumnPropNameInRow="CONDITIONS" msprop:Generator_ColumnVarNameInTable="columnCONDITIONS" msprop:Generator_ColumnPropNameInTable="CONDITIONSColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMARKS" msprop:Generator_UserColumnName="REMARKS" msprop:Generator_ColumnPropNameInRow="REMARKS" msprop:Generator_ColumnVarNameInTable="columnREMARKS" msprop:Generator_ColumnPropNameInTable="REMARKSColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SEQUENCE_NO" msprop:Generator_UserColumnName="SEQUENCE_NO" msprop:Generator_ColumnPropNameInRow="SEQUENCE_NO" msprop:Generator_ColumnVarNameInTable="columnSEQUENCE_NO" msprop:Generator_ColumnPropNameInTable="SEQUENCE_NOColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="CHARGE_CODE" msprop:Generator_UserColumnName="CHARGE_CODE" msprop:Generator_ColumnPropNameInRow="CHARGE_CODE" msprop:Generator_ColumnVarNameInTable="columnCHARGE_CODE" msprop:Generator_ColumnPropNameInTable="CHARGE_CODEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DESCRIPTION" msprop:Generator_UserColumnName="DESCRIPTION" msprop:Generator_ColumnPropNameInRow="DESCRIPTION" msprop:Generator_ColumnVarNameInTable="columnDESCRIPTION" msprop:Generator_ColumnPropNameInTable="DESCRIPTIONColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UOM" msprop:Generator_UserColumnName="UOM" msprop:Generator_ColumnPropNameInRow="UOM" msprop:Generator_ColumnVarNameInTable="columnUOM" msprop:Generator_ColumnPropNameInTable="UOMColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CURRENCY_CODE" msprop:Generator_UserColumnName="CURRENCY_CODE" msprop:Generator_ColumnPropNameInRow="CURRENCY_CODE" msprop:Generator_ColumnVarNameInTable="columnCURRENCY_CODE" msprop:Generator_ColumnPropNameInTable="CURRENCY_CODEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IS_CONTAINER_MOVEMENT" msprop:Generator_UserColumnName="IS_CONTAINER_MOVEMENT" msprop:Generator_ColumnPropNameInRow="IS_CONTAINER_MOVEMENT" msprop:Generator_ColumnVarNameInTable="columnIS_CONTAINER_MOVEMENT" msprop:Generator_ColumnPropNameInTable="IS_CONTAINER_MOVEMENTColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONTAINER_CODE" msprop:Generator_UserColumnName="CONTAINER_CODE" msprop:Generator_ColumnPropNameInRow="CONTAINER_CODE" msprop:Generator_ColumnVarNameInTable="columnCONTAINER_CODE" msprop:Generator_ColumnPropNameInTable="CONTAINER_CODEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="IS_OVERWEIGHT" msprop:Generator_UserColumnName="IS_OVERWEIGHT" msprop:Generator_ColumnPropNameInRow="IS_OVERWEIGHT" msprop:Generator_ColumnVarNameInTable="columnIS_OVERWEIGHT" msprop:Generator_ColumnPropNameInTable="IS_OVERWEIGHTColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BREAK_CEILING" msprop:Generator_UserColumnName="BREAK_CEILING" msprop:Generator_ColumnPropNameInRow="BREAK_CEILING" msprop:Generator_ColumnVarNameInTable="columnBREAK_CEILING" msprop:Generator_ColumnPropNameInTable="BREAK_CEILINGColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="UNIT_RATE" msprop:Generator_UserColumnName="UNIT_RATE" msprop:Generator_ColumnPropNameInRow="UNIT_RATE" msprop:Generator_ColumnVarNameInTable="columnUNIT_RATE" msprop:Generator_ColumnPropNameInTable="UNIT_RATEColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="QUOTATION_ID" msprop:Generator_UserColumnName="QUOTATION_ID" msprop:Generator_ColumnPropNameInRow="QUOTATION_ID" msprop:Generator_ColumnVarNameInTable="columnQUOTATION_ID" msprop:Generator_ColumnPropNameInTable="QUOTATION_IDColumn" type="xs:int" />
+              <xs:element name="QUOTATION_NO" msprop:Generator_UserColumnName="QUOTATION_NO" msprop:Generator_ColumnPropNameInRow="QUOTATION_NO" msprop:Generator_ColumnVarNameInTable="columnQUOTATION_NO" msprop:Generator_ColumnPropNameInTable="QUOTATION_NOColumn">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DATE_VALID_FROM" msprop:Generator_UserColumnName="DATE_VALID_FROM" msprop:Generator_ColumnPropNameInRow="DATE_VALID_FROM" msprop:Generator_ColumnVarNameInTable="columnDATE_VALID_FROM" msprop:Generator_ColumnPropNameInTable="DATE_VALID_FROMColumn" type="xs:dateTime" />
+              <xs:element name="REMARKS2" msprop:Generator_UserColumnName="REMARKS2" msprop:Generator_ColumnPropNameInRow="REMARKS2" msprop:Generator_ColumnVarNameInTable="columnREMARKS2" msprop:Generator_ColumnPropNameInTable="REMARKS2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMARKS3" msprop:Generator_UserColumnName="REMARKS3" msprop:Generator_ColumnPropNameInRow="REMARKS3" msprop:Generator_ColumnVarNameInTable="columnREMARKS3" msprop:Generator_ColumnPropNameInTable="REMARKS3Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMARKS4" msprop:Generator_UserColumnName="REMARKS4" msprop:Generator_ColumnPropNameInRow="REMARKS4" msprop:Generator_ColumnVarNameInTable="columnREMARKS4" msprop:Generator_ColumnPropNameInTable="REMARKS4Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMARKS5" msprop:Generator_UserColumnName="REMARKS5" msprop:Generator_ColumnPropNameInRow="REMARKS5" msprop:Generator_ColumnVarNameInTable="columnREMARKS5" msprop:Generator_ColumnPropNameInTable="REMARKS5Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustVend_Name" msprop:Generator_UserColumnName="CustVend_Name" msprop:Generator_ColumnPropNameInRow="CustVend_Name" msprop:Generator_ColumnVarNameInTable="columnCustVend_Name" msprop:Generator_ColumnPropNameInTable="CustVend_NameColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address1" msprop:Generator_UserColumnName="Address1" msprop:Generator_ColumnPropNameInRow="Address1" msprop:Generator_ColumnVarNameInTable="columnAddress1" msprop:Generator_ColumnPropNameInTable="Address1Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address2" msprop:Generator_UserColumnName="Address2" msprop:Generator_ColumnPropNameInRow="Address2" msprop:Generator_ColumnVarNameInTable="columnAddress2" msprop:Generator_ColumnPropNameInTable="Address2Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address3" msprop:Generator_UserColumnName="Address3" msprop:Generator_ColumnPropNameInRow="Address3" msprop:Generator_ColumnVarNameInTable="columnAddress3" msprop:Generator_ColumnPropNameInTable="Address3Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Address4" msprop:Generator_UserColumnName="Address4" msprop:Generator_ColumnPropNameInRow="Address4" msprop:Generator_ColumnVarNameInTable="columnAddress4" msprop:Generator_ColumnPropNameInTable="Address4Column" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="RATE_TYPE" msprop:Generator_UserColumnName="RATE_TYPE" msprop:Generator_ColumnVarNameInTable="columnRATE_TYPE" msprop:Generator_ColumnPropNameInRow="RATE_TYPE" msprop:Generator_ColumnPropNameInTable="RATE_TYPEColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSTOMER_CREDIT_LIMIT" msprop:Generator_UserColumnName="CUSTOMER_CREDIT_LIMIT" msprop:Generator_ColumnVarNameInTable="columnCUSTOMER_CREDIT_LIMIT" msprop:Generator_ColumnPropNameInRow="CUSTOMER_CREDIT_LIMIT" msprop:Generator_ColumnPropNameInTable="CUSTOMER_CREDIT_LIMITColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CCUSTOMER_TERMS" msprop:Generator_UserColumnName="CCUSTOMER_TERMS" msprop:Generator_ColumnPropNameInRow="CCUSTOMER_TERMS" msprop:Generator_ColumnVarNameInTable="columnCCUSTOMER_TERMS" msprop:Generator_ColumnPropNameInTable="CCUSTOMER_TERMSColumn" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="IS_LUMP_SUM" msprop:Generator_UserColumnName="IS_LUMP_SUM" msprop:Generator_ColumnPropNameInRow="IS_LUMP_SUM" msprop:Generator_ColumnVarNameInTable="columnIS_LUMP_SUM" msprop:Generator_ColumnPropNameInTable="IS_LUMP_SUMColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LUMP_SUM_VALUE" msprop:Generator_UserColumnName="LUMP_SUM_VALUE" msprop:Generator_ColumnPropNameInRow="LUMP_SUM_VALUE" msprop:Generator_ColumnVarNameInTable="columnLUMP_SUM_VALUE" msprop:Generator_ColumnPropNameInTable="LUMP_SUM_VALUEColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PriceBreakRemarks" msprop:Generator_UserColumnName="PriceBreakRemarks" msprop:Generator_ColumnPropNameInRow="PriceBreakRemarks" msprop:Generator_ColumnVarNameInTable="columnPriceBreakRemarks" msprop:Generator_ColumnPropNameInTable="PriceBreakRemarksColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MINIMUM_VALUE" msprop:Generator_UserColumnName="MINIMUM_VALUE" msprop:Generator_ColumnVarNameInTable="columnMINIMUM_VALUE" msprop:Generator_ColumnPropNameInRow="MINIMUM_VALUE" msprop:Generator_ColumnPropNameInTable="MINIMUM_VALUEColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="PackageRemark" msdata:ReadOnly="true" msprop:Generator_UserColumnName="PackageRemark" msprop:Generator_ColumnVarNameInTable="columnPackageRemark" msprop:Generator_ColumnPropNameInRow="PackageRemark" msprop:Generator_ColumnPropNameInTable="PackageRemarkColumn" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="133" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

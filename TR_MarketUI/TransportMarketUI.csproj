@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4ED0ABF8-A8DD-4AE0-A684-4AF45767B380}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FM.TransportMarket</RootNamespace>
+    <AssemblyName>TR_MarketingUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\CompiledCode\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>0219;0162;0168;0169;0414</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>0219;0162;0168;0169;0414</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FMSystem, Version=72.1.1004.2301, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\FMSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="FormBaseLibrary, Version=72.1.1004.2301, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\FormBaseLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CompiledCode\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CompiledCode\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\CompiledCode\System.Data.DataSetExtensions.dll</HintPath>
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TR_Book, Version=72.1.1004.1031, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_Book.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_LanguageResource, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_LanguageResource.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_Maintenance, Version=72.2.1004.1728, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_Maintenance.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_Market, Version=72.1.1004.2301, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_Market.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_SeaFreight, Version=72.1.1004.2301, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_SeaFreight.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DstQuotation.cs">
+      <DependentUpon>DstQuotation.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DstQuotation.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DstQuotation.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DstSpecialData.Designer.cs">
+      <DependentUpon>DstSpecialData.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="UI\FrmAddTruckMovementUOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAddTruckMovementUOM.Designer.cs">
+      <DependentUpon>FrmAddTruckMovementUOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmCharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmCharge.Designer.cs">
+      <DependentUpon>FrmCharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmCopyQuotation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmCopyQuotation.Designer.cs">
+      <DependentUpon>FrmCopyQuotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmMarketMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmMarketMain.Designer.cs">
+      <DependentUpon>FrmMarketMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPackageUOM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPackageUOM.Designer.cs">
+      <DependentUpon>FrmPackageUOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPriceBreakNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPriceBreakNew.Designer.cs">
+      <DependentUpon>FrmPriceBreakNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmQuotationEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmQuotationEntry.Designer.cs">
+      <DependentUpon>FrmQuotationEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptQuotation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptQuotation.Designer.cs">
+      <DependentUpon>FrmRptQuotation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSector.Designer.cs">
+      <DependentUpon>FrmSector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPackages.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPackages.Designer.cs">
+      <DependentUpon>FrmPackages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTransportRateNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTransportRateNew.Designer.cs">
+      <DependentUpon>FrmTransportRateNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Report\RptQuotation.rdlc" />
+    <EmbeddedResource Include="UI\FrmAddTruckMovementUOM.resx">
+      <DependentUpon>FrmAddTruckMovementUOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmCharge.resx">
+      <DependentUpon>FrmCharge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmCopyQuotation.resx">
+      <DependentUpon>FrmCopyQuotation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmMarketMain.resx">
+      <DependentUpon>FrmMarketMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPackageUOM.resx">
+      <DependentUpon>FrmPackageUOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPriceBreakNew.resx">
+      <DependentUpon>FrmPriceBreakNew.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmQuotationEntry.resx">
+      <DependentUpon>FrmQuotationEntry.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptQuotation.resx">
+      <DependentUpon>FrmRptQuotation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSector.resx">
+      <DependentUpon>FrmSector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPackages.resx">
+      <DependentUpon>FrmPackages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTransportRateNew.resx">
+      <DependentUpon>FrmTransportRateNew.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstQuotation.xsc">
+      <DependentUpon>DstQuotation.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstQuotation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstQuotation.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstQuotation.xss">
+      <DependentUpon>DstQuotation.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstSpecialData.xsc">
+      <DependentUpon>DstSpecialData.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstSpecialData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstSpecialData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Report\DstSpecialData.xss">
+      <DependentUpon>DstSpecialData.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
