@@ -1,0 +1,107 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
+//
+using MS_SimulatorBLL.ExternalMessages;
+using FM.FMSystem.BLL;
+
+namespace MS_Simulator.Controllers
+{
+    public class TripUpdate01Controller : ApiController
+    {
+        /*
+         * 2015-04-13 Zhou Kai creates this controller, to:
+         * (1) listen to trip update messages sent from Growth Venture
+         */
+
+        #region "Actions"
+        [HttpPost]
+        [Route("USS_GV_WS/api/DriverUpdate")]
+        public HttpResponseMessage OnReceiveTripUpdate01(TripUpdate01 tripUpdate)
+        {
+            HttpResponseMessage response;
+
+            string runTimeError = String.Empty;
+            #region Gerry removed
+            /*if (tripUpdate.SelfCheck(tripUpdate, out runTimeError) &&
+            runTimeError == String.Empty)
+            {
+                response =
+                    new HttpResponseMessage(HttpStatusCode.Accepted);
+                tripUpdate.InsertTripUpdate01IntoDB(tripUpdate, runTimeError, true);
+
+                return response;
+            }
+            else
+            {
+                HttpError error = new HttpError("Invalid Trip Update Message.") 
+                { Message = runTimeError };
+
+                response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, error);
+                tripUpdate.InsertTripUpdate01IntoDB(tripUpdate, runTimeError, false);
+                return response;
+            }
+             * */
+            #endregion
+            //20150515 - gerry put inside try catch to handle exceptions
+            try
+            {
+                if (tripUpdate.SelfCheck(tripUpdate, out runTimeError))
+                {
+                    tripUpdate.SenderID = tripUpdate.PrimeMover;
+                    TripUpdate01.InsertTripUpdate01IntoDB(tripUpdate, false, true);
+                    response = Request.CreateResponse(HttpStatusCode.Accepted, tripUpdate);// "Message Received.");
+                }
+                else
+                {
+                    tripUpdate.PlannerRemark = runTimeError;
+                    TripUpdate01.InsertTripUpdate01IntoDB(tripUpdate, false, false);
+                    HttpError error = new HttpError("Invalid Trip Update Message.") { Message = runTimeError };
+                    response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, error);
+                }
+            }
+            catch (FMException fmEx)
+            {
+                HttpError error = new HttpError("Invalid Trip Update Message.") { Message = fmEx.Message.ToString() };
+                response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, error);
+            }
+            catch (Exception ex)
+            {
+                HttpError error = new HttpError("Invalid Trip Update Message.") { Message = ex.Message.ToString() };
+                response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, error);
+            }
+            return response;
+        }
+        //Just example for growth venture webservice
+        [HttpPost]
+        [Route("USS_GV_WS/api/TripInstruction")]
+        public HttpResponseMessage OnSendTripInstruction01(TripInstruction01 tripInstruction)
+        {
+            HttpResponseMessage response = null;
+            string runTimeError = String.Empty;
+            //20150515 - gerry put inside try catch to handle exceptions
+            try
+            {
+                //GV has some validation logic
+                //this is just an example of receiving an intruction from planner
+                response = Request.CreateResponse(HttpStatusCode.Accepted, tripInstruction);
+            }
+            catch (FMException fmEx)
+            {
+                HttpError error = new HttpError("Invalid Trip Update Message.") { Message = fmEx.Message.ToString() };
+                response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, error);
+            }
+            catch (Exception ex)
+            {
+                HttpError error = new HttpError("Invalid Trip Update Message.") { Message = ex.Message.ToString() };
+                response = Request.CreateErrorResponse(HttpStatusCode.BadRequest, error);
+            }
+            return response;
+        }
+
+        #endregion
+    }
+}
