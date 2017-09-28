@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="12.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C479EC2B-2229-4998-885C-0CDD8811C8A7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FM.TR_FMSystemDLL</RootNamespace>
+    <AssemblyName>TR_FMSystemDLL</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>0219;0162;0168;0169;0414</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>0219;0162;0168;0169;0414</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TR_LanguageResource, Version=81.1.1.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_LanguageResource.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BLL\Account.cs" />
+    <Compile Include="BLL\ApplicationOption.cs" />
+    <Compile Include="BLL\AuditLog.cs" />
+    <Compile Include="BLL\BranchDTO.cs" />
+    <Compile Include="BLL\CommonEnum.cs" />
+    <Compile Include="BLL\CommonUtilities.cs" />
+    <Compile Include="BLL\ConvertNumbersToWords.cs" />
+    <Compile Include="BLL\CustomerGroup.cs" />
+    <Compile Include="BLL\DateUtility.cs" />
+    <Compile Include="BLL\Job.cs" />
+    <Compile Include="BLL\ModuleItemAccess.cs" />
+    <Compile Include="BLL\OperationDetail.cs" />
+    <Compile Include="BLL\RateType.cs" />
+    <Compile Include="BLL\ReadINIFile.cs" />
+    <Compile Include="BLL\SpecialJobDetail.cs" />
+    <Compile Include="BLL\Stop.cs" />
+    <Compile Include="BLL\Terms.cs" />
+    <Compile Include="BLL\User.cs" />
+    <Compile Include="BLL\UserAccess.cs" />
+    <Compile Include="DAL\AccountDAL.cs" />
+    <Compile Include="DAL\ApplicationOptionDAL.cs" />
+    <Compile Include="DAL\CustomerGroupDAL.cs" />
+    <Compile Include="DAL\JobDAL.cs" />
+    <Compile Include="DAL\OperationDetailDAL.cs" />
+    <Compile Include="DAL\RateTypeDAL.cs" />
+    <Compile Include="DAL\SpecialJobDetailDAL.cs" />
+    <Compile Include="DAL\TermsDAL.cs" />
+    <Compile Include="DAL\UserAccessDAL.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="BLL\CurrencyRate.cs" />
+    <Compile Include="BLL\CustomerDTO.cs" />
+    <Compile Include="BLL\FMException.cs" />
+    <Compile Include="BLL\Gst.cs" />
+    <Compile Include="BLL\LogDetail.cs" />
+    <Compile Include="BLL\Logger.cs" />
+    <Compile Include="BLL\LogHeader.cs" />
+    <Compile Include="BLL\OperatorDTO.cs" />
+    <Compile Include="BLL\Salesman.cs" />
+    <Compile Include="BLL\SortableList.cs" />
+    <Compile Include="BLL\SystemEnum.cs" />
+    <Compile Include="DAL\BranchDAL.cs" />
+    <Compile Include="DAL\CurrencyRateDAL.cs" />
+    <Compile Include="DAL\CustomerVendorDAL.cs" />
+    <Compile Include="DAL\FMGlobalSettings.cs" />
+    <Compile Include="DAL\GstDAL.cs" />
+    <Compile Include="DAL\LoggerDAL.cs" />
+    <Compile Include="DAL\OperatorDAL.cs" />
+    <Compile Include="DAL\SalesmanDAL.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

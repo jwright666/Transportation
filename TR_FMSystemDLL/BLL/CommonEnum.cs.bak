@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace FM.FMSystem.BLL
+{
+    public enum UOM_TYPE : int 
+    {
+        Weight =1,
+        Volume =2, 
+        Others =3
+    }
+    public enum TruckMovementUOM_WtVol : int 
+    {
+        KGM = 1,    //weight
+        MT = 2,     //weight
+        CBM = 3   //volume
+        
+    }
+}
