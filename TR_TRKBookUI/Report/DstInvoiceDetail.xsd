@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DstInvoiceDetail" targetNamespace="http://tempuri.org/DstInvoiceDetail.xsd" xmlns:mstns="http://tempuri.org/DstInvoiceDetail.xsd" xmlns="http://tempuri.org/DstInvoiceDetail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM72_JEConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM72_JEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.FM72_JEConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM72_JE_TESTINGConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM72_JE_TESTINGConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.FM72_JE_TESTINGConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LOCAL_PC" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LOCAL_PC (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtbRptInvoiceDetailTableAdapter" GeneratorDataComponentClassName="dtbRptInvoiceDetailTableAdapter" Name="dtbRptInvoiceDetail" UserDataComponentName="dtbRptInvoiceDetailTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LOCAL_PC (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TRK_JOB_MAIN_Tbl.JOB_NUMBER, TRK_JOB_MAIN_Tbl.CUST_CODE, TRK_JOB_MAIN_Tbl.JOB_DATETIME BOOKING_DATE, TRK_JOB_MAIN_Tbl.TPT_DEPT_CODE, 
+TRK_JOB_MAIN_Tbl.TRIP_TYPE , TRK_JOB_MAIN_Tbl.BRANCH_CODE, ACT_IV_Transport_Invoice_Master_Tbl.Invoice_Number, 
+ACT_IV_Transport_Invoice_Master_Tbl.Invoice_Date, ACT_IV_Transport_Invoice_Master_Tbl.Invoice_Type_Code, 
+ACT_IV_Transport_Invoice_Item_Tbl.Item_Code, ACT_IV_Transport_Invoice_Item_Tbl.Description, 
+ACT_IV_Transport_Invoice_Item_Tbl.Item_Account_Code, ACT_IV_Transport_Invoice_Item_Tbl.Tax_Code, 
+ACT_IV_Transport_Invoice_Item_Tbl.Currency_Code, ACT_IV_Transport_Invoice_Item_Tbl.Exchange_Rate, 
+ACT_IV_Transport_Invoice_Item_Tbl.Home_Amount, ACT_IV_Transport_Invoice_Item_Tbl.Amount, 
+ACT_IV_Transport_Invoice_Item_Tbl.Est_Cost_Amount, ACT_CustVend_Master_Tbl.CustVend_Name, 
+ACT_IV_Transport_Invoice_Item_Tbl.STD_Tax_Amount_FC, ACT_IV_Transport_Invoice_Item_Tbl.STD_Tax_Amount_HM
+FROM ACT_IV_Transport_Invoice_Item_Tbl INNER JOIN
+ACT_IV_Transport_Invoice_Master_Tbl ON 
+ACT_IV_Transport_Invoice_Item_Tbl.Transaction_Number = ACT_IV_Transport_Invoice_Master_Tbl.Transaction_Number INNER JOIN
+TRK_JOB_MAIN_Tbl ON ACT_IV_Transport_Invoice_Item_Tbl.Job_Number = TRK_JOB_MAIN_Tbl.JOB_NUMBER INNER JOIN
+ACT_CustVend_Master_Tbl ON TRK_JOB_MAIN_Tbl.CUST_CODE = ACT_CustVend_Master_Tbl.CustVend_Code</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="JOB_NUMBER" DataSetColumn="JOB_NUMBER" />
+              <Mapping SourceColumn="CUST_CODE" DataSetColumn="CUST_CODE" />
+              <Mapping SourceColumn="BOOKING_DATE" DataSetColumn="BOOKING_DATE" />
+              <Mapping SourceColumn="TPT_DEPT_CODE" DataSetColumn="TPT_DEPT_CODE" />
+              <Mapping SourceColumn="JOB_TYPE" DataSetColumn="JOB_TYPE" />
+              <Mapping SourceColumn="BRANCH_CODE" DataSetColumn="BRANCH_CODE" />
+              <Mapping SourceColumn="Invoice_Number" DataSetColumn="Invoice_Number" />
+              <Mapping SourceColumn="Invoice_Date" DataSetColumn="Invoice_Date" />
+              <Mapping SourceColumn="Invoice_Type_Code" DataSetColumn="Invoice_Type_Code" />
+              <Mapping SourceColumn="Item_Code" DataSetColumn="Item_Code" />
+              <Mapping SourceColumn="Description" DataSetColumn="Description" />
+              <Mapping SourceColumn="Item_Account_Code" DataSetColumn="Item_Account_Code" />
+              <Mapping SourceColumn="Tax_Code" DataSetColumn="Tax_Code" />
+              <Mapping SourceColumn="Currency_Code" DataSetColumn="Currency_Code" />
+              <Mapping SourceColumn="Exchange_Rate" DataSetColumn="Exchange_Rate" />
+              <Mapping SourceColumn="Home_Amount" DataSetColumn="Home_Amount" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Est_Cost_Amount" DataSetColumn="Est_Cost_Amount" />
+              <Mapping SourceColumn="CustVend_Name" DataSetColumn="CustVend_Name" />
+              <Mapping SourceColumn="STD_Tax_Amount_FC" DataSetColumn="STD_Tax_Amount_FC" />
+              <Mapping SourceColumn="STD_Tax_Amount_HM" DataSetColumn="STD_Tax_Amount_HM" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DstInvoiceDetail" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DstInvoiceDetail" msprop:Generator_UserDSName="DstInvoiceDetail">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtbRptInvoiceDetail" msprop:Generator_UserTableName="dtbRptInvoiceDetail" msprop:Generator_RowEvArgName="dtbRptInvoiceDetailRowChangeEvent" msprop:Generator_TableVarName="tabledtbRptInvoiceDetail" msprop:Generator_TablePropName="dtbRptInvoiceDetail" msprop:Generator_RowDeletingName="dtbRptInvoiceDetailRowDeleting" msprop:Generator_RowChangingName="dtbRptInvoiceDetailRowChanging" msprop:Generator_RowDeletedName="dtbRptInvoiceDetailRowDeleted" msprop:Generator_RowEvHandlerName="dtbRptInvoiceDetailRowChangeEventHandler" msprop:Generator_TableClassName="dtbRptInvoiceDetailDataTable" msprop:Generator_RowChangedName="dtbRptInvoiceDetailRowChanged" msprop:Generator_RowClassName="dtbRptInvoiceDetailRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="JOB_NUMBER" msprop:Generator_ColumnVarNameInTable="columnJOB_NUMBER" msprop:Generator_ColumnPropNameInRow="JOB_NUMBER" msprop:Generator_ColumnPropNameInTable="JOB_NUMBERColumn" msprop:Generator_UserColumnName="JOB_NUMBER">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUST_CODE" msprop:Generator_ColumnVarNameInTable="columnCUST_CODE" msprop:Generator_ColumnPropNameInRow="CUST_CODE" msprop:Generator_ColumnPropNameInTable="CUST_CODEColumn" msprop:Generator_UserColumnName="CUST_CODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BOOKING_DATE" msprop:Generator_ColumnVarNameInTable="columnBOOKING_DATE" msprop:Generator_ColumnPropNameInRow="BOOKING_DATE" msprop:Generator_ColumnPropNameInTable="BOOKING_DATEColumn" msprop:Generator_UserColumnName="BOOKING_DATE" type="xs:dateTime" />
+              <xs:element name="TPT_DEPT_CODE" msprop:Generator_ColumnVarNameInTable="columnTPT_DEPT_CODE" msprop:Generator_ColumnPropNameInRow="TPT_DEPT_CODE" msprop:Generator_ColumnPropNameInTable="TPT_DEPT_CODEColumn" msprop:Generator_UserColumnName="TPT_DEPT_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JOB_TYPE" msprop:Generator_ColumnVarNameInTable="columnJOB_TYPE" msprop:Generator_ColumnPropNameInRow="JOB_TYPE" msprop:Generator_ColumnPropNameInTable="JOB_TYPEColumn" msprop:Generator_UserColumnName="JOB_TYPE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BRANCH_CODE" msprop:Generator_ColumnVarNameInTable="columnBRANCH_CODE" msprop:Generator_ColumnPropNameInRow="BRANCH_CODE" msprop:Generator_ColumnPropNameInTable="BRANCH_CODEColumn" msprop:Generator_UserColumnName="BRANCH_CODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Invoice_Number" msprop:Generator_ColumnVarNameInTable="columnInvoice_Number" msprop:Generator_ColumnPropNameInRow="Invoice_Number" msprop:Generator_ColumnPropNameInTable="Invoice_NumberColumn" msprop:Generator_UserColumnName="Invoice_Number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Invoice_Date" msprop:Generator_ColumnVarNameInTable="columnInvoice_Date" msprop:Generator_ColumnPropNameInRow="Invoice_Date" msprop:Generator_ColumnPropNameInTable="Invoice_DateColumn" msprop:Generator_UserColumnName="Invoice_Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Invoice_Type_Code" msprop:Generator_ColumnVarNameInTable="columnInvoice_Type_Code" msprop:Generator_ColumnPropNameInRow="Invoice_Type_Code" msprop:Generator_ColumnPropNameInTable="Invoice_Type_CodeColumn" msprop:Generator_UserColumnName="Invoice_Type_Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Item_Code" msprop:Generator_ColumnVarNameInTable="columnItem_Code" msprop:Generator_ColumnPropNameInRow="Item_Code" msprop:Generator_ColumnPropNameInTable="Item_CodeColumn" msprop:Generator_UserColumnName="Item_Code">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Item_Account_Code" msprop:Generator_ColumnVarNameInTable="columnItem_Account_Code" msprop:Generator_ColumnPropNameInRow="Item_Account_Code" msprop:Generator_ColumnPropNameInTable="Item_Account_CodeColumn" msprop:Generator_UserColumnName="Item_Account_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tax_Code" msprop:Generator_ColumnVarNameInTable="columnTax_Code" msprop:Generator_ColumnPropNameInRow="Tax_Code" msprop:Generator_ColumnPropNameInTable="Tax_CodeColumn" msprop:Generator_UserColumnName="Tax_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Currency_Code" msprop:Generator_ColumnVarNameInTable="columnCurrency_Code" msprop:Generator_ColumnPropNameInRow="Currency_Code" msprop:Generator_ColumnPropNameInTable="Currency_CodeColumn" msprop:Generator_UserColumnName="Currency_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Exchange_Rate" msprop:Generator_ColumnVarNameInTable="columnExchange_Rate" msprop:Generator_ColumnPropNameInRow="Exchange_Rate" msprop:Generator_ColumnPropNameInTable="Exchange_RateColumn" msprop:Generator_UserColumnName="Exchange_Rate" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Home_Amount" msprop:Generator_ColumnVarNameInTable="columnHome_Amount" msprop:Generator_ColumnPropNameInRow="Home_Amount" msprop:Generator_ColumnPropNameInTable="Home_AmountColumn" msprop:Generator_UserColumnName="Home_Amount" type="xs:decimal" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:decimal" />
+              <xs:element name="Est_Cost_Amount" msprop:Generator_ColumnVarNameInTable="columnEst_Cost_Amount" msprop:Generator_ColumnPropNameInRow="Est_Cost_Amount" msprop:Generator_ColumnPropNameInTable="Est_Cost_AmountColumn" msprop:Generator_UserColumnName="Est_Cost_Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CustVend_Name" msprop:Generator_ColumnVarNameInTable="columnCustVend_Name" msprop:Generator_ColumnPropNameInRow="CustVend_Name" msprop:Generator_ColumnPropNameInTable="CustVend_NameColumn" msprop:Generator_UserColumnName="CustVend_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="STD_Tax_Amount_FC" msprop:Generator_ColumnVarNameInTable="columnSTD_Tax_Amount_FC" msprop:Generator_ColumnPropNameInRow="STD_Tax_Amount_FC" msprop:Generator_ColumnPropNameInTable="STD_Tax_Amount_FCColumn" msprop:Generator_UserColumnName="STD_Tax_Amount_FC" type="xs:decimal" />
+              <xs:element name="STD_Tax_Amount_HM" msprop:Generator_ColumnVarNameInTable="columnSTD_Tax_Amount_HM" msprop:Generator_ColumnPropNameInRow="STD_Tax_Amount_HM" msprop:Generator_ColumnPropNameInTable="STD_Tax_Amount_HMColumn" msprop:Generator_UserColumnName="STD_Tax_Amount_HM" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

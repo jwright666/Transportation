@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="FM72_JEConnectionString">
+      <rd:DataSourceID>58b178bc-48fb-4ebf-8fe5-9dde7e90f86d</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=TEMP-SRV\FREIGHTMASTER;Initial Catalog=FM72_JE;Integrated Security=True</ConnectString>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>29.7cm</InteractiveHeight>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>2.5cm</RightMargin>
+  <LeftMargin>2.5cm</LeftMargin>
+  <BottomMargin>2.5cm</BottomMargin>
+  <rd:ReportID>e991b6eb-0113-4eaa-af39-c2325a6ccd73</rd:ReportID>
+  <PageWidth>21cm</PageWidth>
+  <DataSets>
+    <DataSet Name="DstSumByInvoiceType_dtbSumByInvoiceType">
+      <Fields>
+        <Field Name="Invoice_Type_Code">
+          <DataField>Invoice_Type_Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="hm_amount">
+          <DataField>hm_amount</DataField>
+          <rd:TypeName>System.Decimal</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FM72_JEConnectionString</DataSourceName>
+        <CommandText>select Invoice_Type_Code,sum(home_amount) as hm_amount from ACT_IV_Transport_Invoice_Item_Tbl 
+inner join ACT_IV_Transport_Invoice_Master_Tbl
+on ACT_IV_Transport_Invoice_Item_Tbl.transaction_number=ACT_IV_Transport_Invoice_Master_Tbl.transaction_number
+
+WHERE     (ACT_IV_Transport_Invoice_Item_Tbl.JOB_NUMBER &gt;= @START_JOBNO) AND (ACT_IV_Transport_Invoice_Item_Tbl.JOB_NUMBER &lt;= @END_JOBNO)
+
+group by Invoice_Type_Code</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DstSumByInvoiceType</rd:DataSetName>
+        <rd:TableName>dtbSumByInvoiceType</rd:TableName>
+        <rd:TableAdapterName>dtbSumByInvoiceTypeTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Width>16cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <List Name="list1">
+        <Left>0.25cm</Left>
+        <DataSetName>DstSumByInvoiceType_dtbSumByInvoiceType</DataSetName>
+        <ReportItems>
+          <Textbox Name="hm_amount">
+            <rd:DefaultName>hm_amount</rd:DefaultName>
+            <Top>0.75cm</Top>
+            <Width>2.53968cm</Width>
+            <Style>
+              <TextAlign>Right</TextAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <ZIndex>1</ZIndex>
+            <CanGrow>true</CanGrow>
+            <Left>7.25cm</Left>
+            <Height>0.63492cm</Height>
+            <Value>=Fields!hm_amount.Value</Value>
+          </Textbox>
+          <Textbox Name="Invoice_Type_Code">
+            <rd:DefaultName>Invoice_Type_Code</rd:DefaultName>
+            <Top>0.75cm</Top>
+            <Width>2.53968cm</Width>
+            <Style>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+            <CanGrow>true</CanGrow>
+            <Left>1.5cm</Left>
+            <Height>0.63492cm</Height>
+            <Value>=Fields!Invoice_Type_Code.Value</Value>
+          </Textbox>
+        </ReportItems>
+        <Top>0.25cm</Top>
+        <Width>15.5cm</Width>
+        <Height>4cm</Height>
+      </List>
+    </ReportItems>
+    <Height>4.5cm</Height>
+  </Body>
+  <Language>en-US</Language>
+  <TopMargin>2.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

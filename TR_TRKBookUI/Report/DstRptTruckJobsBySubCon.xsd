@@ -1,0 +1,372 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DstRptTruckJobsBySubCon" targetNamespace="http://tempuri.org/DstRptTruckJobsBySubCon.xsd" xmlns:mstns="http://tempuri.org/DstRptTruckJobsBySubCon.xsd" xmlns="http://tempuri.org/DstRptTruckJobsBySubCon.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM72_JE_TESTINGConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM72_JE_TESTINGConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.FM72_JE_TESTINGConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LOCAL_PC" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LOCAL_PC (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_SG_DemoConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_SG_DemoConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.FM80_SG_DemoConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TRK_JOB_BY_SUBCON_REPORT_TblTableAdapter" GeneratorDataComponentClassName="TRK_JOB_BY_SUBCON_REPORT_TblTableAdapter" Name="TRK_JOB_BY_SUBCON_REPORT_Tbl" UserDataComponentName="TRK_JOB_BY_SUBCON_REPORT_TblTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="FM80_SG_DemoConnectionString (Settings)" DbObjectName="FM80_SG_Demo.dbo.TRK_JOB_BY_SUBCON_REPORT_Tbl" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [TRK_JOB_BY_SUBCON_REPORT_Tbl] WHERE (([JOB_ID] = @Original_JOB_ID) AND ([JOBTRIP_SEQ_NO] = @Original_JOBTRIP_SEQ_NO) AND ([JOB_NO] = @Original_JOB_NO) AND ([BOOKINGDATE] = @Original_BOOKINGDATE) AND ([CUSCODE] = @Original_CUSCODE) AND ((@IsNull_SHIPPERCODE = 1 AND [SHIPPERCODE] IS NULL) OR ([SHIPPERCODE] = @Original_SHIPPERCODE)) AND ((@IsNull_CONSIGNEE = 1 AND [CONSIGNEE] IS NULL) OR ([CONSIGNEE] = @Original_CONSIGNEE)) AND ((@IsNull_VENDORNAME = 1 AND [VENDORNAME] IS NULL) OR ([VENDORNAME] = @Original_VENDORNAME)) AND ([FROM_STOP] = @Original_FROM_STOP) AND ([TO_STOP] = @Original_TO_STOP) AND ((@IsNull_AWBBL = 1 AND [AWBBL] IS NULL) OR ([AWBBL] = @Original_AWBBL)) AND ((@IsNull_COMMERCIAL_INVOICENO = 1 AND [COMMERCIAL_INVOICENO] IS NULL) OR ([COMMERCIAL_INVOICENO] = @Original_COMMERCIAL_INVOICENO)) AND ((@IsNull_CUSDECLARATIONNO = 1 AND [CUSDECLARATIONNO] IS NULL) OR ([CUSDECLARATIONNO] = @Original_CUSDECLARATIONNO)) AND ((@IsNull_NOOFPACKAGES = 1 AND [NOOFPACKAGES] IS NULL) OR ([NOOFPACKAGES] = @Original_NOOFPACKAGES)) AND ((@IsNull_NOOFPALLET = 1 AND [NOOFPALLET] IS NULL) OR ([NOOFPALLET] = @Original_NOOFPALLET)) AND ((@IsNull_KGM = 1 AND [KGM] IS NULL) OR ([KGM] = @Original_KGM)) AND ((@IsNull_CBM = 1 AND [CBM] IS NULL) OR ([CBM] = @Original_CBM)) AND ((@IsNull_FR_DATE_ACT = 1 AND [FR_DATE_ACT] IS NULL) OR ([FR_DATE_ACT] = @Original_FR_DATE_ACT)) AND ((@IsNull_TO_DATE_ACT = 1 AND [TO_DATE_ACT] IS NULL) OR ([TO_DATE_ACT] = @Original_TO_DATE_ACT)) AND ((@IsNull_WAIT_TIME_FR_ACT = 1 AND [WAIT_TIME_FR_ACT] IS NULL) OR ([WAIT_TIME_FR_ACT] = @Original_WAIT_TIME_FR_ACT)) AND ((@IsNull_WAIT_TIME_TO_ACT = 1 AND [WAIT_TIME_TO_ACT] IS NULL) OR ([WAIT_TIME_TO_ACT] = @Original_WAIT_TIME_TO_ACT)) AND ((@IsNull_DRIVER = 1 AND [DRIVER] IS NULL) OR ([DRIVER] = @Original_DRIVER)) AND ((@IsNull_VEHICLE = 1 AND [VEHICLE] IS NULL) OR ([VEHICLE] = @Original_VEHICLE)) AND ((@IsNull_REQCUSTRUCKCAPACITY = 1 AND [REQCUSTRUCKCAPACITY] IS NULL) OR ([REQCUSTRUCKCAPACITY] = @Original_REQCUSTRUCKCAPACITY)) AND ((@IsNull_OPERATORTRUCKCAPACITY = 1 AND [OPERATORTRUCKCAPACITY] IS NULL) OR ([OPERATORTRUCKCAPACITY] = @Original_OPERATORTRUCKCAPACITY)) AND ((@IsNull_REMARKS = 1 AND [REMARKS] IS NULL) OR ([REMARKS] = @Original_REMARKS)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_JOB_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="JOB_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_JOBTRIP_SEQ_NO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="JOBTRIP_SEQ_NO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_JOB_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="JOB_NO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_BOOKINGDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="BOOKINGDATE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CUSCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSCODE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPPERCODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPPERCODE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPPERCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPPERCODE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CONSIGNEE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CONSIGNEE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CONSIGNEE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CONSIGNEE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VENDORNAME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VENDORNAME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_VENDORNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VENDORNAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FROM_STOP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FROM_STOP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TO_STOP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TO_STOP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AWBBL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AWBBL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_AWBBL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AWBBL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_COMMERCIAL_INVOICENO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COMMERCIAL_INVOICENO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_COMMERCIAL_INVOICENO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="COMMERCIAL_INVOICENO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CUSDECLARATIONNO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSDECLARATIONNO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CUSDECLARATIONNO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSDECLARATIONNO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOOFPACKAGES" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOOFPACKAGES" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_NOOFPACKAGES" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOOFPACKAGES" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOOFPALLET" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOOFPALLET" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_NOOFPALLET" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOOFPALLET" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_KGM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="KGM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_KGM" Precision="24" ProviderType="Decimal" Scale="8" Size="0" SourceColumn="KGM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CBM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CBM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CBM" Precision="24" ProviderType="Decimal" Scale="8" Size="0" SourceColumn="CBM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FR_DATE_ACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FR_DATE_ACT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FR_DATE_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FR_DATE_ACT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TO_DATE_ACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TO_DATE_ACT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_TO_DATE_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TO_DATE_ACT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_WAIT_TIME_FR_ACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WAIT_TIME_FR_ACT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_WAIT_TIME_FR_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="WAIT_TIME_FR_ACT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_WAIT_TIME_TO_ACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WAIT_TIME_TO_ACT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_WAIT_TIME_TO_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="WAIT_TIME_TO_ACT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DRIVER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DRIVER" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DRIVER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DRIVER" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VEHICLE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VEHICLE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_VEHICLE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VEHICLE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_REQCUSTRUCKCAPACITY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REQCUSTRUCKCAPACITY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_REQCUSTRUCKCAPACITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="REQCUSTRUCKCAPACITY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_OPERATORTRUCKCAPACITY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OPERATORTRUCKCAPACITY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_OPERATORTRUCKCAPACITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OPERATORTRUCKCAPACITY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_REMARKS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REMARKS" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_REMARKS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="REMARKS" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO TRK_JOB_BY_SUBCON_REPORT_Tbl
+                            (JOB_ID, JOBTRIP_SEQ_NO, JOB_NO, BOOKINGDATE, CUSCODE, SHIPPERCODE, CONSIGNEE, VENDORNAME, FROM_STOP, TO_STOP, AWBBL, COMMERCIAL_INVOICENO, CUSDECLARATIONNO, NOOFPACKAGES, 
+                            NOOFPALLET, KGM, CBM, FR_DATE_ACT, TO_DATE_ACT, WAIT_TIME_FR_ACT, WAIT_TIME_TO_ACT, DRIVER, VEHICLE, REQCUSTRUCKCAPACITY, OPERATORTRUCKCAPACITY, REMARKS, SUBCONTRACTOR_CODE)
+VALUES          (@JOB_ID,@JOBTRIP_SEQ_NO,@JOB_NO,@BOOKINGDATE,@CUSCODE,@SHIPPERCODE,@CONSIGNEE,@VENDORNAME,@FROM_STOP,@TO_STOP,@AWBBL,@COMMERCIAL_INVOICENO,@CUSDECLARATIONNO,@NOOFPACKAGES,@NOOFPALLET,@KGM,@CBM,@FR_DATE_ACT,@TO_DATE_ACT,@WAIT_TIME_FR_ACT,@WAIT_TIME_TO_ACT,@DRIVER,@VEHICLE,@REQCUSTRUCKCAPACITY,@OPERATORTRUCKCAPACITY,@REMARKS,@SUBCON_CODE); 
+SELECT JOB_ID, JOBTRIP_SEQ_NO, JOB_NO, BOOKINGDATE, CUSCODE, SHIPPERCODE, CONSIGNEE, VENDORNAME, FROM_STOP, TO_STOP, AWBBL, COMMERCIAL_INVOICENO, CUSDECLARATIONNO, NOOFPACKAGES, NOOFPALLET, KGM, CBM, FR_DATE_ACT, TO_DATE_ACT, WAIT_TIME_FR_ACT, WAIT_TIME_TO_ACT, DRIVER, VEHICLE, REQCUSTRUCKCAPACITY, OPERATORTRUCKCAPACITY, REMARKS FROM TRK_JOB_BY_SUBCON_REPORT_Tbl WHERE (JOBTRIP_SEQ_NO = @JOBTRIP_SEQ_NO) AND (JOB_ID = @JOB_ID) ORDER BY BOOKINGDATE, JOB_NO, JOBTRIP_SEQ_NO</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="JOB_ID" ColumnName="JOB_ID" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@JOB_ID" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="JOB_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="JOBTRIP_SEQ_NO" ColumnName="JOBTRIP_SEQ_NO" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@JOBTRIP_SEQ_NO" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="JOBTRIP_SEQ_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="JOB_NO" ColumnName="JOB_NO" DataSourceName="" DataTypeServer="varchar(26)" DbType="AnsiString" Direction="Input" ParameterName="@JOB_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="26" SourceColumn="JOB_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="BOOKINGDATE" ColumnName="BOOKINGDATE" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@BOOKINGDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="BOOKINGDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="CUSCODE" ColumnName="CUSCODE" DataSourceName="" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@CUSCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="CUSCODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="SHIPPERCODE" ColumnName="SHIPPERCODE" DataSourceName="" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@SHIPPERCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="SHIPPERCODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="CONSIGNEE" ColumnName="CONSIGNEE" DataSourceName="" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@CONSIGNEE" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="CONSIGNEE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="VENDORNAME" ColumnName="VENDORNAME" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@VENDORNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="VENDORNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FROM_STOP" ColumnName="FROM_STOP" DataSourceName="" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@FROM_STOP" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="FROM_STOP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="TO_STOP" ColumnName="TO_STOP" DataSourceName="" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@TO_STOP" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="TO_STOP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="AWBBL" ColumnName="AWBBL" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@AWBBL" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="AWBBL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="COMMERCIAL_INVOICENO" ColumnName="COMMERCIAL_INVOICENO" DataSourceName="" DataTypeServer="varchar(30)" DbType="AnsiString" Direction="Input" ParameterName="@COMMERCIAL_INVOICENO" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumn="COMMERCIAL_INVOICENO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="CUSDECLARATIONNO" ColumnName="CUSDECLARATIONNO" DataSourceName="" DataTypeServer="varchar(30)" DbType="AnsiString" Direction="Input" ParameterName="@CUSDECLARATIONNO" Precision="0" ProviderType="VarChar" Scale="0" Size="30" SourceColumn="CUSDECLARATIONNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NOOFPACKAGES" ColumnName="NOOFPACKAGES" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@NOOFPACKAGES" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="NOOFPACKAGES" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="NOOFPALLET" ColumnName="NOOFPALLET" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@NOOFPALLET" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="NOOFPALLET" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="KGM" ColumnName="KGM" DataSourceName="" DataTypeServer="decimal(24, 8)" DbType="Decimal" Direction="Input" ParameterName="@KGM" Precision="24" ProviderType="Decimal" Scale="8" Size="13" SourceColumn="KGM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="CBM" ColumnName="CBM" DataSourceName="" DataTypeServer="decimal(24, 8)" DbType="Decimal" Direction="Input" ParameterName="@CBM" Precision="24" ProviderType="Decimal" Scale="8" Size="13" SourceColumn="CBM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="FR_DATE_ACT" ColumnName="FR_DATE_ACT" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@FR_DATE_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="FR_DATE_ACT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="TO_DATE_ACT" ColumnName="TO_DATE_ACT" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@TO_DATE_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="TO_DATE_ACT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="WAIT_TIME_FR_ACT" ColumnName="WAIT_TIME_FR_ACT" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@WAIT_TIME_FR_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="WAIT_TIME_FR_ACT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="WAIT_TIME_TO_ACT" ColumnName="WAIT_TIME_TO_ACT" DataSourceName="" DataTypeServer="datetime" DbType="DateTime" Direction="Input" ParameterName="@WAIT_TIME_TO_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="8" SourceColumn="WAIT_TIME_TO_ACT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="DRIVER" ColumnName="DRIVER" DataSourceName="" DataTypeServer="varchar(50)" DbType="AnsiString" Direction="Input" ParameterName="@DRIVER" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="DRIVER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="VEHICLE" ColumnName="VEHICLE" DataSourceName="" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@VEHICLE" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="VEHICLE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="REQCUSTRUCKCAPACITY" ColumnName="REQCUSTRUCKCAPACITY" DataSourceName="" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@REQCUSTRUCKCAPACITY" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="REQCUSTRUCKCAPACITY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="OPERATORTRUCKCAPACITY" ColumnName="OPERATORTRUCKCAPACITY" DataSourceName="" DataTypeServer="varchar(20)" DbType="AnsiString" Direction="Input" ParameterName="@OPERATORTRUCKCAPACITY" Precision="0" ProviderType="VarChar" Scale="0" Size="20" SourceColumn="OPERATORTRUCKCAPACITY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="REMARKS" ColumnName="REMARKS" DataSourceName="" DataTypeServer="nvarchar(50)" DbType="String" Direction="Input" ParameterName="@REMARKS" Precision="0" ProviderType="NVarChar" Scale="0" Size="50" SourceColumn="REMARKS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="SUBCON_CODE" ColumnName="SUBCONTRACTOR_CODE" DataSourceName="" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@SUBCON_CODE" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="SUBCONTRACTOR_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT * FROM TRK_JOB_BY_SUBCON_REPORT_Tbl WHERE BOOKED_DATETIME&gt;= @fr_date AND BOOKED_DATETIME&lt;= @to_date ORDER BY BOOKED_DATETIMEJOB_NO, JOBTRIP_SEQ_NO</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="fr_date" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Object" Direction="Input" ParameterName="@fr_date" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="to_date" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Object" Direction="Input" ParameterName="@to_date" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [TRK_JOB_BY_SUBCON_REPORT_Tbl] SET [JOB_ID] = @JOB_ID, [JOBTRIP_SEQ_NO] = @JOBTRIP_SEQ_NO, [JOB_NO] = @JOB_NO, [BOOKINGDATE] = @BOOKINGDATE, [CUSCODE] = @CUSCODE, [SHIPPERCODE] = @SHIPPERCODE, [CONSIGNEE] = @CONSIGNEE, [VENDORNAME] = @VENDORNAME, [FROM_STOP] = @FROM_STOP, [TO_STOP] = @TO_STOP, [AWBBL] = @AWBBL, [COMMERCIAL_INVOICENO] = @COMMERCIAL_INVOICENO, [CUSDECLARATIONNO] = @CUSDECLARATIONNO, [NOOFPACKAGES] = @NOOFPACKAGES, [NOOFPALLET] = @NOOFPALLET, [KGM] = @KGM, [CBM] = @CBM, [FR_DATE_ACT] = @FR_DATE_ACT, [TO_DATE_ACT] = @TO_DATE_ACT, [WAIT_TIME_FR_ACT] = @WAIT_TIME_FR_ACT, [WAIT_TIME_TO_ACT] = @WAIT_TIME_TO_ACT, [DRIVER] = @DRIVER, [VEHICLE] = @VEHICLE, [REQCUSTRUCKCAPACITY] = @REQCUSTRUCKCAPACITY, [OPERATORTRUCKCAPACITY] = @OPERATORTRUCKCAPACITY, [REMARKS] = @REMARKS WHERE (([JOB_ID] = @Original_JOB_ID) AND ([JOBTRIP_SEQ_NO] = @Original_JOBTRIP_SEQ_NO) AND ([JOB_NO] = @Original_JOB_NO) AND ([BOOKINGDATE] = @Original_BOOKINGDATE) AND ([CUSCODE] = @Original_CUSCODE) AND ((@IsNull_SHIPPERCODE = 1 AND [SHIPPERCODE] IS NULL) OR ([SHIPPERCODE] = @Original_SHIPPERCODE)) AND ((@IsNull_CONSIGNEE = 1 AND [CONSIGNEE] IS NULL) OR ([CONSIGNEE] = @Original_CONSIGNEE)) AND ((@IsNull_VENDORNAME = 1 AND [VENDORNAME] IS NULL) OR ([VENDORNAME] = @Original_VENDORNAME)) AND ([FROM_STOP] = @Original_FROM_STOP) AND ([TO_STOP] = @Original_TO_STOP) AND ((@IsNull_AWBBL = 1 AND [AWBBL] IS NULL) OR ([AWBBL] = @Original_AWBBL)) AND ((@IsNull_COMMERCIAL_INVOICENO = 1 AND [COMMERCIAL_INVOICENO] IS NULL) OR ([COMMERCIAL_INVOICENO] = @Original_COMMERCIAL_INVOICENO)) AND ((@IsNull_CUSDECLARATIONNO = 1 AND [CUSDECLARATIONNO] IS NULL) OR ([CUSDECLARATIONNO] = @Original_CUSDECLARATIONNO)) AND ((@IsNull_NOOFPACKAGES = 1 AND [NOOFPACKAGES] IS NULL) OR ([NOOFPACKAGES] = @Original_NOOFPACKAGES)) AND ((@IsNull_NOOFPALLET = 1 AND [NOOFPALLET] IS NULL) OR ([NOOFPALLET] = @Original_NOOFPALLET)) AND ((@IsNull_KGM = 1 AND [KGM] IS NULL) OR ([KGM] = @Original_KGM)) AND ((@IsNull_CBM = 1 AND [CBM] IS NULL) OR ([CBM] = @Original_CBM)) AND ((@IsNull_FR_DATE_ACT = 1 AND [FR_DATE_ACT] IS NULL) OR ([FR_DATE_ACT] = @Original_FR_DATE_ACT)) AND ((@IsNull_TO_DATE_ACT = 1 AND [TO_DATE_ACT] IS NULL) OR ([TO_DATE_ACT] = @Original_TO_DATE_ACT)) AND ((@IsNull_WAIT_TIME_FR_ACT = 1 AND [WAIT_TIME_FR_ACT] IS NULL) OR ([WAIT_TIME_FR_ACT] = @Original_WAIT_TIME_FR_ACT)) AND ((@IsNull_WAIT_TIME_TO_ACT = 1 AND [WAIT_TIME_TO_ACT] IS NULL) OR ([WAIT_TIME_TO_ACT] = @Original_WAIT_TIME_TO_ACT)) AND ((@IsNull_DRIVER = 1 AND [DRIVER] IS NULL) OR ([DRIVER] = @Original_DRIVER)) AND ((@IsNull_VEHICLE = 1 AND [VEHICLE] IS NULL) OR ([VEHICLE] = @Original_VEHICLE)) AND ((@IsNull_REQCUSTRUCKCAPACITY = 1 AND [REQCUSTRUCKCAPACITY] IS NULL) OR ([REQCUSTRUCKCAPACITY] = @Original_REQCUSTRUCKCAPACITY)) AND ((@IsNull_OPERATORTRUCKCAPACITY = 1 AND [OPERATORTRUCKCAPACITY] IS NULL) OR ([OPERATORTRUCKCAPACITY] = @Original_OPERATORTRUCKCAPACITY)) AND ((@IsNull_REMARKS = 1 AND [REMARKS] IS NULL) OR ([REMARKS] = @Original_REMARKS)));
+SELECT JOB_ID, JOBTRIP_SEQ_NO, JOB_NO, BOOKINGDATE, CUSCODE, SHIPPERCODE, CONSIGNEE, VENDORNAME, FROM_STOP, TO_STOP, AWBBL, COMMERCIAL_INVOICENO, CUSDECLARATIONNO, NOOFPACKAGES, NOOFPALLET, KGM, CBM, FR_DATE_ACT, TO_DATE_ACT, WAIT_TIME_FR_ACT, WAIT_TIME_TO_ACT, DRIVER, VEHICLE, REQCUSTRUCKCAPACITY, OPERATORTRUCKCAPACITY, REMARKS FROM TRK_JOB_BY_SUBCON_REPORT_Tbl WHERE (JOBTRIP_SEQ_NO = @JOBTRIP_SEQ_NO) AND (JOB_ID = @JOB_ID) ORDER BY BOOKINGDATE, JOB_NO, JOBTRIP_SEQ_NO</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@JOB_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="JOB_ID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@JOBTRIP_SEQ_NO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="JOBTRIP_SEQ_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@JOB_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="JOB_NO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@BOOKINGDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="BOOKINGDATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CUSCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSCODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@SHIPPERCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPPERCODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CONSIGNEE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CONSIGNEE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@VENDORNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VENDORNAME" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@FROM_STOP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FROM_STOP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@TO_STOP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TO_STOP" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@AWBBL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AWBBL" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@COMMERCIAL_INVOICENO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="COMMERCIAL_INVOICENO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@CUSDECLARATIONNO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSDECLARATIONNO" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@NOOFPACKAGES" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOOFPACKAGES" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@NOOFPALLET" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOOFPALLET" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@KGM" Precision="24" ProviderType="Decimal" Scale="8" Size="0" SourceColumn="KGM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@CBM" Precision="24" ProviderType="Decimal" Scale="8" Size="0" SourceColumn="CBM" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@FR_DATE_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FR_DATE_ACT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@TO_DATE_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TO_DATE_ACT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@WAIT_TIME_FR_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="WAIT_TIME_FR_ACT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@WAIT_TIME_TO_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="WAIT_TIME_TO_ACT" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@DRIVER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DRIVER" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@VEHICLE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VEHICLE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@REQCUSTRUCKCAPACITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="REQCUSTRUCKCAPACITY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@OPERATORTRUCKCAPACITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OPERATORTRUCKCAPACITY" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@REMARKS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="REMARKS" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_JOB_ID" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="JOB_ID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_JOBTRIP_SEQ_NO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="JOBTRIP_SEQ_NO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_JOB_NO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="JOB_NO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_BOOKINGDATE" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="BOOKINGDATE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CUSCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSCODE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_SHIPPERCODE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="SHIPPERCODE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_SHIPPERCODE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="SHIPPERCODE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CONSIGNEE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CONSIGNEE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CONSIGNEE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CONSIGNEE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VENDORNAME" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VENDORNAME" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_VENDORNAME" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VENDORNAME" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_FROM_STOP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="FROM_STOP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_TO_STOP" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="TO_STOP" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_AWBBL" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="AWBBL" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_AWBBL" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="AWBBL" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_COMMERCIAL_INVOICENO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="COMMERCIAL_INVOICENO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_COMMERCIAL_INVOICENO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="COMMERCIAL_INVOICENO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CUSDECLARATIONNO" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CUSDECLARATIONNO" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_CUSDECLARATIONNO" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="CUSDECLARATIONNO" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOOFPACKAGES" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOOFPACKAGES" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_NOOFPACKAGES" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOOFPACKAGES" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_NOOFPALLET" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOOFPALLET" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_NOOFPALLET" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="NOOFPALLET" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_KGM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="KGM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_KGM" Precision="24" ProviderType="Decimal" Scale="8" Size="0" SourceColumn="KGM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_CBM" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="CBM" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_CBM" Precision="24" ProviderType="Decimal" Scale="8" Size="0" SourceColumn="CBM" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_FR_DATE_ACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="FR_DATE_ACT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_FR_DATE_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="FR_DATE_ACT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_TO_DATE_ACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="TO_DATE_ACT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_TO_DATE_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="TO_DATE_ACT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_WAIT_TIME_FR_ACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WAIT_TIME_FR_ACT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_WAIT_TIME_FR_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="WAIT_TIME_FR_ACT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_WAIT_TIME_TO_ACT" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="WAIT_TIME_TO_ACT" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_WAIT_TIME_TO_ACT" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="WAIT_TIME_TO_ACT" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_DRIVER" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="DRIVER" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_DRIVER" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="DRIVER" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_VEHICLE" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="VEHICLE" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_VEHICLE" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="VEHICLE" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_REQCUSTRUCKCAPACITY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REQCUSTRUCKCAPACITY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_REQCUSTRUCKCAPACITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="REQCUSTRUCKCAPACITY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_OPERATORTRUCKCAPACITY" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="OPERATORTRUCKCAPACITY" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_OPERATORTRUCKCAPACITY" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="OPERATORTRUCKCAPACITY" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_REMARKS" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="REMARKS" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_REMARKS" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="REMARKS" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="JOB_ID" DataSetColumn="JOB_ID" />
+              <Mapping SourceColumn="JOBTRIP_SEQ_NO" DataSetColumn="JOBTRIP_SEQ_NO" />
+              <Mapping SourceColumn="JOB_NO" DataSetColumn="JOB_NO" />
+              <Mapping SourceColumn="BOOKINGDATE" DataSetColumn="BOOKINGDATE" />
+              <Mapping SourceColumn="CUSCODE" DataSetColumn="CUSCODE" />
+              <Mapping SourceColumn="SHIPPERCODE" DataSetColumn="SHIPPERCODE" />
+              <Mapping SourceColumn="CONSIGNEE" DataSetColumn="CONSIGNEE" />
+              <Mapping SourceColumn="VENDORNAME" DataSetColumn="VENDORNAME" />
+              <Mapping SourceColumn="FROM_STOP" DataSetColumn="FROM_STOP" />
+              <Mapping SourceColumn="TO_STOP" DataSetColumn="TO_STOP" />
+              <Mapping SourceColumn="AWBBL" DataSetColumn="AWBBL" />
+              <Mapping SourceColumn="COMMERCIAL_INVOICENO" DataSetColumn="COMMERCIAL_INVOICENO" />
+              <Mapping SourceColumn="CUSDECLARATIONNO" DataSetColumn="CUSDECLARATIONNO" />
+              <Mapping SourceColumn="NOOFPACKAGES" DataSetColumn="NOOFPACKAGES" />
+              <Mapping SourceColumn="NOOFPALLET" DataSetColumn="NOOFPALLET" />
+              <Mapping SourceColumn="KGM" DataSetColumn="KGM" />
+              <Mapping SourceColumn="CBM" DataSetColumn="CBM" />
+              <Mapping SourceColumn="FR_DATE_ACT" DataSetColumn="FR_DATE_ACT" />
+              <Mapping SourceColumn="TO_DATE_ACT" DataSetColumn="TO_DATE_ACT" />
+              <Mapping SourceColumn="WAIT_TIME_FR_ACT" DataSetColumn="WAIT_TIME_FR_ACT" />
+              <Mapping SourceColumn="WAIT_TIME_TO_ACT" DataSetColumn="WAIT_TIME_TO_ACT" />
+              <Mapping SourceColumn="DRIVER" DataSetColumn="DRIVER" />
+              <Mapping SourceColumn="VEHICLE" DataSetColumn="VEHICLE" />
+              <Mapping SourceColumn="REQCUSTRUCKCAPACITY" DataSetColumn="REQCUSTRUCKCAPACITY" />
+              <Mapping SourceColumn="OPERATORTRUCKCAPACITY" DataSetColumn="OPERATORTRUCKCAPACITY" />
+              <Mapping SourceColumn="REMARKS" DataSetColumn="REMARKS" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="FM80_SG_DemoConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteAllData" Modifier="Public" Name="DeleteAllData" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteAllData">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>DELETE FROM TRK_JOB_BY_SUBCON_REPORT_Tbl</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </DeleteCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DstRptTruckJobsBySubCon" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DstRptTruckJobsBySubCon" msprop:Generator_UserDSName="DstRptTruckJobsBySubCon">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TRK_JOB_BY_SUBCON_REPORT_Tbl" msprop:Generator_UserTableName="TRK_JOB_BY_SUBCON_REPORT_Tbl" msprop:Generator_RowEvArgName="TRK_JOB_BY_SUBCON_REPORT_TblRowChangeEvent" msprop:Generator_TableVarName="tableTRK_JOB_BY_SUBCON_REPORT_Tbl" msprop:Generator_TablePropName="TRK_JOB_BY_SUBCON_REPORT_Tbl" msprop:Generator_RowDeletingName="TRK_JOB_BY_SUBCON_REPORT_TblRowDeleting" msprop:Generator_RowChangingName="TRK_JOB_BY_SUBCON_REPORT_TblRowChanging" msprop:Generator_RowDeletedName="TRK_JOB_BY_SUBCON_REPORT_TblRowDeleted" msprop:Generator_RowEvHandlerName="TRK_JOB_BY_SUBCON_REPORT_TblRowChangeEventHandler" msprop:Generator_TableClassName="TRK_JOB_BY_SUBCON_REPORT_TblDataTable" msprop:Generator_RowChangedName="TRK_JOB_BY_SUBCON_REPORT_TblRowChanged" msprop:Generator_RowClassName="TRK_JOB_BY_SUBCON_REPORT_TblRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="JOB_ID" msprop:Generator_ColumnVarNameInTable="columnJOB_ID" msprop:Generator_ColumnPropNameInRow="JOB_ID" msprop:Generator_ColumnPropNameInTable="JOB_IDColumn" msprop:Generator_UserColumnName="JOB_ID" type="xs:int" />
+              <xs:element name="JOBTRIP_SEQ_NO" msprop:Generator_ColumnVarNameInTable="columnJOBTRIP_SEQ_NO" msprop:Generator_ColumnPropNameInRow="JOBTRIP_SEQ_NO" msprop:Generator_ColumnPropNameInTable="JOBTRIP_SEQ_NOColumn" msprop:Generator_UserColumnName="JOBTRIP_SEQ_NO" type="xs:int" />
+              <xs:element name="JOB_NO" msprop:Generator_ColumnVarNameInTable="columnJOB_NO" msprop:Generator_ColumnPropNameInRow="JOB_NO" msprop:Generator_ColumnPropNameInTable="JOB_NOColumn" msprop:Generator_UserColumnName="JOB_NO">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BOOKINGDATE" msprop:Generator_ColumnVarNameInTable="columnBOOKINGDATE" msprop:Generator_ColumnPropNameInRow="BOOKINGDATE" msprop:Generator_ColumnPropNameInTable="BOOKINGDATEColumn" msprop:Generator_UserColumnName="BOOKINGDATE" type="xs:dateTime" />
+              <xs:element name="CUSCODE" msprop:Generator_ColumnVarNameInTable="columnCUSCODE" msprop:Generator_ColumnPropNameInRow="CUSCODE" msprop:Generator_ColumnPropNameInTable="CUSCODEColumn" msprop:Generator_UserColumnName="CUSCODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SHIPPERCODE" msprop:Generator_ColumnVarNameInTable="columnSHIPPERCODE" msprop:Generator_ColumnPropNameInRow="SHIPPERCODE" msprop:Generator_ColumnPropNameInTable="SHIPPERCODEColumn" msprop:Generator_UserColumnName="SHIPPERCODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONSIGNEE" msprop:Generator_ColumnVarNameInTable="columnCONSIGNEE" msprop:Generator_ColumnPropNameInRow="CONSIGNEE" msprop:Generator_ColumnPropNameInTable="CONSIGNEEColumn" msprop:Generator_UserColumnName="CONSIGNEE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VENDORNAME" msprop:Generator_ColumnVarNameInTable="columnVENDORNAME" msprop:Generator_ColumnPropNameInRow="VENDORNAME" msprop:Generator_ColumnPropNameInTable="VENDORNAMEColumn" msprop:Generator_UserColumnName="VENDORNAME" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FROM_STOP" msprop:Generator_ColumnVarNameInTable="columnFROM_STOP" msprop:Generator_ColumnPropNameInRow="FROM_STOP" msprop:Generator_ColumnPropNameInTable="FROM_STOPColumn" msprop:Generator_UserColumnName="FROM_STOP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TO_STOP" msprop:Generator_ColumnVarNameInTable="columnTO_STOP" msprop:Generator_ColumnPropNameInRow="TO_STOP" msprop:Generator_ColumnPropNameInTable="TO_STOPColumn" msprop:Generator_UserColumnName="TO_STOP">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="AWBBL" msprop:Generator_ColumnVarNameInTable="columnAWBBL" msprop:Generator_ColumnPropNameInRow="AWBBL" msprop:Generator_ColumnPropNameInTable="AWBBLColumn" msprop:Generator_UserColumnName="AWBBL" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="COMMERCIAL_INVOICENO" msprop:Generator_ColumnVarNameInTable="columnCOMMERCIAL_INVOICENO" msprop:Generator_ColumnPropNameInRow="COMMERCIAL_INVOICENO" msprop:Generator_ColumnPropNameInTable="COMMERCIAL_INVOICENOColumn" msprop:Generator_UserColumnName="COMMERCIAL_INVOICENO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CUSDECLARATIONNO" msprop:Generator_ColumnVarNameInTable="columnCUSDECLARATIONNO" msprop:Generator_ColumnPropNameInRow="CUSDECLARATIONNO" msprop:Generator_ColumnPropNameInTable="CUSDECLARATIONNOColumn" msprop:Generator_UserColumnName="CUSDECLARATIONNO" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NOOFPACKAGES" msprop:Generator_ColumnVarNameInTable="columnNOOFPACKAGES" msprop:Generator_ColumnPropNameInRow="NOOFPACKAGES" msprop:Generator_ColumnPropNameInTable="NOOFPACKAGESColumn" msprop:Generator_UserColumnName="NOOFPACKAGES" type="xs:int" minOccurs="0" />
+              <xs:element name="NOOFPALLET" msprop:Generator_ColumnVarNameInTable="columnNOOFPALLET" msprop:Generator_ColumnPropNameInRow="NOOFPALLET" msprop:Generator_ColumnPropNameInTable="NOOFPALLETColumn" msprop:Generator_UserColumnName="NOOFPALLET" type="xs:int" minOccurs="0" />
+              <xs:element name="KGM" msprop:Generator_ColumnVarNameInTable="columnKGM" msprop:Generator_ColumnPropNameInRow="KGM" msprop:Generator_ColumnPropNameInTable="KGMColumn" msprop:Generator_UserColumnName="KGM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CBM" msprop:Generator_ColumnVarNameInTable="columnCBM" msprop:Generator_ColumnPropNameInRow="CBM" msprop:Generator_ColumnPropNameInTable="CBMColumn" msprop:Generator_UserColumnName="CBM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="FR_DATE_ACT" msprop:Generator_ColumnVarNameInTable="columnFR_DATE_ACT" msprop:Generator_ColumnPropNameInRow="FR_DATE_ACT" msprop:Generator_ColumnPropNameInTable="FR_DATE_ACTColumn" msprop:Generator_UserColumnName="FR_DATE_ACT" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="TO_DATE_ACT" msprop:Generator_ColumnVarNameInTable="columnTO_DATE_ACT" msprop:Generator_ColumnPropNameInRow="TO_DATE_ACT" msprop:Generator_ColumnPropNameInTable="TO_DATE_ACTColumn" msprop:Generator_UserColumnName="TO_DATE_ACT" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="WAIT_TIME_FR_ACT" msprop:Generator_ColumnVarNameInTable="columnWAIT_TIME_FR_ACT" msprop:Generator_ColumnPropNameInRow="WAIT_TIME_FR_ACT" msprop:Generator_ColumnPropNameInTable="WAIT_TIME_FR_ACTColumn" msprop:Generator_UserColumnName="WAIT_TIME_FR_ACT" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="WAIT_TIME_TO_ACT" msprop:Generator_ColumnVarNameInTable="columnWAIT_TIME_TO_ACT" msprop:Generator_ColumnPropNameInRow="WAIT_TIME_TO_ACT" msprop:Generator_ColumnPropNameInTable="WAIT_TIME_TO_ACTColumn" msprop:Generator_UserColumnName="WAIT_TIME_TO_ACT" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DRIVER" msprop:Generator_ColumnVarNameInTable="columnDRIVER" msprop:Generator_ColumnPropNameInRow="DRIVER" msprop:Generator_ColumnPropNameInTable="DRIVERColumn" msprop:Generator_UserColumnName="DRIVER" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="VEHICLE" msprop:Generator_ColumnVarNameInTable="columnVEHICLE" msprop:Generator_ColumnPropNameInRow="VEHICLE" msprop:Generator_ColumnPropNameInTable="VEHICLEColumn" msprop:Generator_UserColumnName="VEHICLE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REQCUSTRUCKCAPACITY" msprop:Generator_ColumnVarNameInTable="columnREQCUSTRUCKCAPACITY" msprop:Generator_ColumnPropNameInRow="REQCUSTRUCKCAPACITY" msprop:Generator_ColumnPropNameInTable="REQCUSTRUCKCAPACITYColumn" msprop:Generator_UserColumnName="REQCUSTRUCKCAPACITY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OPERATORTRUCKCAPACITY" msprop:Generator_ColumnVarNameInTable="columnOPERATORTRUCKCAPACITY" msprop:Generator_ColumnPropNameInRow="OPERATORTRUCKCAPACITY" msprop:Generator_ColumnPropNameInTable="OPERATORTRUCKCAPACITYColumn" msprop:Generator_UserColumnName="OPERATORTRUCKCAPACITY" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="REMARKS" msprop:Generator_ColumnVarNameInTable="columnREMARKS" msprop:Generator_ColumnPropNameInRow="REMARKS" msprop:Generator_ColumnPropNameInTable="REMARKSColumn" msprop:Generator_UserColumnName="REMARKS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:TRK_JOB_BY_SUBCON_REPORT_Tbl" />
+      <xs:field xpath="mstns:JOB_ID" />
+      <xs:field xpath="mstns:JOBTRIP_SEQ_NO" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

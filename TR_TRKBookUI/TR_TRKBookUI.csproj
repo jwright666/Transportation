@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{556BBCC1-DC91-455F-9B3F-D2050C885C03}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FM.TR_TRKBookUI</RootNamespace>
+    <AssemblyName>TR_TRKBookUI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>0219;0162;0168;0169;0414</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+    <NoWarn>0219;0162;0168;0169;0414</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TR_AirFreightDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_AirFreightDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_ConsignmentNoteDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_ConsignmentNoteDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_FMSystemDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_FMSystemDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_FormBaseLibrary, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_FormBaseLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_HLBookBLL, Version=80.0.1000.8, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_HLBookBLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_LanguageResource, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_LanguageResource.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_MaintenanceDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_MaintenanceDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_MaintenanceUI, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_MaintenanceUI.exe</HintPath>
+    </Reference>
+    <Reference Include="TR_MarketDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_MarketDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_SeaFreightDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_SeaFreightDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_TRKBookDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_TRKBookDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_WMSDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_WMSDLL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="UI\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DstInvoiceDetail.cs">
+      <DependentUpon>DstInvoiceDetail.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DstInvoiceDetail.Designer.cs">
+      <DependentUpon>DstInvoiceDetail.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Report\DstRptBookingConfirmation.cs">
+      <DependentUpon>DstRptBookingConfirmation.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DstRptBookingConfirmation.Designer.cs">
+      <DependentUpon>DstRptBookingConfirmation.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Report\DstRptDeliveryNote.cs">
+      <DependentUpon>DstRptDeliveryNote.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DstRptDeliveryNote.Designer.cs">
+      <DependentUpon>DstRptDeliveryNote.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Report\DstRptJobsWithInvoices.cs">
+      <DependentUpon>DstRptJobsWithInvoices.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DstRptJobsWithInvoices.Designer.cs">
+      <DependentUpon>DstRptJobsWithInvoices.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Report\DstRptTruckJobDetail.cs">
+      <DependentUpon>DstRptTruckJobDetail.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DstRptTruckJobDetail.Designer.cs">
+      <DependentUpon>DstRptTruckJobDetail.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Report\DstRptTruckJobsBySubCon.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DstRptTruckJobsBySubCon.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\DstRptTruckJobsSummary.cs">
+      <DependentUpon>DstRptTruckJobsSummary.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DstRptTruckJobsSummary.Designer.cs">
+      <DependentUpon>DstRptTruckJobsSummary.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Report\DstRptUnbilledJobs.cs">
+      <DependentUpon>DstRptUnbilledJobs.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\DstRptUnbilledJobs.Designer.cs">
+      <DependentUpon>DstRptUnbilledJobs.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Report\DstSpecialData.Designer.cs">
+      <DependentUpon>DstSpecialData.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Report\DstTransportSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DstTransportSettings.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSeaJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSeaJob.Designer.cs">
+      <DependentUpon>FrmSeaJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmAirJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmAirJob.Designer.cs">
+      <DependentUpon>FrmAirJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmConsignmentNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmConsignmentNote.Designer.cs">
+      <DependentUpon>FrmConsignmentNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmPrintOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmPrintOption.Designer.cs">
+      <DependentUpon>FrmPrintOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptBookingConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptBookingConfirmation.Designer.cs">
+      <DependentUpon>FrmRptBookingConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptDeliveryNote.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptDeliveryNote.Designer.cs">
+      <DependentUpon>FrmRptDeliveryNote.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptTruckJobbySubCon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptTruckJobbySubCon.Designer.cs">
+      <DependentUpon>FrmRptTruckJobbySubCon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptUnbilledTruckJobs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptUnbilledTruckJobs.Designer.cs">
+      <DependentUpon>FrmRptUnbilledTruckJobs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptJobsWithInvoices.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptJobsWithInvoices.Designer.cs">
+      <DependentUpon>FrmRptJobsWithInvoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmSubContractor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmSubContractor.designer.cs">
+      <DependentUpon>FrmSubContractor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobCharge.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobCharge.Designer.cs">
+      <DependentUpon>FrmTruckJobCharge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptTruckJobSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptTruckJobSummary.Designer.cs">
+      <DependentUpon>FrmRptTruckJobSummary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmRptTruckJobDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmRptTruckJobDetail.Designer.cs">
+      <DependentUpon>FrmRptTruckJobDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobTrip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobTrip.designer.cs">
+      <DependentUpon>FrmTruckJobTrip.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobMain.Designer.cs">
+      <DependentUpon>FrmTruckJobMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTruckJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckJob.Designer.cs">
+      <DependentUpon>FrmTruckJob.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\FrmTruckSetStatusfrmBookedToReady.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckSetStatusfrmBookedToReady.Designer.cs">
+      <DependentUpon>FrmTruckSetStatusfrmBookedToReady.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmWMSJob.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmWMSJob.Designer.cs">
+      <DependentUpon>FrmWMSJob.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptJobsWithInvoices.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptBookingConfirmation.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptDeliveryNote.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptInvoiceDetail.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptSumByInvoiceType.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptTruckJobBySubCon.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptTruckJobSummary.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptTruckJobTripDetail.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptUnbilledJobs.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSeaJob.resx">
+      <DependentUpon>FrmSeaJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmAirJob.resx">
+      <DependentUpon>FrmAirJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmConsignmentNote.resx">
+      <DependentUpon>FrmConsignmentNote.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmPrintOption.resx">
+      <DependentUpon>FrmPrintOption.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptBookingConfirmation.resx">
+      <DependentUpon>FrmRptBookingConfirmation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptDeliveryNote.resx">
+      <DependentUpon>FrmRptDeliveryNote.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptTruckJobbySubCon.resx">
+      <DependentUpon>FrmRptTruckJobbySubCon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptUnbilledTruckJobs.resx">
+      <DependentUpon>FrmRptUnbilledTruckJobs.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptJobsWithInvoices.resx">
+      <DependentUpon>FrmRptJobsWithInvoices.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmSubContractor.resx">
+      <DependentUpon>FrmSubContractor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckJobCharge.resx">
+      <DependentUpon>FrmTruckJobCharge.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptTruckJobSummary.resx">
+      <DependentUpon>FrmRptTruckJobSummary.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmRptTruckJobDetail.resx">
+      <DependentUpon>FrmRptTruckJobDetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckJobTrip.resx">
+      <DependentUpon>FrmTruckJobTrip.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckJobMain.resx">
+      <DependentUpon>FrmTruckJobMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckJob.resx">
+      <DependentUpon>FrmTruckJob.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckJobTripDetail.resx">
+      <DependentUpon>FrmTruckJobTripDetail.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckJobTripStatusHistory.resx">
+      <DependentUpon>FrmTruckJobTripStatusHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmTruckSetStatusfrmBookedToReady.resx">
+      <DependentUpon>FrmTruckSetStatusfrmBookedToReady.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\FrmWMSJob.resx">
+      <DependentUpon>FrmWMSJob.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstInvoiceDetail.xsc">
+      <DependentUpon>DstInvoiceDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstInvoiceDetail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstInvoiceDetail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstInvoiceDetail.xss">
+      <DependentUpon>DstInvoiceDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptBookingConfirmation.xsc">
+      <DependentUpon>DstRptBookingConfirmation.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptBookingConfirmation.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstRptBookingConfirmation.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstRptBookingConfirmation.xss">
+      <DependentUpon>DstRptBookingConfirmation.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptDeliveryNote.xsc">
+      <DependentUpon>DstRptDeliveryNote.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptDeliveryNote.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstRptDeliveryNote.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstRptDeliveryNote.xss">
+      <DependentUpon>DstRptDeliveryNote.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptJobsWithInvoices.xsc">
+      <DependentUpon>DstRptJobsWithInvoices.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptJobsWithInvoices.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstRptJobsWithInvoices.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstRptJobsWithInvoices.xss">
+      <DependentUpon>DstRptJobsWithInvoices.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptTruckJobDetail.xsc">
+      <DependentUpon>DstRptTruckJobDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptTruckJobDetail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstRptTruckJobDetail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstRptTruckJobDetail.xss">
+      <DependentUpon>DstRptTruckJobDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptTruckJobsBySubCon.xsc">
+      <DependentUpon>DstRptTruckJobsBySubCon.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptTruckJobsBySubCon.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstRptTruckJobsBySubCon.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstRptTruckJobsBySubCon.xss">
+      <DependentUpon>DstRptTruckJobsBySubCon.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptTruckJobsSummary.xsc">
+      <DependentUpon>DstRptTruckJobsSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptTruckJobsSummary.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstRptTruckJobsSummary.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstRptTruckJobsSummary.xss">
+      <DependentUpon>DstRptTruckJobsSummary.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptUnbilledJobs.xsc">
+      <DependentUpon>DstRptUnbilledJobs.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstRptUnbilledJobs.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstRptUnbilledJobs.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstRptUnbilledJobs.xss">
+      <DependentUpon>DstRptUnbilledJobs.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstSpecialData.xsc">
+      <DependentUpon>DstSpecialData.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstSpecialData.xsd">
+      <SubType>
+      </SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstSpecialData.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstSpecialData.xss">
+      <DependentUpon>DstSpecialData.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstTransportSettings.xsc">
+      <DependentUpon>DstTransportSettings.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DstTransportSettings.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DstTransportSettings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DstTransportSettings.xss">
+      <DependentUpon>DstTransportSettings.xsd</DependentUpon>
+    </None>
+    <Compile Include="UI\FrmTruckJobTripDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobTripDetail.Designer.cs">
+      <DependentUpon>FrmTruckJobTripDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobTripStatusHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\FrmTruckJobTripStatusHistory.Designer.cs">
+      <DependentUpon>FrmTruckJobTripStatusHistory.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

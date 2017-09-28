@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DstRptJobsWithInvoices" targetNamespace="http://tempuri.org/DstRptJobsWithInvoices.xsd" xmlns:mstns="http://tempuri.org/DstRptJobsWithInvoices.xsd" xmlns="http://tempuri.org/DstRptJobsWithInvoices.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="3" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM72_JEConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM72_JEConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.FM72_JEConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM72_JE_TESTINGConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM72_JE_TESTINGConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.FM72_JE_TESTINGConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM80_Transport_TestingConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM80_Transport_TestingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.FM80_Transport_TestingConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="LOCAL_PC" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="LOCAL_PC (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.FM.TR_TRKBookUI.Properties.Settings.GlobalReference.Default.LOCAL_PC" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="dtbRptJobsWithInvoicesTableAdapter" GeneratorDataComponentClassName="dtbRptJobsWithInvoicesTableAdapter" Name="dtbRptJobsWithInvoices" UserDataComponentName="dtbRptJobsWithInvoicesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="LOCAL_PC (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillTruckJobChargesAndInvoice" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetTruckJobChargesAndInvoice" GeneratorSourceName="FillTruckJobChargesAndInvoice" GetMethodModifier="Public" GetMethodName="GetTruckJobChargesAndInvoice" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetTruckJobChargesAndInvoice" UserSourceName="FillTruckJobChargesAndInvoice">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT   distinct			
+			invItem.Job_Number,
+			jobMain.Job_id,
+			invMaster.Customer_Name, 
+			jobMain.Booking_Date,    
+			jobMain.TPT_DEPT_CODE, 
+                                                        jobMain.JOB_TYPE, 
+			jobTrip.Charge_Code as  Job_Charge_Code,
+			jobTrip.BILLING_UOM as  Job_BILLING_UOM,
+			jobTrip.JOBTRIP_SEQ_NO as Job_Trip_SeqNo,							             
+			invItem.Item_Sequence_Number as Inv_Item_SeqNo,
+			ISNULL((select sum(BILLING_QTY) from TRK_JOB_DETAIL_TRIP_Tbl
+				where Charge_Code = jobTrip.Charge_Code
+					and BILLING_UOM = jobTrip.BILLING_UOM                                                                                                                           and job_id = jobMain.Job_id), 1) as Job_Billing_Quantity,
+			invItem.Item_Code as Inv_Item_Charge_Code,			
+			invItem.UOM_code as Inv_Item_UOM_Code, 
+			(Select sum(Quantity) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Transaction_Number = invItem.Transaction_Number
+				and Item_Code = invItem.Item_Code
+				and UOM_Code = invItem.UOM_code) as Inv_Item_Quantity,
+			(Select sum(Home_Amount) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Transaction_Number = invItem.Transaction_Number
+				and Item_Code = invItem.Item_Code
+				and UOM_Code = invItem.UOM_code) as Inv_Item_Home_Amt,
+			(Select sum(Amount) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Transaction_Number = invItem.Transaction_Number
+				and Item_Code = invItem.Item_Code
+				and UOM_Code = invItem.UOM_code) as Inv_Item_FC_Amount,	
+			invItem.Currency_Code as Inv_Item_Currency_Code,				
+			invMaster.Transaction_Number, 
+			invMaster.Invoice_Number, 
+			invMaster.Invoice_Date, 
+			invMaster.Invoice_Type_Code,
+			invMaster.Total_Billed_Amount_HM,
+			invMaster.Currency_Code,
+			invMaster.Total_Billed_Amount_FC,			
+			(Select sum(Quantity) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Transaction_Number = invItem.Transaction_Number) as Inv_Total_Quantity,    
+			   
+			(Select sum(Amount) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Job_Number = invItem.Job_Number) as Inv_Total_FC_Amount_WO_TAX,
+			(Select sum(Home_Amount) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Job_Number = invItem.Job_Number) as Inv_Total_Home_Amount_WO_TAX	   	                  
+                                              
+  FROM   ACT_IV_Transport_Invoice_Master_Tbl  as invMaster   
+		INNER JOIN ACT_IV_Transport_Invoice_Item_Tbl as invItem 
+		ON invMaster.Transaction_Number = invItem.Transaction_Number  			  
+		INNER JOIN TRK_JOB_MAIN_Tbl as jobMain 	 
+		ON invMaster.Job_Number = jobMain.JOB_NUMBER 	
+		INNER JOIN TRK_JOB_DETAIL_TRIP_Tbl as jobTrip
+		ON jobTrip.JOB_ID = jobMain.JOB_ID		
+	
+	
+
+WHERE   invMaster.Job_Type_Code = @invJobType and
+(jobMain.JOB_NUMBER &gt;= @START_JOBNO) AND (jobMain.JOB_NUMBER &lt;= @END_JOBNO)
+
+GROUP BY 
+jobMain.Job_id,
+invItem.JOB_NUMBER,
+jobMain.Booking_Date,   
+jobMain.TPT_DEPT_CODE, 
+jobMain.JOB_TYPE, 
+jobTrip.CHARGE_CODE, 
+jobTrip.JOBTRIP_SEQ_NO,
+jobTrip.BILLING_UOM,
+invMaster.Customer_Name,
+invMaster.Transaction_Number, 
+invMaster.Invoice_Number, 
+invMaster.Invoice_Date,
+invItem.Item_Code, 
+invItem.UOM_code,
+invMaster.Invoice_Type_Code,
+invMaster.Total_Billed_Amount_HM,
+invMaster.Currency_Code,
+invMaster.Total_Billed_Amount_FC,
+jobTrip.BILLING_QTY,  
+invMaster.Total_Billed_Amount_HM,
+invItem.Transaction_Number ,
+invItem.With_Holding_Tax_Amount_HM, 
+invItem.With_Holding_Tax_Amount_FC,          
+invItem.STD_Tax_Amount_HM,
+invItem.Exempted_Tax_Amount_HM, 
+invItem.Exempted_Tax_Amount_FC, 
+invItem.Quantity,
+invItem.STD_Tax_Amount_FC,
+invItem.Zero_Rated_Tax_Amount_HM, 
+invItem.Zero_Rated_Tax_Amount_FC,          
+invItem.Home_Amount,
+invItem.Sell_Rate,
+invItem.Out_Scope_Tax_Amount_HM, 
+invItem.Out_Scope_Tax_Amount_FC,          
+invItem.Amount,
+invItem.Cost_Curr_Exch_Rate,
+invItem.Est_Cost_Rate,
+invItem.Est_Cost_Amount,
+invItem.Est_Cost_Home_Amount,
+invItem.Currency_Code,
+invItem.Actu_Cost_Rate,
+invItem.Cost_Currency_Code,
+invItem.Actu_Cost_Amount,invItem.Actu_Cost_Amount_HM,
+invItem.Vendor_Code,invItem.Item_Account_Code,invItem.Rate_Type,invItem.Tax_Code,
+invItem.Item_Sequence_Number,invItem.Exchange_Rate
+
+UNION
+
+SELECT   distinct			
+			invItem.Job_Number,
+			jobMain.Job_id,
+			invMaster.Customer_Name, 
+			jobMain.Booking_Date,    
+			jobMain.TPT_DEPT_CODE,   
+			jobMain.JOB_TYPE, 
+			jobCharge.Charge_Code as  Job_Charge_Code,
+			jobCharge.UOM as  Job_BILLING_UOM,
+			'0' as Job_Trip_SeqNo,							             
+			invItem.Item_Sequence_Number as Inv_Item_SeqNo,
+			ISNULL((select sum(QUANTITY) from TRK_JOB_DETAIL_CHARGE_Tbl
+				where Charge_Code = jobCharge.Charge_Code
+					and UOM = jobCharge.UOM 
+					and JOB_CHARGE_TYPE = 'S'
+					and job_id = jobMain.Job_id), 0) as Job_Billing_Quantity,
+			invItem.Item_Code as Inv_Item_Charge_Code,			
+			invItem.UOM_code as Inv_Item_UOM_Code, 
+			(Select sum(Quantity) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Transaction_Number = invItem.Transaction_Number
+				and Item_Code = invItem.Item_Code
+				and UOM_Code = invItem.UOM_code) as Inv_Item_Quantity,
+			(Select sum(Home_Amount) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Transaction_Number = invItem.Transaction_Number
+				and Item_Code = invItem.Item_Code
+				and UOM_Code = invItem.UOM_code) as Inv_Item_Home_Amt,
+			(Select sum(Amount) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Transaction_Number = invItem.Transaction_Number
+				and Item_Code = invItem.Item_Code
+				and UOM_Code = invItem.UOM_code) as Inv_Item_FC_Amount,	
+			invItem.Currency_Code as Inv_Item_Currency_Code,				
+			invMaster.Transaction_Number, 
+			invMaster.Invoice_Number, 
+			invMaster.Invoice_Date, 
+			invMaster.Invoice_Type_Code,
+			invMaster.Total_Billed_Amount_HM,
+			invMaster.Currency_Code,
+			invMaster.Total_Billed_Amount_FC,			
+			(Select sum(Quantity) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Transaction_Number = invItem.Transaction_Number) as Inv_Total_Quantity,    
+			(Select sum(Amount) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Job_Number = invItem.Job_Number) as Inv_Total_FC_Amount_WO_TAX,
+			(Select sum(Home_Amount) from  ACT_IV_Transport_Invoice_Item_Tbl
+				where Job_Number = invItem.Job_Number) as Inv_Total_Home_Amount_WO_TAX	                  
+                                              
+  FROM   ACT_IV_Transport_Invoice_Master_Tbl  as invMaster   
+		INNER JOIN ACT_IV_Transport_Invoice_Item_Tbl as invItem 
+		ON invMaster.Transaction_Number = invItem.Transaction_Number  			  
+		INNER JOIN TRK_JOB_MAIN_Tbl as jobMain 	 
+		ON invMaster.Job_Number = jobMain.JOB_NUMBER 		
+		INNER JOIN TRK_JOB_DETAIL_CHARGE_Tbl as jobCharge
+		ON jobCharge.Job_ID = jobMain.JOB_ID
+                                      and jobCharge.JOB_CHARGE_TYPE = 'S'
+	
+
+WHERE   invMaster.Job_Type_Code = @invJobType and
+(jobMain.JOB_NUMBER &gt;= @START_JOBNO) AND (jobMain.JOB_NUMBER &lt;= @END_JOBNO)
+
+GROUP BY 
+jobMain.Job_id,
+invItem.JOB_NUMBER,
+jobMain.Booking_Date,   
+jobMain.TPT_DEPT_CODE, 
+jobMain.JOB_TYPE, 
+jobCharge.Charge_Code,
+jobCharge.UOM,
+jobCharge.SEQUENCE_NO,
+invMaster.Customer_Name,
+invMaster.Transaction_Number, 
+invMaster.Invoice_Number, 
+invMaster.Invoice_Date,
+invItem.Item_Code, 
+invItem.UOM_code,
+invMaster.Invoice_Type_Code,
+invMaster.Total_Billed_Amount_HM,
+invMaster.Currency_Code,
+invMaster.Total_Billed_Amount_FC,
+invMaster.Total_Billed_Amount_HM,
+invItem.Transaction_Number ,
+invItem.With_Holding_Tax_Amount_HM, 
+invItem.With_Holding_Tax_Amount_FC,          
+invItem.STD_Tax_Amount_HM,
+invItem.Exempted_Tax_Amount_HM, 
+invItem.Exempted_Tax_Amount_FC, 
+invItem.Quantity,
+invItem.STD_Tax_Amount_FC,
+invItem.Zero_Rated_Tax_Amount_HM, 
+invItem.Zero_Rated_Tax_Amount_FC,          
+invItem.Home_Amount,
+invItem.Sell_Rate,
+invItem.Out_Scope_Tax_Amount_HM, 
+invItem.Out_Scope_Tax_Amount_FC,          
+invItem.Amount,
+invItem.Cost_Curr_Exch_Rate,
+invItem.Est_Cost_Rate,
+invItem.Est_Cost_Amount,
+invItem.Est_Cost_Home_Amount,
+invItem.Currency_Code,
+invItem.Actu_Cost_Rate,
+invItem.Cost_Currency_Code,
+invItem.Actu_Cost_Amount,invItem.Actu_Cost_Amount_HM,
+invItem.Vendor_Code,invItem.Item_Account_Code,invItem.Rate_Type,invItem.Tax_Code,
+invItem.Item_Sequence_Number,invItem.Exchange_Rate</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="invJobType" ColumnName="" DataSourceName="" DataTypeServer="varchar(2)" DbType="AnsiString" Direction="Input" ParameterName="@invJobType" Precision="0" Scale="0" Size="2" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="START_JOBNO" ColumnName="" DataSourceName="" DataTypeServer="varchar(26)" DbType="AnsiString" Direction="Input" ParameterName="@START_JOBNO" Precision="0" Scale="0" Size="26" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="END_JOBNO" ColumnName="" DataSourceName="" DataTypeServer="varchar(26)" DbType="AnsiString" Direction="Input" ParameterName="@END_JOBNO" Precision="0" Scale="0" Size="26" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TPT_DEPT_CODE" DataSetColumn="TPT_DEPT_CODE" />
+              <Mapping SourceColumn="Invoice_Number" DataSetColumn="Invoice_Number" />
+              <Mapping SourceColumn="Invoice_Date" DataSetColumn="Invoice_Date" />
+              <Mapping SourceColumn="Invoice_Type_Code" DataSetColumn="Invoice_Type_Code" />
+              <Mapping SourceColumn="Transaction_Number" DataSetColumn="Transaction_Number" />
+              <Mapping SourceColumn="Currency_Code" DataSetColumn="Currency_Code" />
+              <Mapping SourceColumn="Job_Number" DataSetColumn="Job_Number" />
+              <Mapping SourceColumn="Job_id" DataSetColumn="Job_id" />
+              <Mapping SourceColumn="Customer_Name" DataSetColumn="Customer_Name" />
+              <Mapping SourceColumn="Booking_Date" DataSetColumn="Booking_Date" />
+              <Mapping SourceColumn="Job_Charge_Code" DataSetColumn="Job_Charge_Code" />
+              <Mapping SourceColumn="Inv_Item_Charge_Code" DataSetColumn="Inv_Item_Charge_Code" />
+              <Mapping SourceColumn="Inv_Item_UOM_Code" DataSetColumn="Inv_Item_UOM_Code" />
+              <Mapping SourceColumn="Inv_Item_Quantity" DataSetColumn="Inv_Item_Quantity" />
+              <Mapping SourceColumn="Inv_Item_Home_Amt" DataSetColumn="Inv_Item_Home_Amt" />
+              <Mapping SourceColumn="Inv_Item_FC_Amount" DataSetColumn="Inv_Item_FC_Amount" />
+              <Mapping SourceColumn="Inv_Item_Currency_Code" DataSetColumn="Inv_Item_Currency_Code" />
+              <Mapping SourceColumn="Total_Billed_Amount_HM" DataSetColumn="Total_Billed_Amount_HM" />
+              <Mapping SourceColumn="Total_Billed_Amount_FC" DataSetColumn="Total_Billed_Amount_FC" />
+              <Mapping SourceColumn="Inv_Total_Quantity" DataSetColumn="Inv_Total_Quantity" />
+              <Mapping SourceColumn="Inv_Total_FC_Amount_WO_TAX" DataSetColumn="Inv_Total_FC_Amount_WO_TAX" />
+              <Mapping SourceColumn="Inv_Total_Home_Amount_WO_TAX" DataSetColumn="Inv_Total_Home_Amount_WO_TAX" />
+              <Mapping SourceColumn="Inv_Item_SeqNo" DataSetColumn="Inv_Item_SeqNo" />
+              <Mapping SourceColumn="Job_BILLING_UOM" DataSetColumn="Job_BILLING_UOM" />
+              <Mapping SourceColumn="Job_Trip_SeqNo" DataSetColumn="Job_Trip_SeqNo" />
+              <Mapping SourceColumn="Job_Billing_Quantity" DataSetColumn="Job_Billing_Quantity" />
+              <Mapping SourceColumn="JOB_TYPE" DataSetColumn="JOB_TYPE" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DstRptJobsWithInvoices" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DstRptJobsWithInvoices" msprop:Generator_UserDSName="DstRptJobsWithInvoices">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtbRptJobsWithInvoices" msprop:Generator_UserTableName="dtbRptJobsWithInvoices" msprop:Generator_RowEvArgName="dtbRptJobsWithInvoicesRowChangeEvent" msprop:Generator_TableVarName="tabledtbRptJobsWithInvoices" msprop:Generator_TablePropName="dtbRptJobsWithInvoices" msprop:Generator_RowDeletingName="dtbRptJobsWithInvoicesRowDeleting" msprop:Generator_RowChangingName="dtbRptJobsWithInvoicesRowChanging" msprop:Generator_RowDeletedName="dtbRptJobsWithInvoicesRowDeleted" msprop:Generator_RowEvHandlerName="dtbRptJobsWithInvoicesRowChangeEventHandler" msprop:Generator_TableClassName="dtbRptJobsWithInvoicesDataTable" msprop:Generator_RowChangedName="dtbRptJobsWithInvoicesRowChanged" msprop:Generator_RowClassName="dtbRptJobsWithInvoicesRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TPT_DEPT_CODE" msprop:Generator_ColumnVarNameInTable="columnTPT_DEPT_CODE" msprop:Generator_ColumnPropNameInRow="TPT_DEPT_CODE" msprop:Generator_ColumnPropNameInTable="TPT_DEPT_CODEColumn" msprop:Generator_UserColumnName="TPT_DEPT_CODE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Invoice_Number" msprop:Generator_ColumnVarNameInTable="columnInvoice_Number" msprop:Generator_ColumnPropNameInRow="Invoice_Number" msprop:Generator_ColumnPropNameInTable="Invoice_NumberColumn" msprop:Generator_UserColumnName="Invoice_Number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Invoice_Date" msprop:Generator_ColumnVarNameInTable="columnInvoice_Date" msprop:Generator_ColumnPropNameInRow="Invoice_Date" msprop:Generator_ColumnPropNameInTable="Invoice_DateColumn" msprop:Generator_UserColumnName="Invoice_Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Invoice_Type_Code" msprop:Generator_ColumnVarNameInTable="columnInvoice_Type_Code" msprop:Generator_ColumnPropNameInRow="Invoice_Type_Code" msprop:Generator_ColumnPropNameInTable="Invoice_Type_CodeColumn" msprop:Generator_UserColumnName="Invoice_Type_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Transaction_Number" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTransaction_Number" msprop:Generator_ColumnPropNameInRow="Transaction_Number" msprop:Generator_ColumnPropNameInTable="Transaction_NumberColumn" msprop:Generator_UserColumnName="Transaction_Number" type="xs:int" />
+              <xs:element name="Currency_Code" msprop:Generator_ColumnVarNameInTable="columnCurrency_Code" msprop:Generator_ColumnPropNameInRow="Currency_Code" msprop:Generator_ColumnPropNameInTable="Currency_CodeColumn" msprop:Generator_UserColumnName="Currency_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Job_Number" msprop:Generator_ColumnVarNameInTable="columnJob_Number" msprop:Generator_ColumnPropNameInRow="Job_Number" msprop:Generator_ColumnPropNameInTable="Job_NumberColumn" msprop:Generator_UserColumnName="Job_Number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Job_id" msprop:Generator_ColumnVarNameInTable="columnJob_id" msprop:Generator_ColumnPropNameInRow="Job_id" msprop:Generator_ColumnPropNameInTable="Job_idColumn" msprop:Generator_UserColumnName="Job_id" type="xs:int" minOccurs="0" />
+              <xs:element name="Customer_Name" msprop:Generator_ColumnVarNameInTable="columnCustomer_Name" msprop:Generator_ColumnPropNameInRow="Customer_Name" msprop:Generator_ColumnPropNameInTable="Customer_NameColumn" msprop:Generator_UserColumnName="Customer_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Booking_Date" msprop:Generator_ColumnVarNameInTable="columnBooking_Date" msprop:Generator_ColumnPropNameInRow="Booking_Date" msprop:Generator_ColumnPropNameInTable="Booking_DateColumn" msprop:Generator_UserColumnName="Booking_Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Job_Charge_Code" msprop:Generator_ColumnVarNameInTable="columnJob_Charge_Code" msprop:Generator_ColumnPropNameInRow="Job_Charge_Code" msprop:Generator_ColumnPropNameInTable="Job_Charge_CodeColumn" msprop:Generator_UserColumnName="Job_Charge_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Inv_Item_Charge_Code" msprop:Generator_ColumnVarNameInTable="columnInv_Item_Charge_Code" msprop:Generator_ColumnPropNameInRow="Inv_Item_Charge_Code" msprop:Generator_ColumnPropNameInTable="Inv_Item_Charge_CodeColumn" msprop:Generator_UserColumnName="Inv_Item_Charge_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Inv_Item_UOM_Code" msprop:Generator_ColumnVarNameInTable="columnInv_Item_UOM_Code" msprop:Generator_ColumnPropNameInRow="Inv_Item_UOM_Code" msprop:Generator_ColumnPropNameInTable="Inv_Item_UOM_CodeColumn" msprop:Generator_UserColumnName="Inv_Item_UOM_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Inv_Item_Quantity" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInv_Item_Quantity" msprop:Generator_ColumnPropNameInRow="Inv_Item_Quantity" msprop:Generator_ColumnPropNameInTable="Inv_Item_QuantityColumn" msprop:Generator_UserColumnName="Inv_Item_Quantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Inv_Item_Home_Amt" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInv_Item_Home_Amt" msprop:Generator_ColumnPropNameInRow="Inv_Item_Home_Amt" msprop:Generator_ColumnPropNameInTable="Inv_Item_Home_AmtColumn" msprop:Generator_UserColumnName="Inv_Item_Home_Amt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Inv_Item_FC_Amount" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInv_Item_FC_Amount" msprop:Generator_ColumnPropNameInRow="Inv_Item_FC_Amount" msprop:Generator_ColumnPropNameInTable="Inv_Item_FC_AmountColumn" msprop:Generator_UserColumnName="Inv_Item_FC_Amount" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Inv_Item_Currency_Code" msprop:Generator_ColumnVarNameInTable="columnInv_Item_Currency_Code" msprop:Generator_ColumnPropNameInRow="Inv_Item_Currency_Code" msprop:Generator_ColumnPropNameInTable="Inv_Item_Currency_CodeColumn" msprop:Generator_UserColumnName="Inv_Item_Currency_Code" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="6" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Total_Billed_Amount_HM" msprop:Generator_ColumnVarNameInTable="columnTotal_Billed_Amount_HM" msprop:Generator_ColumnPropNameInRow="Total_Billed_Amount_HM" msprop:Generator_ColumnPropNameInTable="Total_Billed_Amount_HMColumn" msprop:Generator_UserColumnName="Total_Billed_Amount_HM" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Total_Billed_Amount_FC" msprop:Generator_ColumnVarNameInTable="columnTotal_Billed_Amount_FC" msprop:Generator_ColumnPropNameInRow="Total_Billed_Amount_FC" msprop:Generator_ColumnPropNameInTable="Total_Billed_Amount_FCColumn" msprop:Generator_UserColumnName="Total_Billed_Amount_FC" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Inv_Total_Quantity" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInv_Total_Quantity" msprop:Generator_ColumnPropNameInRow="Inv_Total_Quantity" msprop:Generator_ColumnPropNameInTable="Inv_Total_QuantityColumn" msprop:Generator_UserColumnName="Inv_Total_Quantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Inv_Total_FC_Amount_WO_TAX" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInv_Total_FC_Amount_WO_TAX" msprop:Generator_ColumnPropNameInRow="Inv_Total_FC_Amount_WO_TAX" msprop:Generator_ColumnPropNameInTable="Inv_Total_FC_Amount_WO_TAXColumn" msprop:Generator_UserColumnName="Inv_Total_FC_Amount_WO_TAX" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Inv_Total_Home_Amount_WO_TAX" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnInv_Total_Home_Amount_WO_TAX" msprop:Generator_ColumnPropNameInRow="Inv_Total_Home_Amount_WO_TAX" msprop:Generator_ColumnPropNameInTable="Inv_Total_Home_Amount_WO_TAXColumn" msprop:Generator_UserColumnName="Inv_Total_Home_Amount_WO_TAX" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Inv_Item_SeqNo" msprop:Generator_ColumnVarNameInTable="columnInv_Item_SeqNo" msprop:Generator_ColumnPropNameInRow="Inv_Item_SeqNo" msprop:Generator_ColumnPropNameInTable="Inv_Item_SeqNoColumn" msprop:Generator_UserColumnName="Inv_Item_SeqNo" type="xs:short" minOccurs="0" />
+              <xs:element name="Job_BILLING_UOM" msprop:Generator_ColumnVarNameInTable="columnJob_BILLING_UOM" msprop:Generator_ColumnPropNameInRow="Job_BILLING_UOM" msprop:Generator_ColumnPropNameInTable="Job_BILLING_UOMColumn" msprop:Generator_UserColumnName="Job_BILLING_UOM" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Job_Trip_SeqNo" msprop:Generator_ColumnVarNameInTable="columnJob_Trip_SeqNo" msprop:Generator_ColumnPropNameInRow="Job_Trip_SeqNo" msprop:Generator_ColumnPropNameInTable="Job_Trip_SeqNoColumn" msprop:Generator_UserColumnName="Job_Trip_SeqNo" type="xs:int" minOccurs="0" />
+              <xs:element name="Job_Billing_Quantity" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnJob_Billing_Quantity" msprop:Generator_ColumnPropNameInRow="Job_Billing_Quantity" msprop:Generator_ColumnPropNameInTable="Job_Billing_QuantityColumn" msprop:Generator_UserColumnName="Job_Billing_Quantity" type="xs:decimal" minOccurs="0" />
+              <xs:element name="JOB_TYPE" msprop:Generator_ColumnVarNameInTable="columnJOB_TYPE" msprop:Generator_ColumnPropNameInRow="JOB_TYPE" msprop:Generator_ColumnPropNameInTable="JOB_TYPEColumn" msprop:Generator_UserColumnName="JOB_TYPE" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtbRptJobsWithInvoices" />
+      <xs:field xpath="mstns:Transaction_Number" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
