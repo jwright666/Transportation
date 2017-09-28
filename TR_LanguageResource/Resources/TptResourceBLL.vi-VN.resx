@@ -1,0 +1,1399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ErrAllocatedToThisTruckAlready" xml:space="preserve">
+    <value>This job is allocated to this truck already, please choose another truck</value>
+  </data>
+  <data name="ErrBookingNoPrefix" xml:space="preserve">
+    <value>Booking No Prefix only allowed 2 characters</value>
+  </data>
+  <data name="ErrBranchCodeBlank" xml:space="preserve">
+    <value>Branch Code Cannot be Blank</value>
+  </data>
+  <data name="ErrCannotCopyTransportRateBecauseCurrCodeNotMatch" xml:space="preserve">
+    <value>Currency Code doesn't match</value>
+  </data>
+  <data name="ErrCannotCopyTransportRateBecauseTransportRateNotEmpty" xml:space="preserve">
+    <value>To do copy, transport rate must be empty</value>
+  </data>
+  <data name="ErrCannotDeleteQuotationUsedInBooking" xml:space="preserve">
+    <value>The Quotation cannot be deleted as an existing booking uses it</value>
+  </data>
+  <data name="ErrCannotDeleteTransportRate" xml:space="preserve">
+    <value>Cannot Delete Transport Rate</value>
+  </data>
+  <data name="ErrCannotEditBecauseJobTripAlreadyComplete" xml:space="preserve">
+    <value>Cannot Edit this jobtrip because status already completed</value>
+  </data>
+  <data name="ErrCannotEditContainerNo" xml:space="preserve">
+    <value>Cannot edit non-first Leg Trip's Container No </value>
+  </data>
+  <data name="ErrCantChangeEndTime" xml:space="preserve">
+    <value>Can't change end time</value>
+  </data>
+  <data name="ErrCantDeleteAssignedJob" xml:space="preserve">
+    <value>Failed to delete, this job is either assigned, ready or completed</value>
+  </data>
+  <data name="ErrCantDeleteBecauseInvoice" xml:space="preserve">
+    <value>Failed to delete because invoice has been created</value>
+  </data>
+  <data name="ErrCantDeleteBecauseJobAlreadyBilled" xml:space="preserve">
+    <value>Failed to Delete because job already billed</value>
+  </data>
+  <data name="ErrCantDeleteBecauseJobAlreadyCanceled" xml:space="preserve">
+    <value>Failed to Delete because job already canceled</value>
+  </data>
+  <data name="ErrCantDeleteBecauseJobChargeAlreadyCompleteorInvoiced" xml:space="preserve">
+    <value>Failed to Delete beacause job Charge already completed or invoiced</value>
+  </data>
+  <data name="ErrCantDeleteBecauseJobTripAlreadyAssigned" xml:space="preserve">
+    <value>Failed to Delete because job trip already assigned</value>
+  </data>
+  <data name="ErrCantDeleteBecauseStartStopNotValid" xml:space="preserve">
+    <value>Cannot delete this job, it's started from previous trip plans. You can delete it from the plan trip where this job is started.</value>
+  </data>
+  <data name="ErrCantDeleteBecauseThereareJobsAllocated" xml:space="preserve">
+    <value>Failed to delete, there are jobs allocated inside this plan sub trip</value>
+  </data>
+  <data name="ErrCantDeleteBilledJob" xml:space="preserve">
+    <value>Failed to delete, this job is billed already</value>
+  </data>
+  <data name="ErrCantDeleteCompleted" xml:space="preserve">
+    <value>Cannot delete this job charge, job already completed</value>
+  </data>
+  <data name="ErrCantDeleteCompletedJob" xml:space="preserve">
+    <value>Failed to delete, job already completed</value>
+  </data>
+  <data name="ErrCantDeleteCompletedOrInvoicedSubTrip" xml:space="preserve">
+    <value>Failed to delete, it is completed already</value>
+  </data>
+  <data name="ErrCantDeleteInvoiced" xml:space="preserve">
+    <value>Cannot delete this job charge, invoice has been made for this</value>
+  </data>
+  <data name="ErrCantDelteCompletedorAssignedJob" xml:space="preserve">
+    <value>Cannot delete assigned or completed job</value>
+  </data>
+  <data name="ErrCantEdit" xml:space="preserve">
+    <value>Cannot edit this job charge, invoice has been made for this</value>
+  </data>
+  <data name="ErrCantEditBesideBooked" xml:space="preserve">
+    <value>Trip not in the booked status, failed to edit</value>
+  </data>
+  <data name="ErrCantEditBilledCust" xml:space="preserve">
+    <value>Cant change customer, job has been billed</value>
+  </data>
+  <data name="ErrCantEditChargeType" xml:space="preserve">
+    <value>Cant edit charge type if there are job trips assigned</value>
+  </data>
+  <data name="ErrCantEditJobHeader" xml:space="preserve">
+    <value>Can't change, Have 1 or more job trip status not in booking state</value>
+  </data>
+  <data name="ErrCantEditJobType" xml:space="preserve">
+    <value>Job type cannot be changed as Job Trips have been created</value>
+  </data>
+  <data name="ErrCantEnterDuplicateMovementCharge" xml:space="preserve">
+    <value>Duplicate charge with same stop and uom</value>
+  </data>
+  <data name="ErrCantEnterDuplicateNonMovementCharge" xml:space="preserve">
+    <value>Duplicate charge with same uom</value>
+  </data>
+  <data name="ErrCantFindEndStop" xml:space="preserve">
+    <value>Cant find the same end job in any existing plan sub trip</value>
+  </data>
+  <data name="ErrCantMoveAppointmentIfTrailerAssigned" xml:space="preserve">
+    <value>Cant drag back to job trip form, because trailer has been assigned</value>
+  </data>
+  <data name="ErrCBM" xml:space="preserve">
+    <value>Volume is more than the job trip</value>
+  </data>
+  <data name="ErrChargeIDBlank" xml:space="preserve">
+    <value>Charge ID Cannot be Blank</value>
+  </data>
+  <data name="ErrChargeTypeBlank" xml:space="preserve">
+    <value>Charge Type Cannot be Blank</value>
+  </data>
+  <data name="ErrChargeTypeNotValid" xml:space="preserve">
+    <value>Charge Type Not Valid</value>
+  </data>
+  <data name="ErrClass" xml:space="preserve">
+    <value>Driving Class Cannot be Blank</value>
+  </data>
+  <data name="ErrCode" xml:space="preserve">
+    <value>Driver Code Cannot be Blank</value>
+  </data>
+  <data name="ErrConditionsBlank" xml:space="preserve">
+    <value>Conditions Cannot be Blank</value>
+  </data>
+  <data name="ErrContainerNoBlank" xml:space="preserve">
+    <value>Container No Cannot be Blank</value>
+  </data>
+  <data name="ErrContainerNoEmpty" xml:space="preserve">
+    <value>Container No must be filled in before a job trip can be set to 'Complete' status</value>
+  </data>
+  <data name="ErrContainerNoLessThan11Char" xml:space="preserve">
+    <value>A container No must be 11 characters long</value>
+  </data>
+  <data name="ErrCreditDaysBlank" xml:space="preserve">
+    <value>Credit Days Cannot be Blank</value>
+  </data>
+  <data name="ErrCreditDaysLessThanZero" xml:space="preserve">
+    <value>Credit Days Must be Greater than 0</value>
+  </data>
+  <data name="ErrCurrencyBlank" xml:space="preserve">
+    <value>Currency Cannot be Blank</value>
+  </data>
+  <data name="ErrCurrencyNotCorrect" xml:space="preserve">
+    <value>Currency Code is not correct</value>
+  </data>
+  <data name="ErrCurrentStatusIsComplete" xml:space="preserve">
+    <value>Current status is Completed, cannot change</value>
+  </data>
+  <data name="ErrCurrentStatusIsInvoiced" xml:space="preserve">
+    <value>Current status is Invoiced, cannot change</value>
+  </data>
+  <data name="ErrCustNoBlank" xml:space="preserve">
+    <value>Customer Code Cannot be Blank</value>
+  </data>
+  <data name="ErrCustomerGroupBlank" xml:space="preserve">
+    <value>Customer Group Cannot be Blank</value>
+  </data>
+  <data name="ErrCustomerNotFound" xml:space="preserve">
+    <value>Not a valid customer</value>
+  </data>
+  <data name="ErrDateDuplicate" xml:space="preserve">
+    <value>Duplicate date ! Please choose other date</value>
+  </data>
+  <data name="ErrDeleteConfirmation" xml:space="preserve">
+    <value>Are you sure want to delete it?</value>
+  </data>
+  <data name="ErrDependent" xml:space="preserve">
+    <value>Both isSectorDependent and isStopDependent cannot be false</value>
+  </data>
+  <data name="ErrDescriptionBlank" xml:space="preserve">
+    <value>Description Cannot be Blank</value>
+  </data>
+  <data name="ErrDoubleContainerNo" xml:space="preserve">
+    <value>Container No {0} cannot be the same with the other</value>
+  </data>
+  <data name="ErrDriverNotAvailable" xml:space="preserve">
+    <value>This driver is not available, please choose another driver</value>
+  </data>
+  <data name="ErrDuplicateJobCharge" xml:space="preserve">
+    <value>Duplicate job charge code, please reenter charge code</value>
+  </data>
+  <data name="ErrDuplicateQuotationForCust" xml:space="preserve">
+    <value>There is a valid quotation for this customer already, please change the date validFrom and ValidTo after the previous quotation date range if you want to proceed</value>
+  </data>
+  <data name="ErrDuplicateQuotationForCustGroup" xml:space="preserve">
+    <value>There is a valid quotation for this customer group already, please change the valid from date if you want to proceed</value>
+  </data>
+  <data name="ErrEditDeptType" xml:space="preserve">
+    <value>Department Type cannot be change, some transactions exist.</value>
+  </data>
+  <data name="ErrEditInvoicedCharge" xml:space="preserve">
+    <value>Cant Edit Invoiced Charge</value>
+  </data>
+  <data name="ErrEmptyFields" xml:space="preserve">
+    <value>Department fields should not be empty.</value>
+  </data>
+  <data name="ErrEndBlank" xml:space="preserve">
+    <value>End Cannot be Blank</value>
+  </data>
+  <data name="ErrEndCustLesserThanStartCust" xml:space="preserve">
+    <value>Wrong Start and End Customer Code</value>
+  </data>
+  <data name="ErrEndJobNoLesserThanStartJobNo" xml:space="preserve">
+    <value>Wrong Start and End Job No</value>
+  </data>
+  <data name="ErrEndLessThanStart" xml:space="preserve">
+    <value>End Cannot be Less Than Start</value>
+  </data>
+  <data name="ErrEndPriceBreak" xml:space="preserve">
+    <value>End of a price break must be larger than the previous price break</value>
+  </data>
+  <data name="ErrEndTimeBlank" xml:space="preserve">
+    <value>Please key in End Time</value>
+  </data>
+  <data name="ErrEndZero" xml:space="preserve">
+    <value>End Cannot be Zero</value>
+  </data>
+  <data name="ErrExceededVolume" xml:space="preserve">
+    <value>Volume exceeded truck capacity</value>
+  </data>
+  <data name="ErrExceededWeight" xml:space="preserve">
+    <value>Weight exceeded truck capacity</value>
+  </data>
+  <data name="ErrGrossCBMExceedMaxCBM" xml:space="preserve">
+    <value>Gross CBM cannot exceed Max CBM</value>
+  </data>
+  <data name="ErrGrossWeightAndGrossCBMisZero" xml:space="preserve">
+    <value>Gross weight and gross cbm must not be zero</value>
+  </data>
+  <data name="ErrGrossWeightExceedMax" xml:space="preserve">
+    <value>Gross Weight cannot exceed Max Weight </value>
+  </data>
+  <data name="ErrGstAmountHCNotCorrect" xml:space="preserve">
+    <value>Gst Amount HC is not correct </value>
+  </data>
+  <data name="ErrInvalidIsSectorOrIsStopDependent" xml:space="preserve">
+    <value>This charge is not sector or stop dependent</value>
+  </data>
+  <data name="ErrIsLumpSumBlank" xml:space="preserve">
+    <value>Is Lump Sum Cannot be Blank</value>
+  </data>
+  <data name="ErrJobNoPrefix" xml:space="preserve">
+    <value>Job No Prefix only allowed 2 characters</value>
+  </data>
+  <data name="ErrJobTripCannotEdit" xml:space="preserve">
+    <value>The status of this job trip is assigned and complete. You should not change this job trip if planning is being carried out at the same time. Date, time and stop fields cannot be changed</value>
+  </data>
+  <data name="ErrJobTripCantBeRepeatable" xml:space="preserve">
+    <value>Job Trip Status cant be Repeatable</value>
+  </data>
+  <data name="ErrJobTripDateStopCannotEdit" xml:space="preserve">
+    <value>Job Trip Date and Stop cannot be changed if status is Complete or Assigned</value>
+  </data>
+  <data name="ErrJobTripMustBeAssignedOrCompleted" xml:space="preserve">
+    <value>Job Trip must be either Assigned or Completed</value>
+  </data>
+  <data name="ErrJobTripMustBeBooked" xml:space="preserve">
+    <value>Job Trip Status must be Booked</value>
+  </data>
+  <data name="ErrJobTripMustBeCompleted" xml:space="preserve">
+    <value>Job Trip must be Completed</value>
+  </data>
+  <data name="ErrJobTripMustBeReadyOrAssigned" xml:space="preserve">
+    <value>Job Trip must be either Ready or Assigned</value>
+  </data>
+  <data name="ErrJobTripStateCannotEdit" xml:space="preserve">
+    <value>Cannot change TripState in Edit Mode</value>
+  </data>
+  <data name="ErrLicence" xml:space="preserve">
+    <value>Driving Licence Cannot be Blank</value>
+  </data>
+  <data name="ErrLumpSumRateLessThanZero" xml:space="preserve">
+    <value>Rate Value Must be More Than Zero if It is not Lump Sum</value>
+  </data>
+  <data name="ErrLumpSumValueBlank" xml:space="preserve">
+    <value>Lump Sum Value Cannot be Blank</value>
+  </data>
+  <data name="ErrLumpSumValueLessThanZero" xml:space="preserve">
+    <value>Lump Sum Value Must be More Than Zero if It is Lump Sum</value>
+  </data>
+  <data name="ErrMaxLadenWeightLessThanZero" xml:space="preserve">
+    <value>Max Laden Weight cannot less than 0</value>
+  </data>
+  <data name="ErrMinimumBlank" xml:space="preserve">
+    <value>Minimum Value Cannot be Blank</value>
+  </data>
+  <data name="ErrMinimumLessThanZero" xml:space="preserve">
+    <value>Minimum Value Cannot Less Than Zero</value>
+  </data>
+  <data name="ErrMissingBranchCode" xml:space="preserve">
+    <value>Branch code is mandatory field, cannot be blank</value>
+  </data>
+  <data name="ErrMissingChargeCode" xml:space="preserve">
+    <value>Please Key In Charge Code</value>
+  </data>
+  <data name="ErrMissingChargeDesc" xml:space="preserve">
+    <value>Charge Description cannot be blank</value>
+  </data>
+  <data name="ErrMissingConsigneeAddress" xml:space="preserve">
+    <value>Consignee Address cannot be blank</value>
+  </data>
+  <data name="ErrMissingConsigneeCode" xml:space="preserve">
+    <value>Consignee Code must not be blank</value>
+  </data>
+  <data name="ErrMissingConsigneeName" xml:space="preserve">
+    <value>Consignee Name cannot be blank</value>
+  </data>
+  <data name="ErrMissingContainerNo" xml:space="preserve">
+    <value>Container No cannot be blank</value>
+  </data>
+  <data name="ErrMissingCurrency" xml:space="preserve">
+    <value>Currency Code cannot be blank</value>
+  </data>
+  <data name="ErrMissingCustomer" xml:space="preserve">
+    <value>Customer code cannot be blank</value>
+  </data>
+  <data name="ErrMissingShipperCode" xml:space="preserve">
+    <value>Shipper Code must not be blank</value>
+  </data>
+  <data name="ErrMissingShipperName" xml:space="preserve">
+    <value>Shipper Name cannot be blank</value>
+  </data>
+  <data name="ErrMissingUnitRateFC" xml:space="preserve">
+    <value>Unit Rate FC cannot be zero</value>
+  </data>
+  <data name="ErrMoreThan1Setting" xml:space="preserve">
+    <value>Can allow 1 setting only</value>
+  </data>
+  <data name="ErrMustHaveAtLeast1TripDetail" xml:space="preserve">
+    <value>Must have at least 1 truck job trip detail</value>
+  </data>
+  <data name="ErrName" xml:space="preserve">
+    <value>Driver Name Cannot be Blank</value>
+  </data>
+  <data name="ErrNextSubtripNotFound" xml:space="preserve">
+    <value>There is no next plan subtrip in this day</value>
+  </data>
+  <data name="ErrNoChargeFound" xml:space="preserve">
+    <value>No corresponding charge for truck trip no </value>
+  </data>
+  <data name="ErrNoDriver" xml:space="preserve">
+    <value>Please assign driver first before proceed</value>
+  </data>
+  <data name="ErrNoJobTrip" xml:space="preserve">
+    <value>No corresponding job trip for this charge code</value>
+  </data>
+  <data name="ErrNoPriceBreak" xml:space="preserve">
+    <value>Please Enter Price Break</value>
+  </data>
+  <data name="ErrNoTMCCharge" xml:space="preserve">
+    <value>Please add truck movement charge</value>
+  </data>
+  <data name="ErrNoTrailer" xml:space="preserve">
+    <value>Please enter trailer number</value>
+  </data>
+  <data name="ErrNoUOM" xml:space="preserve">
+    <value>Please fill in UOM for the charges</value>
+  </data>
+  <data name="ErroFailedToChangeDriver" xml:space="preserve">
+    <value>Failed to change driver, because some of the plan jobs are completed</value>
+  </data>
+  <data name="ErrPaymentTermsBlank" xml:space="preserve">
+    <value>Payment Terms Cannot be blank</value>
+  </data>
+  <data name="ErrPriceBreakMustBeOne" xml:space="preserve">
+    <value>Please enter only 1 Price Break for rate type "S"</value>
+  </data>
+  <data name="ErrPriceBreakNotValid" xml:space="preserve">
+    <value>Price Break Properties is Not Valid</value>
+  </data>
+  <data name="ErrQtyExceedPriceBreaks" xml:space="preserve">
+    <value>The quantity exceeds the limits set by price breaks</value>
+  </data>
+  <data name="ErrQtyZero" xml:space="preserve">
+    <value>Quantity cannot be zero</value>
+  </data>
+  <data name="ErrQuotationDateBlank" xml:space="preserve">
+    <value>Quotation Date Cannot be Blank</value>
+  </data>
+  <data name="ErrQuotationIDBlank" xml:space="preserve">
+    <value>Quotation ID Cannot be Blank</value>
+  </data>
+  <data name="ErrQuotationNoBlank" xml:space="preserve">
+    <value>Quotation No Cannot be Blank</value>
+  </data>
+  <data name="ErrQuotationTypeBlank" xml:space="preserve">
+    <value>Quotation Type Cannot be Blank</value>
+  </data>
+  <data name="ErrQuotationTypeInvalid" xml:space="preserve">
+    <value>QuotationType must be "S" or "R"</value>
+  </data>
+  <data name="ErrRateBlank" xml:space="preserve">
+    <value>Rate Cannot be Blank</value>
+  </data>
+  <data name="ErrSalesmanBlank" xml:space="preserve">
+    <value>Salesman Cannot be Blank</value>
+  </data>
+  <data name="ErrSameSector" xml:space="preserve">
+    <value>Start sector and end sector cannot be the same</value>
+  </data>
+  <data name="ErrSameStop" xml:space="preserve">
+    <value>Start stop and end stop cannot be the same</value>
+  </data>
+  <data name="ErrSectorBlank" xml:space="preserve">
+    <value>Sector cannnot be blank</value>
+  </data>
+  <data name="ErrSequenceNoCannotEdit" xml:space="preserve">
+    <value>Cannot change Sequence No. in Edit Mode</value>
+  </data>
+  <data name="ErrStartBlank" xml:space="preserve">
+    <value>Start Cannot be Blank</value>
+  </data>
+  <data name="ErrStartDatenEndDate" xml:space="preserve">
+    <value>Start Time must be before or same as End Date</value>
+  </data>
+  <data name="ErrStartMoreThanEnd" xml:space="preserve">
+    <value>Start Must be Less Than End</value>
+  </data>
+  <data name="ErrStartStopnEndStop" xml:space="preserve">
+    <value>Start and End Stop cannot be the same</value>
+  </data>
+  <data name="ErrStartStopNotSame" xml:space="preserve">
+    <value>Start stop of the plan truck sub trip is not the same with the job trip</value>
+  </data>
+  <data name="ErrStartTimeBlank" xml:space="preserve">
+    <value>Please key in start time</value>
+  </data>
+  <data name="ErrStartTimeEndTimeOverlapWithOthers" xml:space="preserve">
+    <value>Start time or end time overlap with other trip</value>
+  </data>
+  <data name="ErrStartTimenEndTime" xml:space="preserve">
+    <value>Start Time must be before End Time</value>
+  </data>
+  <data name="ErrStartTimenEndTimeBlank" xml:space="preserve">
+    <value>Start Time and End Time cannot be blank</value>
+  </data>
+  <data name="ErrStartZero" xml:space="preserve">
+    <value>Start Cannot be Zero</value>
+  </data>
+  <data name="ErrStopBlank" xml:space="preserve">
+    <value>Stop cannot be blank</value>
+  </data>
+  <data name="ErrSubContractorBlank" xml:space="preserve">
+    <value>Sub Contractor cannot be blank</value>
+  </data>
+  <data name="ErrTareWeightLessThanZero" xml:space="preserve">
+    <value>Tare Weight cannot less than 0</value>
+  </data>
+  <data name="ErrTareWeightMoreThanMaxLadenWeight" xml:space="preserve">
+    <value>Tare Weight cannot exceed Max Laden Weight</value>
+  </data>
+  <data name="ErrTotalAmountFCNotCorrect" xml:space="preserve">
+    <value>TotalAmountFC is not correct</value>
+  </data>
+  <data name="ErrTotalWeightOrVolZero" xml:space="preserve">
+    <value>Weight and volume cannot be zero, must key in either one or both</value>
+  </data>
+  <data name="ErrTrailerAssignedForNextSubTrip" xml:space="preserve">
+    <value>Trailer for next sub trip already assigned</value>
+  </data>
+  <data name="ErrTrailerOtherOverlapping" xml:space="preserve">
+    <value>Trailer assigned to other place is overlapping with others</value>
+  </data>
+  <data name="ErrTrailerOverlapping" xml:space="preserve">
+    <value>Trailer overlapping with others</value>
+  </data>
+  <data name="ErrTrailerTypeBlank" xml:space="preserve">
+    <value>Trailer Type cannot be blank</value>
+  </data>
+  <data name="ErrTruckJobTripPlansNotCompleted" xml:space="preserve">
+    <value>Not all truck job trip plans have been completed</value>
+  </data>
+  <data name="ErrUOMBlank" xml:space="preserve">
+    <value>UOM Cannot be Blank</value>
+  </data>
+  <data name="ErrValidFromBlank" xml:space="preserve">
+    <value>Valid From Cannot be Blank</value>
+  </data>
+  <data name="ErrValidFromLaterTanValidTo" xml:space="preserve">
+    <value>Valid From Must be Earlier than Valid To</value>
+  </data>
+  <data name="ErrValidToBlank" xml:space="preserve">
+    <value>Valid To Cannot be Blank</value>
+  </data>
+  <data name="ErrValidToLaterTanOldValidTo" xml:space="preserve">
+    <value>Cannot Assign Valid To Earlier Than Previous One</value>
+  </data>
+  <data name="ErrVehicleUsedInPlanning" xml:space="preserve">
+    <value>Cant delete this trailer since its used in planning</value>
+  </data>
+  <data name="ErrVehicleUsedInsideDriver" xml:space="preserve">
+    <value>Cant delete this vehicle since there is a driver uses this vehicle</value>
+  </data>
+  <data name="ErrVehicleUsedInTrailerLocation" xml:space="preserve">
+    <value>Cant delete this trailer since its used in Trailer Location</value>
+  </data>
+  <data name="ErrVolCapacityisZero" xml:space="preserve">
+    <value>Please enter capacity</value>
+  </data>
+  <data name="ErrWeight" xml:space="preserve">
+    <value>Weight is more than the job trip</value>
+  </data>
+  <data name="ErrZeroWtVol" xml:space="preserve">
+    <value>Charge based on {0}, please enter {1} for this job trip</value>
+  </data>
+  <data name="ErrorCannotDeleteGroupUsedByCustomer" xml:space="preserve">
+    <value>The customerGroup cannot be deleted as an existing customer uses it</value>
+  </data>
+  <data name="ErrorCannotDeleteGroupUsedInQuotation" xml:space="preserve">
+    <value>Customer Group cannot be deleted as already used in Quotation</value>
+  </data>
+  <data name="ErrorContainerCodeBlank" xml:space="preserve">
+    <value>Container Code cannot be blank</value>
+  </data>
+  <data name="ErrorCustomerGroupCodeBlank" xml:space="preserve">
+    <value>Customer Group Code Cannot be Blank</value>
+  </data>
+  <data name="ErrorCustomerGroupNameBlank" xml:space="preserve">
+    <value>Customer Group Name Cannot be Blank</value>
+  </data>
+  <data name="ErrorCustVendBlank" xml:space="preserve">
+    <value>Customer Vendor Type Cannot be Blank</value>
+  </data>
+  <data name="ErrorExistingJobWithCustomerGroup" xml:space="preserve">
+    <value>Cannot change customer group code as there are existing jobs using the code</value>
+  </data>
+  <data name="ErrorIsOverweight" xml:space="preserve">
+    <value>Is Overweight must be false </value>
+  </data>
+  <data name="ErrorMissingBranch" xml:space="preserve">
+    <value>Branch cannot be blank</value>
+  </data>
+  <data name="ErrorMissingCustVendorType" xml:space="preserve">
+    <value>Customer Vendor Type cannot be blank</value>
+  </data>
+  <data name="ErrorMissingSalesAccntCode" xml:space="preserve">
+    <value>Sales Account Code cannot be blank</value>
+  </data>
+  <data name="ErrorMissingUOM" xml:space="preserve">
+    <value>UOM cannot be blank</value>
+  </data>
+  <data name="ErrNotNumeric" xml:space="preserve">
+    <value>Please enter the correct numeric value.</value>
+  </data>
+  <data name="ErrDeptCodeEmpty" xml:space="preserve">
+    <value>Department Code Cannot be Empty</value>
+  </data>
+  <data name="ErrDeptCodeExist" xml:space="preserve">
+    <value>Department Code already exist</value>
+  </data>
+  <data name="ErrDeptDelete" xml:space="preserve">
+    <value>Department cannot be deleted, some transactions exist.</value>
+  </data>
+  <data name="ErrDeptEdit" xml:space="preserve">
+    <value>Department cannot be change, some transactions exist.</value>
+  </data>
+  <data name="ErrDeptNameEmpty" xml:space="preserve">
+    <value>Department Name cannot be Empty</value>
+  </data>
+  <data name="ErrDeptTypeEmpty" xml:space="preserve">
+    <value>Department Type cannot be Empty</value>
+  </data>
+  <data name="ErrDeptTypeorEdit" xml:space="preserve">
+    <value>Department Type cannot be change, some transactions exist.</value>
+  </data>
+  <data name="ErrDriverCode" xml:space="preserve">
+    <value>Driver Code Cannot be Blank</value>
+  </data>
+  <data name="ErrDriverLicence" xml:space="preserve">
+    <value>Driving Licence Cannot be Blank</value>
+  </data>
+  <data name="ErrDriverName" xml:space="preserve">
+    <value>Driver Name Cannot be Blank</value>
+  </data>
+  <data name="ErrDrivingClass" xml:space="preserve">
+    <value>Driving Class Cannot be Blank</value>
+  </data>
+  <data name="ErrorBookingNoPrefix" xml:space="preserve">
+    <value>Booking No Prefix only allowed 2 characters</value>
+  </data>
+  <data name="ErrorJobNoPrefix" xml:space="preserve">
+    <value>Job No Prefix only allowed 2 characters</value>
+  </data>
+  <data name="ErrDefaultVehicleExist" xml:space="preserve">
+    <value>Please choose other default vehicle</value>
+  </data>
+  <data name="ErrDriveCodeExist" xml:space="preserve">
+    <value>Driver code exist</value>
+  </data>
+  <data name="ErrDriverExistAtSched" xml:space="preserve">
+    <value>Driver still exist at schedule</value>
+  </data>
+  <data name="ErrDriverNoDefaultVehicle" xml:space="preserve">
+    <value>Please choose default vehicle for this driver. </value>
+  </data>
+  <data name="ErrInvalidPeriod" xml:space="preserve">
+    <value>Period Not Valid</value>
+  </data>
+  <data name="ErrInvalidValidFromValue" xml:space="preserve">
+    <value>Valid From must be earlier than Valid To</value>
+  </data>
+  <data name="ErrEmptyVehicleID" xml:space="preserve">
+    <value>Vehicle ID should not be empty </value>
+  </data>
+  <data name="ErrCanSetOnlyToAssignOrComplete" xml:space="preserve">
+    <value>Can set only to Assigned or Complete</value>
+  </data>
+  <data name="ErrCanSetOnlyToBooked" xml:space="preserve">
+    <value>Can Set only to Booked</value>
+  </data>
+  <data name="ErrCanSetOnlyToComplete" xml:space="preserve">
+    <value>Can Set Only to Complete</value>
+  </data>
+  <data name="ErrCanSetOnlyToReady" xml:space="preserve">
+    <value>Can Set only to Ready</value>
+  </data>
+  <data name="ErrCantSetStatusToCompleteIfCurrentStatusNotAssigned" xml:space="preserve">
+    <value>Failed to set job trip status to completed, because current status is not assigned</value>
+  </data>
+  <data name="ErrMissingShipperAddress" xml:space="preserve">
+    <value>Shipper Address cannot be blank</value>
+  </data>
+  <data name="ErrOwnTransCanSetBookedOrReady" xml:space="preserve">
+    <value>For own transport, can only set from booked to ready or ready to booked. You can change this job status in Planning.</value>
+  </data>
+  <data name="ErrTotalVolumeNotFullyAllocated" xml:space="preserve">
+    <value>Volume is not fully Allocated</value>
+  </data>
+  <data name="ErrTotalWeightNotFullyAllocated" xml:space="preserve">
+    <value>Weight is not fully Allocated</value>
+  </data>
+  <data name="ErrCantEditInvoicedCharge" xml:space="preserve">
+    <value>Cant Edit Invoiced Charge</value>
+  </data>
+  <data name="ErrEmptyQtyAndRateUnit" xml:space="preserve">
+    <value>Please key in numbers for Quantity and Unit Rate</value>
+  </data>
+  <data name="ErrCantDeleteDriverInUsed" xml:space="preserve">
+    <value>Failed to delete because driver is currently used. </value>
+  </data>
+  <data name="ErrCantChangeTrailerStatusToAssigned" xml:space="preserve">
+    <value>Can only set to Assigned when the latest status is TrialerPark or CompleteStuffOrUnstuff.</value>
+  </data>
+  <data name="ErrCantAddTrailerLocationTimeOverlapped" xml:space="preserve">
+    <value>Can't add Trailer Location because time is overlapped with other schedule. </value>
+  </data>
+  <data name="ErrEndTimeEarlierThanStartTime" xml:space="preserve">
+    <value>End time must be greater than or after start time. </value>
+  </data>
+  <data name="ErrTimeIsOverLapped" xml:space="preserve">
+    <value>Time is overlapped with another schedule. </value>
+  </data>
+  <data name="ErrCantChangeTrailerStatusToCompleteStuffUnstuff" xml:space="preserve">
+    <value>Can only set to CompleteStuffOrUnstuff when the latest status is CustomerStuff/CustomerUnstuff. </value>
+  </data>
+  <data name="ErrCantChangeTrailerStatusToStuffUnstuffTraialerPark" xml:space="preserve">
+    <value>Can only set to CompleteTrailerTrip  when the latest status is Assigned. </value>
+  </data>
+  <data name="ErrCantChangeDriverBecauseDifferentEndStop" xml:space="preserve">
+    <value>Failed to changed driver, plan sub trip and truck job has different end stop</value>
+  </data>
+  <data name="ErrCantChangeDriverBecauseDifferentStartStop" xml:space="preserve">
+    <value>Failed to changed driver, plan sub trip and truck job has different start stop </value>
+  </data>
+  <data name="ErrCantChangeDriverBecauseItIsCompleted" xml:space="preserve">
+    <value>Failed to changed driver, trip already completed</value>
+  </data>
+  <data name="ErrNotAllJobsCompleted" xml:space="preserve">
+    <value>Failed to set to completed, all trip jobs must be completed or at least has 1 job </value>
+  </data>
+  <data name="ErrorApplyToEmpty" xml:space="preserve">
+    <value>Apply to cannot be empty </value>
+  </data>
+  <data name="ErrorApplyToExceed" xml:space="preserve">
+    <value>Apply to cannot more than 18 characters</value>
+  </data>
+  <data name="ErrorBankAccountCodeEmpty" xml:space="preserve">
+    <value>Bank account code cannot be empty</value>
+  </data>
+  <data name="ErrorBankAccountCodeExceed" xml:space="preserve">
+    <value>Bank account code cannot more than 16 characters</value>
+  </data>
+  <data name="ErrorBranchCodeEmpty" xml:space="preserve">
+    <value>Branch code cannot be empty </value>
+  </data>
+  <data name="ErrorBranchCodeExceed" xml:space="preserve">
+    <value>Branch code cannot more than 16 characters</value>
+  </data>
+  <data name="ErrorChequeNoEmpty" xml:space="preserve">
+    <value>Cheque no cannot be empty</value>
+  </data>
+  <data name="ErrorChequeNoExceed" xml:space="preserve">
+    <value>Cheque no cannot more 26 characters</value>
+  </data>
+  <data name="ErrorCostCurrencyCodeEmpty" xml:space="preserve">
+    <value>Cost currency code cannot be empty</value>
+  </data>
+  <data name="ErrorCostCurrencyCodeExceed" xml:space="preserve">
+    <value>Cost currency code cannot more than 6 characters</value>
+  </data>
+  <data name="ErrorCostCurrencyRateEmpty" xml:space="preserve">
+    <value>Cost currency rate cannot be empty</value>
+  </data>
+  <data name="ErrorCostCurrencyRateMustPositiveNumber" xml:space="preserve">
+    <value>Cost currency rate must in positive number </value>
+  </data>
+  <data name="ErrorCurrCodeEmpty" xml:space="preserve">
+    <value>Currency code cannot be empty</value>
+  </data>
+  <data name="ErrorCurrCodeExceed" xml:space="preserve">
+    <value>Currency code cannot more than 6 characters</value>
+  </data>
+  <data name="ErrorCurrRateEmpty" xml:space="preserve">
+    <value>Currency rate cannot be empty</value>
+  </data>
+  <data name="ErrorCurrRateMustPositiveNumber" xml:space="preserve">
+    <value>Currency rate must in positive empty</value>
+  </data>
+  <data name="ErrorCustomerCodeEmpty" xml:space="preserve">
+    <value>Customer code cannot be empty </value>
+  </data>
+  <data name="ErrorCustomerCodeExceed" xml:space="preserve">
+    <value>Customer code cannot more than 12 characters</value>
+  </data>
+  <data name="ErrorCustomerNameEmpty" xml:space="preserve">
+    <value>Customer name cannot be empty</value>
+  </data>
+  <data name="ErrorCustomerNameExceed" xml:space="preserve">
+    <value>Customer name cannot more than 50 characters</value>
+  </data>
+  <data name="ErrorDescriptionEmpty" xml:space="preserve">
+    <value>Description cannot be empty</value>
+  </data>
+  <data name="ErrorEstimatedCostAmountEmpty" xml:space="preserve">
+    <value>Estimated cost amount cannot be empty</value>
+  </data>
+  <data name="ErrorExchangeRateEmpty" xml:space="preserve">
+    <value>Exchange rate cannot be empty</value>
+  </data>
+  <data name="ErrorExchangeRateExceed" xml:space="preserve">
+    <value>Exchange rate cannot more than 6 characters</value>
+  </data>
+  <data name="ErrorItemCodeEmpty" xml:space="preserve">
+    <value>Item code cannot be empty</value>
+  </data>
+  <data name="ErrorItemCodeExceed" xml:space="preserve">
+    <value>Item code cannot more than 16 characters</value>
+  </data>
+  <data name="ErrorJobNoEmpty" xml:space="preserve">
+    <value>Job no cannot be empty</value>
+  </data>
+  <data name="ErrorJobNoExceed" xml:space="preserve">
+    <value>Job no cannot more than 26 characters</value>
+  </data>
+  <data name="ErrorQuantityEmpty" xml:space="preserve">
+    <value>Quantity cannot be empty</value>
+  </data>
+  <data name="ErrorQuantityMustPositive" xml:space="preserve">
+    <value>Quantity must in positive number</value>
+  </data>
+  <data name="ErrorRateTypeEmpty" xml:space="preserve">
+    <value>Rate type cannot be empty</value>
+  </data>
+  <data name="ErrorRateTypeExceed" xml:space="preserve">
+    <value>Rate type cannot more than 1 characters</value>
+  </data>
+  <data name="ErrorTermsCodeEmpty" xml:space="preserve">
+    <value>Terms code cannot be empty </value>
+  </data>
+  <data name="ErrorTermsCodePositive" xml:space="preserve">
+    <value>Terms code must in positive number</value>
+  </data>
+  <data name="ErrorUnitRateEmpty" xml:space="preserve">
+    <value>Unit rate cannot be empty</value>
+  </data>
+  <data name="ErrorUnitRateMustPositive" xml:space="preserve">
+    <value>Unit rate must in positive number</value>
+  </data>
+  <data name="ErrorUOMEmpty" xml:space="preserve">
+    <value>UOM cannot be empty</value>
+  </data>
+  <data name="ErrorUOMExceed" xml:space="preserve">
+    <value>UOM cannot more than 4 characters</value>
+  </data>
+  <data name="ErrFailedToSetToCompleteDifferentEndStop" xml:space="preserve">
+    <value>Failed To Set To Complete Different End Stop </value>
+  </data>
+  <data name="ErrToChangeStatus" xml:space="preserve">
+    <value>You must set the new status if you want to change</value>
+  </data>
+  <data name="ErrNoInvoiceSelected" xml:space="preserve">
+    <value>No invoice selected. Please select or create invoice first </value>
+  </data>
+  <data name="ErrExceedVariance" xml:space="preserve">
+    <value>Exchange Rate exceeds Variance Range. </value>
+  </data>
+  <data name="ErrCustomerNotDefine" xml:space="preserve">
+    <value>Please define customer code. </value>
+  </data>
+  <data name="ErrCantDeletePostedTransaction" xml:space="preserve">
+    <value>Cannot delete POSTED transcation </value>
+  </data>
+  <data name="ErrCantEditPostedTransaction" xml:space="preserve">
+    <value>Cannot edit POSTED Transaction </value>
+  </data>
+  <data name="ErrEmptyBranchCode" xml:space="preserve">
+    <value>Branch Code cannot be empty </value>
+  </data>
+  <data name="ErrEmptyExchangeRate" xml:space="preserve">
+    <value>Exchange Rate cannot be empty </value>
+  </data>
+  <data name="ErrEmptyInvoiceType" xml:space="preserve">
+    <value>Invoice Type cannot be empty </value>
+  </data>
+  <data name="ErrInvalidChequeDate" xml:space="preserve">
+    <value>Please select cheque date </value>
+  </data>
+  <data name="ErrInvalidDueDate" xml:space="preserve">
+    <value>Due date must large than cheque date </value>
+  </data>
+  <data name="ErrNoCurrRateForInvDate" xml:space="preserve">
+    <value>Currency Rate was not yet set during this selected invoice date. </value>
+  </data>
+  <data name="ErrSelectOtherInvDate" xml:space="preserve">
+    <value>Please select another invoice date. </value>
+  </data>
+  <data name="ErrValidToOverlapped" xml:space="preserve">
+    <value>Customer Quotation validTo was overlapped with other Quotation Range. </value>
+  </data>
+  <data name="ErrCantAddDriverUsedInPlanning" xml:space="preserve">
+    <value>Can't Add this driver, it is already used in planning </value>
+  </data>
+  <data name="ErrCantAddTrailerUsedInPlanning" xml:space="preserve">
+    <value>Can't add this trailer, it is already used in planning </value>
+  </data>
+  <data name="ErrCantDeleteDriverusedInPlanning" xml:space="preserve">
+    <value>Can't delete this driver, it is already used in planning </value>
+  </data>
+  <data name="ErrCantDeleteTrailerUsedInPlanning" xml:space="preserve">
+    <value>Can't delete this trailer, it is already used in planning </value>
+  </data>
+  <data name="ErrDuplicateDateAndDeptPlan" xml:space="preserve">
+    <value>Duplicate - there is an existing reservation for the same date and department </value>
+  </data>
+  <data name="ErrStartTimeNotInScheduleDate" xml:space="preserve">
+    <value>You can only set start date time with in the schedule date. </value>
+  </data>
+  <data name="WarnCantChangeStartTime" xml:space="preserve">
+    <value>Start time cannot be change. </value>
+  </data>
+  <data name="WarnSetStartTime" xml:space="preserve">
+    <value>Start time must be set to  original plan trip schedule date.  </value>
+  </data>
+  <data name="WarnCantEditTransportRateWithJobs" xml:space="preserve">
+    <value>Cannot edit TransportRate, some jobs using this quotation.</value>
+  </data>
+  <data name="WarnItemCodeUOMnotMatch" xml:space="preserve">
+    <value>Item code and UOM were not match in the quotation, which has the following </value>
+  </data>
+  <data name="WarnProceedConfirmation" xml:space="preserve">
+    <value>Do you wish to proceed? </value>
+  </data>
+  <data name="WarnProceedYesNO" xml:space="preserve">
+    <value>If you wish to proceed please press 'YES' then you have to key in the unit rates or If you wish to use quotation please press 'NO'. </value>
+  </data>
+  <data name="WarnUOMSelection" xml:space="preserve">
+    <value>You can select available Rates for this quotation. </value>
+  </data>
+  <data name="ErrImportContainerNotAllowed" xml:space="preserve">
+    <value>Import is not allowed if there are existing job trips</value>
+  </data>
+  <data name="ErrNoCargoDetail" xml:space="preserve">
+    <value>No containers with this charge code in Cargo Details</value>
+  </data>
+  <data name="ErrNumberOfContainerNotMatchWithServicesRequired" xml:space="preserve">
+    <value>Number of containers not match with quantity specified in Services Required</value>
+  </data>
+  <data name="ErrMaxJobPerPlantrip" xml:space="preserve">
+    <value>Maximum 2 Haulier Job per PlanSubTrip</value>
+  </data>
+  <data name="ErrNoJobSelectedTobeSet" xml:space="preserve">
+    <value>No job selected to be set from Booked to Ready</value>
+  </data>
+  <data name="ErrNotSameLegType" xml:space="preserve">
+    <value>Leg Type Must be the same</value>
+  </data>
+  <data name="WarnSetJobStatus" xml:space="preserve">
+    <value>This option will set job status from Booked to Ready.</value>
+  </data>
+  <data name="WarnSetNewStatus" xml:space="preserve">
+    <value>You must set the new status if you want to change.</value>
+  </data>
+  <data name="WarnSettingBookedToReadySuccess" xml:space="preserve">
+    <value>Setting from Booked to Ready is Done</value>
+  </data>
+  <data name="ErrCantAddDupChargeCode" xml:space="preserve">
+    <value>Cannot insert duplicate charge code in the same BranchCode and Vendortype</value>
+  </data>
+  <data name="WarnNoTRMovChargeFound" xml:space="preserve">
+    <value>No TruckMovevent rate found in this quotation. Please modify your booking job and Change to 'No Quotation' instead.</value>
+  </data>
+  <data name="ErrCantChangeBookingDate" xml:space="preserve">
+    <value>Booking date must not be less than today. </value>
+  </data>
+  <data name="ErrCantChangeBookingDateCharges" xml:space="preserve">
+    <value>BookingDate cannot be change, some JobCharge exist, quotation might be affected. </value>
+  </data>
+  <data name="ErrCantChangeBookingDateJobTrips" xml:space="preserve">
+    <value>BookingDate cannot be change, some JobTrips exist, quotation might be affected. </value>
+  </data>
+  <data name="ErrCantEditBilledJob" xml:space="preserve">
+    <value>The job is already billed, you can't modified or edit. </value>
+  </data>
+  <data name="ErrCantEditPostedInv" xml:space="preserve">
+    <value>Cannot EDIT posted invoice.</value>
+  </data>
+  <data name="ErrCantAddJobTripAlreadyInPlanSubTrip" xml:space="preserve">
+    <value>Cannot add JobTrip, already in PlanTruckSubTrip. </value>
+  </data>
+  <data name="ErrCantSavePlanSubTripWithSameStop" xml:space="preserve">
+    <value>Can't add PlanSubTrip with the same startStop and endStop. </value>
+  </data>
+  <data name="ErrCantDeletePlanTripSomePlanSubTripExist" xml:space="preserve">
+    <value>Unable to delete PlanTruckTrip. Some existing PlanTruckSubTrip.</value>
+  </data>
+  <data name="ErrCantSavePlanWOjobtrip" xml:space="preserve">
+    <value>Unable to saved plan date schedule unless you have atleast 1 jobtrip assigned </value>
+  </data>
+  <data name="ErrDifferentStartStop" xml:space="preserve">
+    <value>Cannot modify with different Start Stop</value>
+  </data>
+  <data name="ErrNoChargeCreated" xml:space="preserve">
+    <value>No transport charge found for this customer type. Please create charge(s) first found in Charge tab.</value>
+  </data>
+  <data name="ErrNoCurrencyFound" xml:space="preserve">
+    <value>Please make sure that the customer have currency assigned or the currency has corresponding exchange rate</value>
+  </data>
+  <data name="ErrEmptyStop" xml:space="preserve">
+    <value> stop cannot be empty. </value>
+  </data>
+  <data name="WarnCantAssignTrailerFor2ndLeg" xml:space="preserve">
+    <value>Can't assign trailer for 2nd leg, you must assign first leg first.</value>
+  </data>
+  <data name="ErrSecondLegEarlierThanFirstLeg" xml:space="preserve">
+    <value>Secondleg must assign after firstleg. </value>
+  </data>
+  <data name="ErrPreviousLegMustEarlier" xml:space="preserve">
+    <value>Job trip cannot be assigned earlier than the previous leg based on container number. </value>
+  </data>
+  <data name="ErrConfirmNotAvailableInPlan" xml:space="preserve">
+    <value> in the plan are not available, Do you wish to change?</value>
+  </data>
+  <data name="ErrFirstTripMust20FtCont" xml:space="preserve">
+    <value>Trips must use 20' Container </value>
+  </data>
+  <data name="ErrMoreThan1instance" xml:space="preserve">
+    <value>Only one instance of this application can be started</value>
+  </data>
+  <data name="ErrStartApplicationInMainMenu" xml:space="preserve">
+    <value>Please start this application from Freight Master Menu</value>
+  </data>
+  <data name="Warn2ndLegStart" xml:space="preserve">
+    <value>Second leg start at </value>
+  </data>
+  <data name="WarnFirstLegStart" xml:space="preserve">
+    <value>First leg start at </value>
+  </data>
+  <data name="WarnPreviousLegStart" xml:space="preserve">
+    <value>Previous leg start at </value>
+  </data>
+  <data name="ErrCantEditJobPostedInv" xml:space="preserve">
+    <value>Cannot edit job some invoice already posted. </value>
+  </data>
+  <data name="ErrDifferentContainerNo" xml:space="preserve">
+    <value>For multiple leg type, Container number must be the same with previous leg.</value>
+  </data>
+  <data name="ErrNotCompletedJobTrips" xml:space="preserve">
+    <value>The following job trips seq no: '{0}' are not yet completed. Hence this job cannot be set to complete status. </value>
+  </data>
+  <data name="WarnSetJobToComplete" xml:space="preserve">
+    <value>Closing this job means that no further changes can be made to Haulier Job Trips and Charges. </value>
+  </data>
+  <data name="ErrCantEditCompletedJob" xml:space="preserve">
+    <value>Can't edit completed job. </value>
+  </data>
+  <data name="ErrAirJobAlreadyConverted" xml:space="preserve">
+    <value>Air job number {0} has been converted to Truck job number {1}</value>
+  </data>
+  <data name="ErrAirJobNoEmpty" xml:space="preserve">
+    <value>Please input air job number.</value>
+  </data>
+  <data name="ErrAirJobNoNotExist" xml:space="preserve">
+    <value>The job number does not exist in Air freight job list.</value>
+  </data>
+  <data name="WarnAirJobNoQuotation" xml:space="preserve">
+    <value>This customer does not have a valid quotation. This truck job will be set to 'No Quotation'.</value>
+  </data>
+  <data name="WarnAirJobRateCBM_MT" xml:space="preserve">
+    <value>AirJobRate JobNo('{0}') , SeqNo('{1}') has no dimension details and 0 grossweight. This job cannot be converted into truck job trip.</value>
+  </data>
+  <data name="WarnNoAirJobRateDelivery" xml:space="preserve">
+    <value>AirJobRate JobNo('{0}') , SeqNo('{1}' has no delivery address. This job cannot be converted into truck job trip.</value>
+  </data>
+  <data name="WarnNoAirJobRatePickup" xml:space="preserve">
+    <value>AirJobRate JobNo('{0}') , SeqNo('{1}' has no pickup address. This job cannot be converted into truck job trip.</value>
+  </data>
+  <data name="WarnNoAirJobPickupAndDelivery" xml:space="preserve">
+    <value>AirJobRate JobNo('{0}') has no pickup and delivery addresses, This job cannot be converted into truck job trip.</value>
+  </data>
+  <data name="WarnNoAirJobRates" xml:space="preserve">
+    <value>There are no weight and rate data for this job, the program will not create any job trips. Do you wish to proceed?</value>
+  </data>
+  <data name="WarnNoAirJobDelivery" xml:space="preserve">
+    <value>AirJobRate JobNo('{0}') has no delivery address. This job cannot be converted into truck job trip.</value>
+  </data>
+  <data name="WarnNoAirJobPickup" xml:space="preserve">
+    <value>AirJobRate JobNo('{0}') has no pickup address. This job cannot be converted into truck job trip.</value>
+  </data>
+  <data name="WarnNoQuotationForUOM" xml:space="preserve">
+    <value>This customer does not have a quotation for truck movements for {0}. This truck job will be set to 'No Quotation'. </value>
+  </data>
+  <data name="ErrNoTruckMovChargeFound" xml:space="preserve">
+    <value>No truckmovement charge found for this customer type. Please create truckmovement charge(s) first found in Charge tab.</value>
+  </data>
+  <data name="ErrCantDeleteInUsedCharge" xml:space="preserve">
+    <value>Cannot delete charge because some transport rate(s) using it. </value>
+  </data>
+  <data name="WarnNoAvailableTrailerForDate" xml:space="preserve">
+    <value>No available trailer for the selected date. </value>
+  </data>
+  <data name="ErrDifferentSealNo" xml:space="preserve">
+    <value>For multiple leg type, Seal number must be the same with previous leg.</value>
+  </data>
+  <data name="ErrDoubleSealNo" xml:space="preserve">
+    <value>Seal No {0} cannot be the same with the other</value>
+  </data>
+  <data name="ErrCantEditNonFirstLegContNo" xml:space="preserve">
+    <value>Cannot edit container number for non-first leg trip</value>
+  </data>
+  <data name="ErrCantEditNonFirstLegSealNo" xml:space="preserve">
+    <value>Cannot edit seal number for non-first leg trip</value>
+  </data>
+  <data name="ErrCantChangeJobTypeJobChargeExist" xml:space="preserve">
+    <value>Job Type cannot be change, some Job Charge exist. </value>
+  </data>
+  <data name="ErrCantChangeJobTypeJobTripExist" xml:space="preserve">
+    <value>Job Type cannot be change, some JobTrip(s) exist. </value>
+  </data>
+  <data name="ErrCantChangeChargeTypeJobChargeExist" xml:space="preserve">
+    <value>TruckChargeType cannot be change, some JobCharge(s) exist, quotation might be affected.</value>
+  </data>
+  <data name="ErrCantChangeChargeTypeJobTripExist" xml:space="preserve">
+    <value>TruckChargeType cannot be change, some JobTrips exist, quotation might be affected.</value>
+  </data>
+  <data name="ErrCantChangeCustomerJobChargeExist" xml:space="preserve">
+    <value>Customer Code cannot be change, some JobCharge exist. </value>
+  </data>
+  <data name="ErrCantChangeCustomerJobTripExist" xml:space="preserve">
+    <value>Customer Code cannot be change, some JobTrips exist. </value>
+  </data>
+  <data name="WarnTruckMovementCharge" xml:space="preserve">
+    <value>Truck movement charge(s) must have at least 1 valid UOM. </value>
+  </data>
+  <data name="WarnValidUOMForJobTripDependentCharge" xml:space="preserve">
+    <value>If Invoice Amount for each job trip depends on weight or volume in that job trip only KGM, CBM or MT can be added.</value>
+  </data>
+  <data name="ErrCantSaveTruckMovementChargeWOValidUOM" xml:space="preserve">
+    <value>Can't save truck movement charge without valid UOM(s). Please add atleast 1 valid UOM. </value>
+  </data>
+  <data name="ErrEmptyUomType" xml:space="preserve">
+    <value>UOM type cannot be empty. </value>
+  </data>
+  <data name="ErrUOMExist" xml:space="preserve">
+    <value>UOM already exist. </value>
+  </data>
+  <data name="ErrPriceBreakEnd" xml:space="preserve">
+    <value>Pricebreak end must be greater than the previous previous pricebreak.</value>
+  </data>
+  <data name="ErrTrailerIsAssignedToOtherJob" xml:space="preserve">
+    <value>Trailer ({0}) is currently assigned to {1} container('{2}') from {3} - {4}, {5}, {6}. You can only use this trailer after completion of the assigned job and set status to 'Trailer Park'. </value>
+  </data>
+  <data name="ErrEmptyConsigneeCode" xml:space="preserve">
+    <value>Consignee code cannot be empty.  </value>
+  </data>
+  <data name="ErrEmptyShipperCode" xml:space="preserve">
+    <value>Shipper code cannot be empty.  </value>
+  </data>
+  <data name="ErrEmptyTransportCode" xml:space="preserve">
+    <value>Transport code cannot be empty. </value>
+  </data>
+  <data name="ErrCantREmoveAllUomWhenEdit" xml:space="preserve">
+    <value>Cannot remove all valid uom for edit mode. </value>
+  </data>
+  <data name="ErrNoJobTripDetail" xml:space="preserve">
+    <value>Job trip billing quantity will depends on detail(s), then you must key in atleast 1 job trip detail.</value>
+  </data>
+  <data name="ErrNoOfLicenseExceed" xml:space="preserve">
+    <value>Sorry! you have exceed the number of license. Please contact support@innosys.com.sg to acquire additional vehicle license.</value>
+  </data>
+  <data name="ErrNoValidLicense" xml:space="preserve">
+    <value>Sorry! you have no valid license. Please contact support@innosys.com.sg to acquire vehicle license.</value>
+  </data>
+  <data name="WarnUpdateCargoWt" xml:space="preserve">
+    <value>Do you want to update cargo and total weight fron preious leg? </value>
+  </data>
+  <data name="WarnTotalCargoWtExceedTrailer" xml:space="preserve">
+    <value>Total cargo weight exceed the trailer capacity. Do you want to proceed?</value>
+  </data>
+  <data name="ErrNoContainerForQuotation" xml:space="preserve">
+    <value>The quotation for this customer does not have a valid transport rate to add this trip.</value>
+  </data>
+  <data name="ErrContainerCodeBlank" xml:space="preserve">
+    <value>Container code cannot be blank or empty. </value>
+  </data>
+  <data name="ErrCantDeleteJobTripNotBooked" xml:space="preserve">
+    <value>Can only delete job trip which status is Booked.</value>
+  </data>
+  <data name="WarnSetLegTypeContAndSealNo" xml:space="preserve">
+    <value>There are other trip(s) related to this trip with the same container number. If you delete this, all trip with the same container number will be set to single leg and their container and seal numbers will be set to blank.</value>
+  </data>
+  <data name="ErrDifferentContOrSealNo" xml:space="preserve">
+    <value>For multiple leg type, container and seal number must be the same with previous leg. </value>
+  </data>
+  <data name="ErrCantAddSubConAlreadyInPlan" xml:space="preserve">
+    <value>Cannot add SubContructor because the jobtrip is already a plan.</value>
+  </data>
+  <data name="ErrCantAddSubConStatusNotReady" xml:space="preserve">
+    <value>SubContructor cannot be added because the status is not READY. </value>
+  </data>
+  <data name="ErrNoChargeForQuotation" xml:space="preserve">
+    <value>There is no charges for this quotation. Please  enter charge quotation first.</value>
+  </data>
+  <data name="WarnPreviousSubConWillChange" xml:space="preserve">
+    <value>Previous subcontractor will be overriden. </value>
+  </data>
+  <data name="WarnAssignToSubCon" xml:space="preserve">
+    <value>Assigning to sub contractor means the job trip will not be shown or disabled in planning. </value>
+  </data>
+  <data name="ErrDriversVehicleIsNotAvailable" xml:space="preserve">
+    <value>Driver's default vehicle is not available, please set available vehicle to this driver. Go to Booking module then Setup &gt; Driver. </value>
+  </data>
+  <data name="WarnSetSubConToBlank" xml:space="preserve">
+    <value>No sub contractor was selected. This means that the subcontractor code in this job trip will be set to blank with your selected status(either Booked or Ready). </value>
+  </data>
+  <data name="ErrNotBookedOrReadyInBlankSubCon" xml:space="preserve">
+    <value>Setting sub contractor to blank, the status must be Booked or Ready. </value>
+  </data>
+  <data name="ErrVehicleCountExceedAllowedLicense" xml:space="preserve">
+    <value>Current number of vehicles exceeds the allowed number of license. Please contact innosys staff to acquire new license. </value>
+  </data>
+  <data name="WarnSetupDriver" xml:space="preserve">
+    <value>Go to Booking module then Setup &gt; Driver. </value>
+  </data>
+  <data name="NoDataIsDeletedAsExpected" xml:space="preserve">
+    <value>Data is expected to be deleted here, but actually no data is going to be deleted, please check database.</value>
+  </data>
+  <data name="CannotChangeSubConAtJobLevelWhenSubConByJobAndSomeJobTripsAssigned" xml:space="preserve">
+    <value>Cannot change the sub-contractor when the job is sub-contracted wholy and some job trips are already assigned.</value>
+  </data>
+  <data name="ErrSetSubconTripNotAssignedStatus" xml:space="preserve">
+    <value>The job trip was being assigned to a subcon the status must be ASSIGNED. </value>
+  </data>
+  <data name="ErrCantAssigToSubNotTrailerPark" xml:space="preserve">
+    <value>Cannot assign to sub contractor because the trailer of the previous leg is not in trailer park.</value>
+  </data>
+  <data name="ErrMostSelect1Row" xml:space="preserve">
+    <value>Please 1 row you want to assign to a sub contractor. </value>
+  </data>
+  <data name="ErrMustSelect1RowToAssignSubcon" xml:space="preserve">
+    <value>Please 1 row you want to assign to a sub contractor.</value>
+  </data>
+  <data name="ErrLicenseExceedTotalVehicle" xml:space="preserve">
+    <value>Total available vehicles exceeded the available license(s). Currently available license is {0} while total available vehicle is {1}. Please contact innosys staff if you wish to acquire more license. Or you can manually select less drivers at Menu &gt; Select Drivers and Trailers</value>
+  </data>
+  <data name="ErrNoJobTripFound" xml:space="preserve">
+    <value>Please key in atleast 1 job trip. </value>
+  </data>
+  <data name="ErrCantDeleteUnavailableDateTimeEarlyThanToday" xml:space="preserve">
+    <value>You cannot delete record earler than today. </value>
+  </data>
+  <data name="ErrUnavailableDateTimeOverlapped" xml:space="preserve">
+    <value>Date/Time overlapped with other record.</value>
+  </data>
+  <data name="ErrUnavailableStartDateTimeLaterThanEndDateTim" xml:space="preserve">
+    <value>Start date/time must be early than end date/time. </value>
+  </data>
+  <data name="WarnUnavailableDateLessThanToday" xml:space="preserve">
+    <value>unvailable date is less than today. </value>
+  </data>
+  <data name="WarnHowtoAddEditUnavailableDates" xml:space="preserve">
+    <value>To add or modify driver unavailable date, select 1 row and press "Master tab". </value>
+  </data>
+  <data name="WarnCustHasNoQuotation" xml:space="preserve">
+    <value>This customer has no quotation. Hence you have to key in the price in invoices.</value>
+  </data>
+  <data name="ErrCantAddJobTripNotCompletedPreviousLeg" xml:space="preserve">
+    <value>This additional leg can be created and set to ready only if the previous leg is completed. </value>
+  </data>
+  <data name="ErrNoValid1LegRateUomForContainerCode" xml:space="preserve">
+    <value>No valid single leg transport rate uom for {0} container code. </value>
+  </data>
+  <data name="ErrPlanHaulierSubTripOverlapped" xml:space="preserve">
+    <value>PlanHaulierSubTrip Start/End Time overlapped. </value>
+  </data>
+  <data name="MsgJobTripDescFromPlanning" xml:space="preserve">
+    <value>Added from planning. </value>
+  </data>
+  <data name="ErrNoValidContainerNo" xml:space="preserve">
+    <value>No valid container number for the selected job. Please untick isMulti Leg or select another job. </value>
+  </data>
+  <data name="OKToAddNotBillable" xml:space="preserve">
+    <value>Press OK to add the trip as not billable, press Cancel to cancel the operation.</value>
+  </data>
+  <data name="ErrCantSetSubTripStatusFromCompletedToAssigned" xml:space="preserve">
+    <value>Cannot set this back to assign because the next leg is already complete. </value>
+  </data>
+  <data name="ErrNo1LegRate" xml:space="preserve">
+    <value>Error, the trip you're deleting is a trip of a 2-leg trips. Delete a leg from a 2-leg trips results the other leg to be a 1-leg trip, but there's no rates in quotation for a 1-leg trip. Please add a rate for 1-leg trip to the quotation first. Operation cancelled.</value>
+  </data>
+  <data name="WarnPlanDataNotSaved" xml:space="preserve">
+    <value>You have unsaved data. If you dont save, all data after last saved will be lost. Do you wish to exit without saving?</value>
+  </data>
+  <data name="ErrCantSetTransferOutForBillable" xml:space="preserve">
+    <value>Can't set to transferOut job because the job is billable. Please set job to not billable first.</value>
+  </data>
+  <data name="ErrNoSampleTripGenerated" xml:space="preserve">
+    <value>Please generate sample trips first by clicking OK button after selecting atleast 1 stop.</value>
+  </data>
+  <data name="ErrNoSelectedContainerToTransfer" xml:space="preserve">
+    <value>Please select containers to be transferred and where is the next stop. </value>
+  </data>
+  <data name="MsgContainersSucessfullyTransferred" xml:space="preserve">
+    <value>Selected container(s) were sucessfully transferred to a new Job.</value>
+  </data>
+  <data name="NoSuitableRate" xml:space="preserve">
+    <value>Make sure you have correspondent rates in the quotation for adding such trips.</value>
+  </data>
+  <data name="ErrNo1LegRateForSize" xml:space="preserve">
+    <value>No single trip rate for {0} container(s). </value>
+  </data>
+  <data name="ErrNo2LegRateForSize" xml:space="preserve">
+    <value>No round trip rate for {0} container(s). </value>
+  </data>
+  <data name="ErrNoValidRateForSize" xml:space="preserve">
+    <value>No valid rate for {0} container(s). </value>
+  </data>
+  <data name="ContainerNoNoInOutJob" xml:space="preserve">
+    <value>The Container NO(s).:{0} are
+(1) not in the transfer out job, or
+(2) container_size mismatched, or
+(3) already been transferred in. 
+Operation aborted.</value>
+  </data>
+  <data name="ErrSomeConNoNotFilled" xml:space="preserve">
+    <value>There are some containers whose number is not filled in so we cannot transfer in this job. Operation aborted.</value>
+  </data>
+  <data name="ErrPortEmpty" xml:space="preserve">
+    <value>The "Deliver To" field on Sea-Freight side, aka the Port field on this form cannot be blank. Operation aborted.</value>
+  </data>
+  <data name="ErrCantSetStatusTo" xml:space="preserve">
+    <value>Cannot set the status from {0} to {1}.</value>
+  </data>
+  <data name="ErrPreviousLegStatusIs" xml:space="preserve">
+    <value>The status of the previous leg is {0}.</value>
+  </data>
+  <data name="WarnTwoTripsInPlanSubTrip" xml:space="preserve">
+    <value>There are 2 containers for this planSubTrip, so the default trailer will be set to the previous leg of the first container. </value>
+  </data>
+  <data name="Warn1TripAndPrevLegDoubleMount" xml:space="preserve">
+    <value>There is a second container no: {0} in the previous leg. </value>
+  </data>
+  <data name="Warn2TripAndPrevLeg1Trip" xml:space="preserve">
+    <value>There is only 1 container in the previous leg. </value>
+  </data>
+  <data name="Warn2TripAndPrevLegDoubleMount" xml:space="preserve">
+    <value>In the previous leg, the double mount conatiner was {0} and not {1}. </value>
+  </data>
+  <data name="Err2ContainerNotSameStop" xml:space="preserve">
+    <value>For double mount, the 2 containers should be the same origin and destination. </value>
+  </data>
+</root>
