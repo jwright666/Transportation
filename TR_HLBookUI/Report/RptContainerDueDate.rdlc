@@ -1,0 +1,997 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2005/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
+  <DataSources>
+    <DataSource Name="FM72_TestingConnectionString">
+      <rd:DataSourceID>be573078-2e86-4dea-9761-04ae6e520070</rd:DataSourceID>
+      <ConnectionProperties>
+        <DataProvider>SQL</DataProvider>
+        <ConnectString>Data Source=IPL-SUPPORT\INNOSQLMASTER;Initial Catalog=FM72_Testing;Integrated Security=True</ConnectString>
+      </ConnectionProperties>
+    </DataSource>
+  </DataSources>
+  <InteractiveHeight>29cm</InteractiveHeight>
+  <ReportParameters>
+    <ReportParameter Name="Start_Date">
+      <DataType>DateTime</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_0</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="End_Date">
+      <DataType>DateTime</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>Report_Parameter_1</Prompt>
+      <Hidden>true</Hidden>
+    </ReportParameter>
+    <ReportParameter Name="DateFormatString">
+      <DataType>String</DataType>
+      <AllowBlank>true</AllowBlank>
+      <Prompt>DateFormatString</Prompt>
+    </ReportParameter>
+  </ReportParameters>
+  <rd:DrawGrid>true</rd:DrawGrid>
+  <InteractiveWidth>21cm</InteractiveWidth>
+  <rd:GridSpacing>0.25cm</rd:GridSpacing>
+  <rd:SnapToGrid>true</rd:SnapToGrid>
+  <RightMargin>0.2cm</RightMargin>
+  <LeftMargin>0.3cm</LeftMargin>
+  <BottomMargin>1cm</BottomMargin>
+  <rd:ReportID>f7ac95ab-090a-4ee1-89db-5bdb1dd8dffb</rd:ReportID>
+  <PageWidth>21cm</PageWidth>
+  <DataSets>
+    <DataSet Name="DstRptContainerDueDate_DtbRptContainerDueDate">
+      <Fields>
+        <Field Name="TO_DATE">
+          <DataField>TO_DATE</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="TO_TIME">
+          <DataField>TO_TIME</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CONTAINER_NUMBER">
+          <DataField>CONTAINER_NUMBER</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CY">
+          <DataField>CY</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Port">
+          <DataField>Port</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Operation_Code">
+          <DataField>Operation_Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="JOB_NUMBER">
+          <DataField>JOB_NUMBER</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Operation_Name">
+          <DataField>Operation_Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Op_Add1">
+          <DataField>Op_Add1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="CustVend_Name">
+          <DataField>CustVend_Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FM72_TestingConnectionString</DataSourceName>
+        <CommandText>select TO_DATE,TO_TIME,CONTAINER_NUMBER,TO_STOP as CY,'' as Port,
+b.CustVend_Name,b.Address1,JOB_NUMBER
+from TPT_JOB_DETAIL_CARGO_Tbl
+inner join TPT_JOB_MAIN_Tbl
+on TPT_JOB_DETAIL_CARGO_Tbl.job_id = TPT_JOB_MAIN_Tbl.job_id
+inner join CRT_Operation_Database_Tbl a
+on TPT_JOB_DETAIL_CARGO_Tbl.TO_STOP = a.Operation_Code
+inner join ACT_CustVend_Master_Tbl b
+on TPT_JOB_MAIN_Tbl.CUST_CODE = b.CustVend_Code
+where a.Operation_Type_Code='CY'  AND 
+(TPT_JOB_DETAIL_CARGO_Tbl.TO_DATE &gt;= @FROM_DATE) AND
+(TPT_JOB_DETAIL_CARGO_Tbl.TO_DATE &lt;= @TO_DATE)
+AND TPT_JOB_DETAIL_CARGO_Tbl.STATUS&lt;&gt;4
+AND TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER&lt;&gt;''
+union
+select TO_DATE,TO_TIME,CONTAINER_NUMBER,'' as CY,TO_STOP as Port,
+b.CustVend_Name,b.Address1,JOB_NUMBER
+from TPT_JOB_DETAIL_CARGO_Tbl
+inner join TPT_JOB_MAIN_Tbl
+on TPT_JOB_DETAIL_CARGO_Tbl.job_id = TPT_JOB_MAIN_Tbl.job_id
+inner join CRT_Operation_Database_Tbl a
+on TPT_JOB_DETAIL_CARGO_Tbl.TO_STOP = a.Operation_Code
+inner join ACT_CustVend_Master_Tbl b
+on TPT_JOB_MAIN_Tbl.CUST_CODE = b.CustVend_Code
+where a.Operation_Type_Code='PO'   AND
+(TPT_JOB_DETAIL_CARGO_Tbl.TO_DATE &gt;= @FROM_DATE) AND
+(TPT_JOB_DETAIL_CARGO_Tbl.TO_DATE &lt;= @TO_DATE)
+AND TPT_JOB_DETAIL_CARGO_Tbl.STATUS&lt;&gt;4
+AND TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER&lt;&gt;''</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DstRptContainerDueDate</rd:DataSetName>
+        <rd:TableName>DtbRptContainerDueDate</rd:TableName>
+        <rd:TableAdapterName>DtbRptContainerDueDateTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="DstSpecialData_DtbSpecialData">
+      <Fields>
+        <Field Name="Company_Code">
+          <DataField>Company_Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Company_Name">
+          <DataField>Company_Name</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address1">
+          <DataField>Address1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address2">
+          <DataField>Address2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address3">
+          <DataField>Address3</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Address4">
+          <DataField>Address4</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Zip_Code">
+          <DataField>Zip_Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="City_Code">
+          <DataField>City_Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Country_Code">
+          <DataField>Country_Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Home_Port_Code">
+          <DataField>Home_Port_Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Telephone1">
+          <DataField>Telephone1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Telephone2">
+          <DataField>Telephone2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fax1">
+          <DataField>Fax1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Fax2">
+          <DataField>Fax2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Contact1">
+          <DataField>Contact1</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Contact2">
+          <DataField>Contact2</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Currency_Code">
+          <DataField>Currency_Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Langauage_ID">
+          <DataField>Langauage_ID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="Logo">
+          <DataField>Logo</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="FootnoteImage">
+          <DataField>FootnoteImage</DataField>
+          <rd:TypeName>System.Byte[]</rd:TypeName>
+        </Field>
+        <Field Name="Security_Code">
+          <DataField>Security_Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="DateFormatString">
+          <DataField>DateFormatString</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Location">
+          <DataField>Location</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaxUsersDualLang">
+          <DataField>MaxUsersDualLang</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MaxUsersDualLangChecksum">
+          <DataField>MaxUsersDualLangChecksum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MultipleBranch">
+          <DataField>MultipleBranch</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="MaxUsers">
+          <DataField>MaxUsers</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="MaxUsersChecksum">
+          <DataField>MaxUsersChecksum</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Company_Reg_No">
+          <DataField>Company_Reg_No</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Version_Code">
+          <DataField>Version_Code</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Paper_Size">
+          <DataField>Paper_Size</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>FM72_TestingConnectionString</DataSourceName>
+        <CommandText>select * from CRT_Special_Data_Tbl</CommandText>
+        <rd:UseGenericDesigner>true</rd:UseGenericDesigner>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DstSpecialData</rd:DataSetName>
+        <rd:TableName>DtbSpecialData</rd:TableName>
+        <rd:TableAdapterName>DtbSpecialDataTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Width>20.25cm</Width>
+  <Body>
+    <ColumnSpacing>1cm</ColumnSpacing>
+    <ReportItems>
+      <Textbox Name="Logo">
+        <rd:DefaultName>Logo</rd:DefaultName>
+        <Visibility>
+          <Hidden>true</Hidden>
+        </Visibility>
+        <Width>1in</Width>
+        <Style>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>4</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.39375in</Left>
+        <Height>0.09844in</Height>
+        <Value>=Convert.ToBase64String(First(Fields!Logo.Value, "DstSpecialData_DtbSpecialData"))</Value>
+      </Textbox>
+      <Image Name="image1">
+        <Sizing>Fit</Sizing>
+        <Width>19.75cm</Width>
+        <MIMEType>image/jpeg</MIMEType>
+        <Source>Database</Source>
+        <Style />
+        <ZIndex>3</ZIndex>
+        <Left>0.25cm</Left>
+        <Height>0.88594in</Height>
+        <Value>=Convert.FromBase64String(ReportItems!Logo.Value)</Value>
+      </Image>
+      <Textbox Name="textbox5">
+        <rd:DefaultName>textbox5</rd:DefaultName>
+        <Top>2.5cm</Top>
+        <Width>7.77656in</Width>
+        <Style>
+          <FontSize>14pt</FontSize>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>2</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.09844in</Left>
+        <Height>0.29531in</Height>
+        <Value>List of Containers Due at Container Yards/Ports based on Booking Date</Value>
+      </Textbox>
+      <Textbox Name="textbox1">
+        <rd:DefaultName>textbox1</rd:DefaultName>
+        <Top>3.25cm</Top>
+        <Width>7.77656in</Width>
+        <Style>
+          <FontWeight>700</FontWeight>
+          <TextAlign>Center</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>0.09844in</Left>
+        <Height>0.25in</Height>
+        <Value>="From  " &amp; Format(Parameters!Start_Date.Value,Parameters!DateFormatString.Value) &amp; " - To  " 
+&amp; Format(Parameters!End_Date.Value,Parameters!DateFormatString.Value)</Value>
+      </Textbox>
+      <Table Name="table1">
+        <DataSetName>DstRptContainerDueDate_DtbRptContainerDueDate</DataSetName>
+        <Top>4.5cm</Top>
+        <Width>7.77656in</Width>
+        <Details>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TO_DATE">
+                      <rd:DefaultName>TO_DATE</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>7</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Format(Fields!TO_DATE.Value,)</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="TO_TIME">
+                      <rd:DefaultName>TO_TIME</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>6</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!TO_TIME.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CONTAINER_NUMBER">
+                      <rd:DefaultName>CONTAINER_NUMBER</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>5</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CONTAINER_NUMBER.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="CY">
+                      <rd:DefaultName>CY</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>4</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CY.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Port">
+                      <rd:DefaultName>Port</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>3</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Port.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Operation_Code">
+                      <rd:DefaultName>Operation_Code</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>2</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!CustVend_Name.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="Op_Add1">
+                      <rd:DefaultName>Op_Add1</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>1</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!Address1.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="JOB_NUMBER">
+                      <rd:DefaultName>JOB_NUMBER</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <CanGrow>true</CanGrow>
+                      <Value>=Fields!JOB_NUMBER.Value</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.58333cm</Height>
+            </TableRow>
+          </TableRows>
+        </Details>
+        <Style>
+          <BorderStyle>
+            <Default>Solid</Default>
+          </BorderStyle>
+        </Style>
+        <Header>
+          <TableRows>
+            <TableRow>
+              <TableCells>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox7">
+                      <rd:DefaultName>textbox7</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Right>Black</Right>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Right>Solid</Right>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Right>1pt</Right>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>15</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Date</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox8">
+                      <rd:DefaultName>textbox8</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>14</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Time</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox9">
+                      <rd:DefaultName>textbox9</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>13</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Container No</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox10">
+                      <rd:DefaultName>textbox10</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>12</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Container Yard</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox16">
+                      <rd:DefaultName>textbox16</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>11</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Port</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox11">
+                      <rd:DefaultName>textbox11</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>10</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Customer Name</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox12">
+                      <rd:DefaultName>textbox12</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Right>Black</Right>
+                          <Top>Black</Top>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Right>Solid</Right>
+                          <Top>Solid</Top>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Right>1pt</Right>
+                          <Top>1pt</Top>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>9</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Cust Location</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+                <TableCell>
+                  <ReportItems>
+                    <Textbox Name="textbox20">
+                      <rd:DefaultName>textbox20</rd:DefaultName>
+                      <Style>
+                        <BorderColor>
+                          <Left>Black</Left>
+                          <Bottom>Black</Bottom>
+                        </BorderColor>
+                        <BorderStyle>
+                          <Left>Solid</Left>
+                          <Bottom>Solid</Bottom>
+                        </BorderStyle>
+                        <BorderWidth>
+                          <Left>1pt</Left>
+                          <Bottom>1pt</Bottom>
+                        </BorderWidth>
+                        <FontSize>8pt</FontSize>
+                        <FontWeight>700</FontWeight>
+                        <TextAlign>Left</TextAlign>
+                        <PaddingLeft>2.2pt</PaddingLeft>
+                        <PaddingRight>2.2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                      <ZIndex>8</ZIndex>
+                      <CanGrow>true</CanGrow>
+                      <Value>Job No</Value>
+                    </Textbox>
+                  </ReportItems>
+                </TableCell>
+              </TableCells>
+              <Height>0.58333cm</Height>
+            </TableRow>
+          </TableRows>
+        </Header>
+        <TableColumns>
+          <TableColumn>
+            <Width>2.05195cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>1.79545cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.30844cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.56494cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.56494cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.82143cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>3.59091cm</Width>
+          </TableColumn>
+          <TableColumn>
+            <Width>2.05193cm</Width>
+          </TableColumn>
+        </TableColumns>
+        <Height>1.16666cm</Height>
+        <Left>0.09844in</Left>
+      </Table>
+    </ReportItems>
+    <Height>6cm</Height>
+  </Body>
+  <Language>en-US</Language>
+  <PageFooter>
+    <PrintOnFirstPage>true</PrintOnFirstPage>
+    <ReportItems>
+      <Textbox Name="textbox3">
+        <Top>0.19687in</Top>
+        <Width>3.54375in</Width>
+        <Style>
+          <TextAlign>Right</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <ZIndex>1</ZIndex>
+        <CanGrow>true</CanGrow>
+        <Left>4.23281in</Left>
+        <Value>="Page " &amp; Globals!PageNumber &amp; " of " &amp; Globals!TotalPages</Value>
+      </Textbox>
+      <Textbox Name="textbox2">
+        <rd:DefaultName>textbox2</rd:DefaultName>
+        <Top>0.19687in</Top>
+        <Width>3.15in</Width>
+        <Style>
+          <TextAlign>Left</TextAlign>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+        <CanGrow>true</CanGrow>
+        <Left>0.09844in</Left>
+        <Value>="Date Printed : " &amp; Format(Globals!ExecutionTime,Parameters!DateFormatString.Value &amp;" HH:mm")</Value>
+      </Textbox>
+    </ReportItems>
+    <Height>0.39374in</Height>
+    <PrintOnLastPage>true</PrintOnLastPage>
+  </PageFooter>
+  <TopMargin>1.5cm</TopMargin>
+  <PageHeight>29.7cm</PageHeight>
+</Report>

@@ -1,0 +1,318 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DstRptJobTripsSubCon" targetNamespace="http://tempuri.org/DstRptJobTripsSubCon.xsd" xmlns:mstns="http://tempuri.org/DstRptJobTripsSubCon.xsd" xmlns="http://tempuri.org/DstRptJobTripsSubCon.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="FM72_TestingConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="FM72_TestingConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TR_HLBookUI.Properties.Settings.GlobalReference.Default.FM72_TestingConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TR_HLBookUI.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DtbRptJobTripsSubConTableAdapter" GeneratorDataComponentClassName="DtbRptJobTripsSubConTableAdapter" Name="DtbRptJobTripsSubCon" UserDataComponentName="DtbRptJobTripsSubConTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+COUNT(TPT_JOB_MAIN_Tbl.JOB_NUMBER) AS FORTYL,
+0 AS FORTYU,
+0 AS TWENTYL,
+0 AS TWENTYU,
+0 AS FORTYIFIVEU,
+0 AS FORTYFIVEL,
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+FROM TPT_JOB_DETAIL_CARGO_Tbl INNER JOIN
+TPT_JOB_MAIN_Tbl ON TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID = TPT_JOB_MAIN_Tbl.JOB_ID
+INNER JOIN ACT_CustVend_Master_Tbl ON 
+TPT_JOB_MAIN_Tbl.CUST_CODE=ACT_CustVend_Master_Tbl.CustVend_Code
+WHERE TPT_JOB_DETAIL_CARGO_Tbl.OWNTRANSPORT='F' AND
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE LIKE '4%' AND
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE NOT LIKE '45%' AND
+TPT_JOB_DETAIL_CARGO_Tbl.IS_LADEN = 'T' AND
+TPT_JOB_DETAIL_CARGO_Tbl.STATUS=4 AND 
+
+((TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &gt;= @FROM_DATE) AND
+(TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &lt;= @TO_DATE) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&gt;=@FROM_SUBCON) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&lt;=@TO_SUBCON))
+GROUP BY
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+
+
+UNION
+
+SELECT 
+0 AS FORTYL,
+COUNT(TPT_JOB_MAIN_Tbl.JOB_NUMBER) AS FORTYU,
+0 AS TWENTYL,
+0 AS TWENTYU,
+0 AS FORTYIFIVEU,
+0 AS FORTYFIVEL,
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+FROM TPT_JOB_DETAIL_CARGO_Tbl INNER JOIN
+TPT_JOB_MAIN_Tbl ON TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID = TPT_JOB_MAIN_Tbl.JOB_ID
+INNER JOIN ACT_CustVend_Master_Tbl ON 
+TPT_JOB_MAIN_Tbl.CUST_CODE=ACT_CustVend_Master_Tbl.CustVend_Code
+WHERE TPT_JOB_DETAIL_CARGO_Tbl.OWNTRANSPORT='F' AND
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE LIKE '4%' AND
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE NOT LIKE '45%' AND
+TPT_JOB_DETAIL_CARGO_Tbl.IS_LADEN = 'F' AND
+
+TPT_JOB_DETAIL_CARGO_Tbl.STATUS=4 AND 
+((TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &gt;= @FROM_DATE) AND
+(TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &lt;= @TO_DATE) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&gt;=@FROM_SUBCON) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&lt;=@TO_SUBCON))
+GROUP BY
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+
+UNION
+
+SELECT 
+0 AS FORTYL,
+0 AS FORTYU,
+COUNT(TPT_JOB_MAIN_Tbl.JOB_NUMBER) AS TWENTYL,
+0 AS TWENTYU,
+0 AS FORTYIFIVEU,
+0 AS FORTYFIVEL,
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+
+FROM TPT_JOB_DETAIL_CARGO_Tbl INNER JOIN
+TPT_JOB_MAIN_Tbl ON TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID = TPT_JOB_MAIN_Tbl.JOB_ID
+INNER JOIN ACT_CustVend_Master_Tbl ON 
+TPT_JOB_MAIN_Tbl.CUST_CODE=ACT_CustVend_Master_Tbl.CustVend_Code
+WHERE TPT_JOB_DETAIL_CARGO_Tbl.OWNTRANSPORT='F' AND
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE LIKE '2%' AND
+TPT_JOB_DETAIL_CARGO_Tbl.IS_LADEN = 'T' AND
+TPT_JOB_DETAIL_CARGO_Tbl.STATUS=4 AND 
+((TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &gt;= @FROM_DATE) AND
+(TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &lt;= @TO_DATE) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&gt;=@FROM_SUBCON) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&lt;=@TO_SUBCON))
+GROUP BY
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+
+UNION
+
+SELECT 
+0 AS FORTYL,
+0 AS FORTYU,
+0 AS TWENTYL,
+COUNT(TPT_JOB_MAIN_Tbl.JOB_NUMBER) AS TWENTYU,
+0 AS FORTYIFIVEU,
+0 AS FORTYFIVEL,
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+FROM TPT_JOB_DETAIL_CARGO_Tbl INNER JOIN
+TPT_JOB_MAIN_Tbl ON TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID = TPT_JOB_MAIN_Tbl.JOB_ID
+INNER JOIN ACT_CustVend_Master_Tbl ON 
+TPT_JOB_MAIN_Tbl.CUST_CODE=ACT_CustVend_Master_Tbl.CustVend_Code
+WHERE TPT_JOB_DETAIL_CARGO_Tbl.OWNTRANSPORT='F' AND
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE LIKE '2%' AND
+TPT_JOB_DETAIL_CARGO_Tbl.IS_LADEN = 'F' AND
+TPT_JOB_DETAIL_CARGO_Tbl.STATUS=4 AND 
+((TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &gt;= @FROM_DATE) AND
+(TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &lt;= @TO_DATE) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&gt;=@FROM_SUBCON) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&lt;=@TO_SUBCON))
+GROUP BY
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+
+UNION
+
+SELECT 
+0 AS FORTYL,
+0 AS FORTYU,
+0 AS TWENTYL,
+0 AS TWENTYU,
+COUNT(TPT_JOB_MAIN_Tbl.JOB_NUMBER) AS FORTYIFIVEU,
+0 AS FORTYFIVEL,
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+FROM TPT_JOB_DETAIL_CARGO_Tbl INNER JOIN
+TPT_JOB_MAIN_Tbl ON TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID = TPT_JOB_MAIN_Tbl.JOB_ID
+INNER JOIN ACT_CustVend_Master_Tbl ON 
+TPT_JOB_MAIN_Tbl.CUST_CODE=ACT_CustVend_Master_Tbl.CustVend_Code
+WHERE TPT_JOB_DETAIL_CARGO_Tbl.OWNTRANSPORT='F' AND
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE LIKE '45%' AND
+TPT_JOB_DETAIL_CARGO_Tbl.IS_LADEN = 'F' AND
+
+TPT_JOB_DETAIL_CARGO_Tbl.STATUS=4 AND 
+((TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &gt;= @FROM_DATE) AND
+(TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &lt;= @TO_DATE) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&gt;=@FROM_SUBCON) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&lt;=@TO_SUBCON))
+GROUP BY
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+
+UNION
+
+SELECT 
+0 AS FORTYL,
+0 AS FORTYU,
+0 AS TWENTYL,
+0 AS TWENTYU,
+0 AS FORTYIFIVEU,
+COUNT(TPT_JOB_MAIN_Tbl.JOB_NUMBER)  AS FORTYFIVEL,
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+FROM TPT_JOB_DETAIL_CARGO_Tbl INNER JOIN
+TPT_JOB_MAIN_Tbl ON TPT_JOB_DETAIL_CARGO_Tbl.JOB_ID = TPT_JOB_MAIN_Tbl.JOB_ID
+INNER JOIN ACT_CustVend_Master_Tbl ON 
+TPT_JOB_MAIN_Tbl.CUST_CODE=ACT_CustVend_Master_Tbl.CustVend_Code
+WHERE TPT_JOB_DETAIL_CARGO_Tbl.OWNTRANSPORT='F' AND
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_CODE LIKE '45%' AND
+TPT_JOB_DETAIL_CARGO_Tbl.IS_LADEN = 'T' AND
+
+TPT_JOB_DETAIL_CARGO_Tbl.STATUS=4 AND 
+((TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &gt;= @FROM_DATE) AND
+(TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE &lt;= @TO_DATE) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&gt;=@FROM_SUBCON) AND
+(TPT_JOB_MAIN_Tbl.CUST_CODE&lt;=@TO_SUBCON))
+GROUP BY
+TPT_JOB_MAIN_Tbl.JOB_NUMBER, 
+TPT_JOB_DETAIL_CARGO_Tbl.FROM_DATE, 
+TPT_JOB_MAIN_Tbl.JOB_TYPE, 
+TPT_JOB_DETAIL_CARGO_Tbl.CONTAINER_NUMBER, 
+TPT_JOB_MAIN_Tbl.CUST_CODE,
+ACT_CustVend_Master_Tbl.CustVend_Name
+
+</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="FROM_DATE" ColumnName="FROM_DATE" DataSourceName="FM72_Testing.dbo.TPT_JOB_DETAIL_CARGO_Tbl" DataTypeServer="smalldatetime" DbType="DateTime" Direction="Input" ParameterName="@FROM_DATE" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="4" SourceColumn="FROM_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="TO_DATE" ColumnName="FROM_DATE" DataSourceName="FM72_Testing.dbo.TPT_JOB_DETAIL_CARGO_Tbl" DataTypeServer="smalldatetime" DbType="DateTime" Direction="Input" ParameterName="@TO_DATE" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="4" SourceColumn="FROM_DATE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="FROM_SUBCON" ColumnName="CUST_CODE" DataSourceName="FM72_Testing.dbo.TPT_JOB_MAIN_Tbl" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@FROM_SUBCON" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="CUST_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="TO_SUBCON" ColumnName="CUST_CODE" DataSourceName="FM72_Testing.dbo.TPT_JOB_MAIN_Tbl" DataTypeServer="varchar(12)" DbType="AnsiString" Direction="Input" ParameterName="@TO_SUBCON" Precision="0" ProviderType="VarChar" Scale="0" Size="12" SourceColumn="CUST_CODE" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="JOB_NUMBER" DataSetColumn="JOB_NUMBER" />
+              <Mapping SourceColumn="FROM_DATE" DataSetColumn="FROM_DATE" />
+              <Mapping SourceColumn="JOB_TYPE" DataSetColumn="JOB_TYPE" />
+              <Mapping SourceColumn="CONTAINER_NUMBER" DataSetColumn="CONTAINER_NUMBER" />
+              <Mapping SourceColumn="FORTYL" DataSetColumn="FORTYL" />
+              <Mapping SourceColumn="FORTYU" DataSetColumn="FORTYU" />
+              <Mapping SourceColumn="TWENTYL" DataSetColumn="TWENTYL" />
+              <Mapping SourceColumn="TWENTYU" DataSetColumn="TWENTYU" />
+              <Mapping SourceColumn="FORTYIFIVEU" DataSetColumn="FORTYIFIVEU" />
+              <Mapping SourceColumn="FORTYFIVEL" DataSetColumn="FORTYFIVEL" />
+              <Mapping SourceColumn="CUST_CODE" DataSetColumn="CUST_CODE" />
+              <Mapping SourceColumn="CustVend_Name" DataSetColumn="CustVend_Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DstRptJobTripsSubCon" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DstRptJobTripsSubCon" msprop:Generator_UserDSName="DstRptJobTripsSubCon">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DtbRptJobTripsSubCon" msprop:Generator_UserTableName="DtbRptJobTripsSubCon" msprop:Generator_RowEvArgName="DtbRptJobTripsSubConRowChangeEvent" msprop:Generator_TableVarName="tableDtbRptJobTripsSubCon" msprop:Generator_TablePropName="DtbRptJobTripsSubCon" msprop:Generator_RowDeletingName="DtbRptJobTripsSubConRowDeleting" msprop:Generator_RowChangingName="DtbRptJobTripsSubConRowChanging" msprop:Generator_RowDeletedName="DtbRptJobTripsSubConRowDeleted" msprop:Generator_RowEvHandlerName="DtbRptJobTripsSubConRowChangeEventHandler" msprop:Generator_TableClassName="DtbRptJobTripsSubConDataTable" msprop:Generator_RowChangedName="DtbRptJobTripsSubConRowChanged" msprop:Generator_RowClassName="DtbRptJobTripsSubConRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="JOB_NUMBER" msprop:Generator_ColumnVarNameInTable="columnJOB_NUMBER" msprop:Generator_ColumnPropNameInRow="JOB_NUMBER" msprop:Generator_ColumnPropNameInTable="JOB_NUMBERColumn" msprop:Generator_UserColumnName="JOB_NUMBER">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FROM_DATE" msprop:Generator_ColumnVarNameInTable="columnFROM_DATE" msprop:Generator_ColumnPropNameInRow="FROM_DATE" msprop:Generator_ColumnPropNameInTable="FROM_DATEColumn" msprop:Generator_UserColumnName="FROM_DATE" type="xs:dateTime" />
+              <xs:element name="JOB_TYPE" msprop:Generator_ColumnVarNameInTable="columnJOB_TYPE" msprop:Generator_ColumnPropNameInRow="JOB_TYPE" msprop:Generator_ColumnPropNameInTable="JOB_TYPEColumn" msprop:Generator_UserColumnName="JOB_TYPE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CONTAINER_NUMBER" msprop:Generator_ColumnVarNameInTable="columnCONTAINER_NUMBER" msprop:Generator_ColumnPropNameInRow="CONTAINER_NUMBER" msprop:Generator_ColumnPropNameInTable="CONTAINER_NUMBERColumn" msprop:Generator_UserColumnName="CONTAINER_NUMBER">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="26" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FORTYL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFORTYL" msprop:Generator_ColumnPropNameInRow="FORTYL" msprop:Generator_ColumnPropNameInTable="FORTYLColumn" msprop:Generator_UserColumnName="FORTYL" type="xs:int" minOccurs="0" />
+              <xs:element name="FORTYU" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFORTYU" msprop:Generator_ColumnPropNameInRow="FORTYU" msprop:Generator_ColumnPropNameInTable="FORTYUColumn" msprop:Generator_UserColumnName="FORTYU" type="xs:int" minOccurs="0" />
+              <xs:element name="TWENTYL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTWENTYL" msprop:Generator_ColumnPropNameInRow="TWENTYL" msprop:Generator_ColumnPropNameInTable="TWENTYLColumn" msprop:Generator_UserColumnName="TWENTYL" type="xs:int" minOccurs="0" />
+              <xs:element name="TWENTYU" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnTWENTYU" msprop:Generator_ColumnPropNameInRow="TWENTYU" msprop:Generator_ColumnPropNameInTable="TWENTYUColumn" msprop:Generator_UserColumnName="TWENTYU" type="xs:int" minOccurs="0" />
+              <xs:element name="FORTYIFIVEU" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFORTYIFIVEU" msprop:Generator_ColumnPropNameInRow="FORTYIFIVEU" msprop:Generator_ColumnPropNameInTable="FORTYIFIVEUColumn" msprop:Generator_UserColumnName="FORTYIFIVEU" type="xs:int" minOccurs="0" />
+              <xs:element name="FORTYFIVEL" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnFORTYFIVEL" msprop:Generator_ColumnPropNameInRow="FORTYFIVEL" msprop:Generator_ColumnPropNameInTable="FORTYFIVELColumn" msprop:Generator_UserColumnName="FORTYFIVEL" type="xs:int" minOccurs="0" />
+              <xs:element name="CUST_CODE" msprop:Generator_ColumnVarNameInTable="columnCUST_CODE" msprop:Generator_ColumnPropNameInRow="CUST_CODE" msprop:Generator_ColumnPropNameInTable="CUST_CODEColumn" msprop:Generator_UserColumnName="CUST_CODE">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustVend_Name" msprop:Generator_ColumnVarNameInTable="columnCustVend_Name" msprop:Generator_ColumnPropNameInRow="CustVend_Name" msprop:Generator_ColumnPropNameInTable="CustVend_NameColumn" msprop:Generator_UserColumnName="CustVend_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
