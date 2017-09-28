@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{596D4469-1B7C-4746-BDED-4E8436C71686}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FM.TR_MaintenanceDLL</RootNamespace>
+    <AssemblyName>TR_MaintenanceDLL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>0219;0162;0168;0169;</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <NoWarn>0219;0162;0168;0169;0414</NoWarn>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FMEncryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\FMEncryption.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TR_FMSystemDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_FMSystemDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_LanguageResource, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_LanguageResource.dll</HintPath>
+    </Reference>
+    <Reference Include="TR_LicenseDLL, Version=80.0.1000.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Release\TR_LicenseDLL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\ContainerOrTruckSize.cs" />
+    <Compile Include="BLL\Driver.cs" />
+    <Compile Include="BLL\DriverPriority.cs" />
+    <Compile Include="BLL\JobAssignmentPriority.cs" />
+    <Compile Include="BLL\DriverUnavailable.cs" />
+    <Compile Include="BLL\FormLogs.cs" />
+    <Compile Include="BLL\LoadOrUnloadingTime.cs" />
+    <Compile Include="BLL\PlanDateDept.cs" />
+    <Compile Include="BLL\Sector.cs" />
+    <Compile Include="BLL\TptDept.cs" />
+    <Compile Include="BLL\TrailerLocation.cs" />
+    <Compile Include="BLL\TransportMaintenanceEnum.cs" />
+    <Compile Include="BLL\TransportSettings.cs" />
+    <Compile Include="BLL\Vehicle.cs" />
+    <Compile Include="BLL\VehicleAverageSpeed.cs" />
+    <Compile Include="DAL\ContainerOrTruckSizeDAL.cs" />
+    <Compile Include="DAL\DriverDAL.cs" />
+    <Compile Include="DAL\FormLogsDAL.cs" />
+    <Compile Include="DAL\LoadOrUnloadingTimeDAL.cs" />
+    <Compile Include="DAL\PlanDateDeptDAL.cs" />
+    <Compile Include="DAL\PriorityDAL.cs" />
+    <Compile Include="DAL\SectorDAL.cs" />
+    <Compile Include="DAL\TptDeptDAL.cs" />
+    <Compile Include="DAL\TrailerLocationDAL.cs" />
+    <Compile Include="DAL\TransportSettingsDAL.cs" />
+    <Compile Include="DAL\VehicleAverageSpeedDAL.cs" />
+    <Compile Include="DAL\VehicleDAL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
