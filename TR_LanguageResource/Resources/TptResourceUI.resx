@@ -1,0 +1,1057 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Add" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="AddPlanSubTrip" xml:space="preserve">
+    <value>Add Plan Sub Trip</value>
+  </data>
+  <data name="AddPlanTrip" xml:space="preserve">
+    <value>Add Plan Trip</value>
+  </data>
+  <data name="AddTripJob" xml:space="preserve">
+    <value>Add Trip Job</value>
+  </data>
+  <data name="AddTripPlan" xml:space="preserve">
+    <value>Add Trip Plan</value>
+  </data>
+  <data name="ArePriceVisible" xml:space="preserve">
+    <value>Are Price Visible to Job</value>
+  </data>
+  <data name="AssignJobTripToSubCon" xml:space="preserve">
+    <value>Assign Job Trip To Sub Con</value>
+  </data>
+  <data name="BillingUOM" xml:space="preserve">
+    <value>Billing UOM</value>
+  </data>
+  <data name="ChangeDriver" xml:space="preserve">
+    <value>Change Driver</value>
+  </data>
+  <data name="ChangeEndTime" xml:space="preserve">
+    <value>Change End Time</value>
+  </data>
+  <data name="ChangeTripStatus" xml:space="preserve">
+    <value>Change Trip Status</value>
+  </data>
+  <data name="chkBillByTransport" xml:space="preserve">
+    <value>Bill By Transport</value>
+  </data>
+  <data name="chkBillByTransport1" xml:space="preserve">
+    <value>Bill By Transport</value>
+  </data>
+  <data name="ChoseDate" xml:space="preserve">
+    <value>Chose Date Per Department</value>
+  </data>
+  <data name="CompletedDate" xml:space="preserve">
+    <value>Completed Date</value>
+  </data>
+  <data name="Conditions" xml:space="preserve">
+    <value>Conditions</value>
+  </data>
+  <data name="ConfirmToDeleteHeaderName" xml:space="preserve">
+    <value>Are you sure you want to delete this </value>
+  </data>
+  <data name="CopyIncentives" xml:space="preserve">
+    <value>Copy Incentives</value>
+  </data>
+  <data name="CopyQuotation" xml:space="preserve">
+    <value>Copy Quotation</value>
+  </data>
+  <data name="DefaultStop" xml:space="preserve">
+    <value>Default Stop</value>
+  </data>
+  <data name="DeleteTripJob" xml:space="preserve">
+    <value>Delete Trip Job</value>
+  </data>
+  <data name="Department" xml:space="preserve">
+    <value>Department</value>
+  </data>
+  <data name="DeptCode" xml:space="preserve">
+    <value>Department Code</value>
+  </data>
+  <data name="DeptName" xml:space="preserve">
+    <value>Department Name</value>
+  </data>
+  <data name="DeptType" xml:space="preserve">
+    <value>Department Type</value>
+  </data>
+  <data name="DriverCode" xml:space="preserve">
+    <value>Driver Code</value>
+  </data>
+  <data name="DriverIncentiveItem" xml:space="preserve">
+    <value>Driver Incentive Items</value>
+  </data>
+  <data name="DriverIncentives" xml:space="preserve">
+    <value>Driver Incentives</value>
+  </data>
+  <data name="DriverIncentivesDetails" xml:space="preserve">
+    <value>Driver Incentives Details</value>
+  </data>
+  <data name="DriverName" xml:space="preserve">
+    <value>Driver Name</value>
+  </data>
+  <data name="DrivingClass" xml:space="preserve">
+    <value>Driving Class</value>
+  </data>
+  <data name="DrivingExpiryDate" xml:space="preserve">
+    <value>Driving Expiry Date</value>
+  </data>
+  <data name="DrivingLicenceNo" xml:space="preserve">
+    <value>Driving Licence No</value>
+  </data>
+  <data name="EndCustCode" xml:space="preserve">
+    <value>End Cust Code</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="EndJobNo" xml:space="preserve">
+    <value>End Job No</value>
+  </data>
+  <data name="EndStop" xml:space="preserve">
+    <value>End Stop</value>
+  </data>
+  <data name="EndTime" xml:space="preserve">
+    <value>End Time</value>
+  </data>
+  <data name="HaulierJob" xml:space="preserve">
+    <value>Haulier Job</value>
+  </data>
+  <data name="HaulierPlanEntry" xml:space="preserve">
+    <value>Haulier Plan Entry</value>
+  </data>
+  <data name="HeaderWillBeDeletedBecauseNoTransportRate" xml:space="preserve">
+    <value>This Quotation will be deleted because there's no transport rate</value>
+  </data>
+  <data name="Height" xml:space="preserve">
+    <value>Height</value>
+  </data>
+  <data name="IncentiveDescription" xml:space="preserve">
+    <value>Incentive Description</value>
+  </data>
+  <data name="IncentivePerTrip" xml:space="preserve">
+    <value>Incentive Per Trip</value>
+  </data>
+  <data name="IncentiveRef" xml:space="preserve">
+    <value>Incentive Reference</value>
+  </data>
+  <data name="IncentiveType" xml:space="preserve">
+    <value>Incentive Type</value>
+  </data>
+  <data name="IsAvailable" xml:space="preserve">
+    <value>Is Available</value>
+  </data>
+  <data name="IsContainerMovement" xml:space="preserve">
+    <value>Is Container Movement</value>
+  </data>
+  <data name="IsDangerousGoods" xml:space="preserve">
+    <value>IsDangerous Goods</value>
+  </data>
+  <data name="IsDirectDelivery" xml:space="preserve">
+    <value>IsDirect Delivery</value>
+  </data>
+  <data name="IsLaden" xml:space="preserve">
+    <value>IsLaden</value>
+  </data>
+  <data name="IsLumpSum" xml:space="preserve">
+    <value>IsLump Sum</value>
+  </data>
+  <data name="IsNew" xml:space="preserve">
+    <value>IsNew</value>
+  </data>
+  <data name="IsOverWeight" xml:space="preserve">
+    <value>Is Over Weight</value>
+  </data>
+  <data name="IsTruckMovement" xml:space="preserve">
+    <value>is Truck Movement</value>
+  </data>
+  <data name="JobTripPrintOption" xml:space="preserve">
+    <value>Job Trip Print Option</value>
+  </data>
+  <data name="JobType" xml:space="preserve">
+    <value>Job Type</value>
+  </data>
+  <data name="JobUrgencyType" xml:space="preserve">
+    <value>Job Urgency Type</value>
+  </data>
+  <data name="LatestTrailerStatus" xml:space="preserve">
+    <value>Latest Trailer Status</value>
+  </data>
+  <data name="LegType" xml:space="preserve">
+    <value>Leg Type</value>
+  </data>
+  <data name="Length" xml:space="preserve">
+    <value>Length</value>
+  </data>
+  <data name="LumpSum" xml:space="preserve">
+    <value>LumpSum</value>
+  </data>
+  <data name="LumpSumValue" xml:space="preserve">
+    <value>Lump Sum Value</value>
+  </data>
+  <data name="MaxLadenWeight" xml:space="preserve">
+    <value>Max. Laden Wt. </value>
+  </data>
+  <data name="MinValue" xml:space="preserve">
+    <value>Minimum Value</value>
+  </data>
+  <data name="MultiContainer" xml:space="preserve">
+    <value>Multiple Container Details</value>
+  </data>
+  <data name="MultiContainer2Trips" xml:space="preserve">
+    <value>Multiple Container Details 2 Trips</value>
+  </data>
+  <data name="OBLNo" xml:space="preserve">
+    <value>OBL No</value>
+  </data>
+  <data name="OldDriver" xml:space="preserve">
+    <value>Old Driver</value>
+  </data>
+  <data name="OldJobChargeStatus" xml:space="preserve">
+    <value>Old Job Charge Status</value>
+  </data>
+  <data name="Origin" xml:space="preserve">
+    <value>Origin</value>
+  </data>
+  <data name="OwnTransport" xml:space="preserve">
+    <value>Own Transport</value>
+  </data>
+  <data name="PlanDept" xml:space="preserve">
+    <value>Plan Department</value>
+  </data>
+  <data name="PlanEntry" xml:space="preserve">
+    <value>Plan Entry</value>
+  </data>
+  <data name="PlanHaulierSubTrip" xml:space="preserve">
+    <value>Plan Hualier Sub Trip</value>
+  </data>
+  <data name="PlanTrip" xml:space="preserve">
+    <value>Job Plan Trip</value>
+  </data>
+  <data name="PlanTripNo" xml:space="preserve">
+    <value>Plan Trip No.</value>
+  </data>
+  <data name="PlanTruckSubTrip" xml:space="preserve">
+    <value>Plan Truck Sub Trip</value>
+  </data>
+  <data name="PriceBreakNew" xml:space="preserve">
+    <value>Price Break New</value>
+  </data>
+  <data name="Quantity" xml:space="preserve">
+    <value>Qty</value>
+  </data>
+  <data name="RatePerLaden" xml:space="preserve">
+    <value>Rate Per Laden Trip</value>
+  </data>
+  <data name="RatePerUnladen" xml:space="preserve">
+    <value>Rate Per Unladen Trip</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="SaveTripJob" xml:space="preserve">
+    <value>Save Trip Job</value>
+  </data>
+  <data name="ScheduleDate" xml:space="preserve">
+    <value>Schedule Date</value>
+  </data>
+  <data name="Sector" xml:space="preserve">
+    <value>Sector</value>
+  </data>
+  <data name="SectorRelated" xml:space="preserve">
+    <value>SectorRelated</value>
+  </data>
+  <data name="SetDriverAvailability" xml:space="preserve">
+    <value>Set Driver Availability</value>
+  </data>
+  <data name="SetPlanSubTripToComplete" xml:space="preserve">
+    <value>Set Plan Sub Trip to Complete</value>
+  </data>
+  <data name="SetStatusBookedToReady" xml:space="preserve">
+    <value>Set Status From Booked To Ready</value>
+  </data>
+  <data name="SetToComplete" xml:space="preserve">
+    <value>Set to Complete</value>
+  </data>
+  <data name="ShipperCode" xml:space="preserve">
+    <value>Shipper Code</value>
+  </data>
+  <data name="ShipperName" xml:space="preserve">
+    <value>Shipper Name</value>
+  </data>
+  <data name="Single" xml:space="preserve">
+    <value>Single</value>
+  </data>
+  <data name="StartCustCode" xml:space="preserve">
+    <value>Start Cust Code</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="StartJobNo" xml:space="preserve">
+    <value>Start Job No</value>
+  </data>
+  <data name="StartStop" xml:space="preserve">
+    <value>Start Stop</value>
+  </data>
+  <data name="StartTime" xml:space="preserve">
+    <value>Start Time</value>
+  </data>
+  <data name="StopRelated" xml:space="preserve">
+    <value>Stop Related</value>
+  </data>
+  <data name="SubConCode" xml:space="preserve">
+    <value>SubCon Code</value>
+  </data>
+  <data name="SubConName" xml:space="preserve">
+    <value>SubCon Name</value>
+  </data>
+  <data name="TareWeight" xml:space="preserve">
+    <value>Tare Wt. </value>
+  </data>
+  <data name="Trailer" xml:space="preserve">
+    <value>Trailer</value>
+  </data>
+  <data name="TrailerHistory" xml:space="preserve">
+    <value>Trailer History</value>
+  </data>
+  <data name="TrailerType" xml:space="preserve">
+    <value>Trailer Type</value>
+  </data>
+  <data name="TransportCode" xml:space="preserve">
+    <value>Transport Code</value>
+  </data>
+  <data name="TransportName" xml:space="preserve">
+    <value>Transport Name</value>
+  </data>
+  <data name="TransportRateNew" xml:space="preserve">
+    <value>Transport Rate New</value>
+  </data>
+  <data name="TransportSettings" xml:space="preserve">
+    <value>Transport Settings</value>
+  </data>
+  <data name="TripStatus" xml:space="preserve">
+    <value>Trip Status</value>
+  </data>
+  <data name="TruckJob" xml:space="preserve">
+    <value>Truck Job</value>
+  </data>
+  <data name="TruckNo" xml:space="preserve">
+    <value>Truck No.</value>
+  </data>
+  <data name="UCRNo" xml:space="preserve">
+    <value>UCR No</value>
+  </data>
+  <data name="VehicleID" xml:space="preserve">
+    <value>Vehicle ID</value>
+  </data>
+  <data name="VehicleMaker" xml:space="preserve">
+    <value>Maker</value>
+  </data>
+  <data name="VehicleModel" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="VehicleNo" xml:space="preserve">
+    <value>Vehicle No.</value>
+  </data>
+  <data name="VehicleType" xml:space="preserve">
+    <value>Vehicle Type</value>
+  </data>
+  <data name="Via" xml:space="preserve">
+    <value>Via</value>
+  </data>
+  <data name="WarningThereIsExistingJobTripDetails" xml:space="preserve">
+    <value>There are existing Truck Job Trip Details. Changing this option, means that the weight and volume will not be calculated from them anymore. Do you wish to proceed ?</value>
+  </data>
+  <data name="WeightRequired" xml:space="preserve">
+    <value>Weight Required</value>
+  </data>
+  <data name="Width" xml:space="preserve">
+    <value>Width </value>
+  </data>
+  <data name="ChooseQuotationNo" xml:space="preserve">
+    <value>Choose Quotation Number</value>
+  </data>
+  <data name="QuotationReport" xml:space="preserve">
+    <value>Quotation Report</value>
+  </data>
+  <data name="IsValid" xml:space="preserve">
+    <value>IsValid</value>
+  </data>
+  <data name="CopyTransportRate" xml:space="preserve">
+    <value>Copy Transport Rate</value>
+  </data>
+  <data name="PriceBreak" xml:space="preserve">
+    <value>Price Break</value>
+  </data>
+  <data name="TransportRate" xml:space="preserve">
+    <value>TransportRate</value>
+  </data>
+  <data name="IsStopDependent" xml:space="preserve">
+    <value>IsStopDependent</value>
+  </data>
+  <data name="VendorType" xml:space="preserve">
+    <value>Vendor Type </value>
+  </data>
+  <data name="Charge" xml:space="preserve">
+    <value>Charge</value>
+  </data>
+  <data name="Report" xml:space="preserve">
+    <value>Report</value>
+  </data>
+  <data name="DepartmentEntry" xml:space="preserve">
+    <value>Department Entry</value>
+  </data>
+  <data name="DriverEntry" xml:space="preserve">
+    <value>Driver Entry</value>
+  </data>
+  <data name="VehicleEntry" xml:space="preserve">
+    <value>Vehicle Entry</value>
+  </data>
+  <data name="NRIC" xml:space="preserve">
+    <value>NRIC</value>
+  </data>
+  <data name="DefaultVehicle" xml:space="preserve">
+    <value>Default Vehicle</value>
+  </data>
+  <data name="EmployeeStatus" xml:space="preserve">
+    <value>Employee Status</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>File</value>
+  </data>
+  <data name="Billing" xml:space="preserve">
+    <value>Billing</value>
+  </data>
+  <data name="Driver" xml:space="preserve">
+    <value>Driver</value>
+  </data>
+  <data name="Invoice" xml:space="preserve">
+    <value>Invoice</value>
+  </data>
+  <data name="Setup" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="Vehicle" xml:space="preserve">
+    <value>Vehicle</value>
+  </data>
+  <data name="CantDeleteJob" xml:space="preserve">
+    <value>Cannot delete job </value>
+  </data>
+  <data name="CantEditJob" xml:space="preserve">
+    <value>Cannot edit job </value>
+  </data>
+  <data name="CantSaveJob" xml:space="preserve">
+    <value>Cannot save job </value>
+  </data>
+  <data name="ConsigneeAddress" xml:space="preserve">
+    <value>Consignee Address</value>
+  </data>
+  <data name="ConsigneeDetail" xml:space="preserve">
+    <value>Consignee Detail</value>
+  </data>
+  <data name="ShipperAddress" xml:space="preserve">
+    <value>Shipper Address</value>
+  </data>
+  <data name="ShipperDetail" xml:space="preserve">
+    <value>Shipper Detail</value>
+  </data>
+  <data name="SubConAddress" xml:space="preserve">
+    <value>SubCon Address</value>
+  </data>
+  <data name="SubConDetail" xml:space="preserve">
+    <value>Sub Contractor Detail</value>
+  </data>
+  <data name="DangerousGoodsRemarks" xml:space="preserve">
+    <value>Dangerous Goods Remarks</value>
+  </data>
+  <data name="IsOverSize" xml:space="preserve">
+    <value>IsOverSize</value>
+  </data>
+  <data name="NotaNumber" xml:space="preserve">
+    <value>Please key in number only</value>
+  </data>
+  <data name="OversizeRemark" xml:space="preserve">
+    <value>Oversize Remarks</value>
+  </data>
+  <data name="CargoCBM" xml:space="preserve">
+    <value>Cargo Vol. </value>
+  </data>
+  <data name="JobTripDetail" xml:space="preserve">
+    <value>Job Trip Detail </value>
+  </data>
+  <data name="JobTripDetailEntry" xml:space="preserve">
+    <value>Job Trip Detail Entry </value>
+  </data>
+  <data name="JobTripEntry" xml:space="preserve">
+    <value>Job Trip Entry </value>
+  </data>
+  <data name="Maximum" xml:space="preserve">
+    <value>Maximum </value>
+  </data>
+  <data name="WeightVolumeFromDetails" xml:space="preserve">
+    <value>Weight/Volume From Details </value>
+  </data>
+  <data name="AssignTrailer" xml:space="preserve">
+    <value>Assign Trailer </value>
+  </data>
+  <data name="CompleteStuffUnstuff" xml:space="preserve">
+    <value>Complete Stuff or Unstuff </value>
+  </data>
+  <data name="CompleteTrailerTrip" xml:space="preserve">
+    <value>Complete Trailer Trip </value>
+  </data>
+  <data name="Refresh" xml:space="preserve">
+    <value>Refresh </value>
+  </data>
+  <data name="TrailerLocation" xml:space="preserve">
+    <value>Trailer Location </value>
+  </data>
+  <data name="PlanTripSeq" xml:space="preserve">
+    <value>Plan Trip Seq</value>
+  </data>
+  <data name="SetPlanSubTripJobToComplete" xml:space="preserve">
+    <value>Set Plan Sub Trip Job to Complete</value>
+  </data>
+  <data name="TransferToOtherDriver" xml:space="preserve">
+    <value>TransferTo OtherDriver</value>
+  </data>
+  <data name="SetTrailerLocation" xml:space="preserve">
+    <value>Set Trailer Location</value>
+  </data>
+  <data name="TrailerLocationInfo" xml:space="preserve">
+    <value>TrailerLocationInfo</value>
+  </data>
+  <data name="TrailerNo" xml:space="preserve">
+    <value>Trailer No.</value>
+  </data>
+  <data name="ByDate" xml:space="preserve">
+    <value>By Date </value>
+  </data>
+  <data name="ByJobNo" xml:space="preserve">
+    <value>By Job No </value>
+  </data>
+  <data name="ChangedDate" xml:space="preserve">
+    <value>Changed Date </value>
+  </data>
+  <data name="CurrentStatus" xml:space="preserve">
+    <value>Current Status </value>
+  </data>
+  <data name="MaxCBM" xml:space="preserve">
+    <value>Maximum CBM</value>
+  </data>
+  <data name="MaxWeight" xml:space="preserve">
+    <value>Maximum Weight</value>
+  </data>
+  <data name="NewStatus" xml:space="preserve">
+    <value>New Status </value>
+  </data>
+  <data name="ParkStop" xml:space="preserve">
+    <value>Park Stop </value>
+  </data>
+  <data name="StopCode" xml:space="preserve">
+    <value>Stop Code </value>
+  </data>
+  <data name="TotalCBM" xml:space="preserve">
+    <value>Total CBM</value>
+  </data>
+  <data name="TotalWeight" xml:space="preserve">
+    <value>Total Weight </value>
+  </data>
+  <data name="TruckJobTrips" xml:space="preserve">
+    <value>Truck Job Trips</value>
+  </data>
+  <data name="Enquiry" xml:space="preserve">
+    <value>Enquiry </value>
+  </data>
+  <data name="Haulier" xml:space="preserve">
+    <value>Haulier </value>
+  </data>
+  <data name="Planning" xml:space="preserve">
+    <value>Planning </value>
+  </data>
+  <data name="SelectDriversAndTrailers" xml:space="preserve">
+    <value>Select Drivers and Trailers </value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings </value>
+  </data>
+  <data name="Truck" xml:space="preserve">
+    <value>Truck </value>
+  </data>
+  <data name="ChangedSuccessfully" xml:space="preserve">
+    <value>Changed successfully</value>
+  </data>
+  <data name="NoJobSelectedTobeSet" xml:space="preserve">
+    <value>No Job Selected To be Set </value>
+  </data>
+  <data name="PleaseChooseAnotherDriver" xml:space="preserve">
+    <value>Please Choose Another Driver</value>
+  </data>
+  <data name="SettingBookedToReadySuccess" xml:space="preserve">
+    <value>Setting Booked To Ready Success </value>
+  </data>
+  <data name="ConfirmToSetComplete" xml:space="preserve">
+    <value>Are you sure want to set to complete? </value>
+  </data>
+  <data name="NoRecordSelected" xml:space="preserve">
+    <value>No record selected </value>
+  </data>
+  <data name="SaveOrCancelMainDetails" xml:space="preserve">
+    <value>Please save or cancel main detail! </value>
+  </data>
+  <data name="ActualVol" xml:space="preserve">
+    <value>Actual Vol.{0} </value>
+  </data>
+  <data name="ActualWeight" xml:space="preserve">
+    <value>Actual Wt.{0} </value>
+  </data>
+  <data name="BillingQty" xml:space="preserve">
+    <value>Billing Qty</value>
+  </data>
+  <data name="BookedVol" xml:space="preserve">
+    <value>Booked Vol.{0} </value>
+  </data>
+  <data name="BookedWeight" xml:space="preserve">
+    <value>Booked Wt.{0} </value>
+  </data>
+  <data name="EndDateTime" xml:space="preserve">
+    <value>End Date/Time </value>
+  </data>
+  <data name="StartDateTime" xml:space="preserve">
+    <value>Start Date/Time </value>
+  </data>
+  <data name="ErrorInRoutSetting" xml:space="preserve">
+    <value>We can't save this route:</value>
+  </data>
+  <data name="FinishPTSTBeforeSave" xml:space="preserve">
+    <value>Please select a plan sub trip for editing and save.</value>
+  </data>
+  <data name="MakeSureStartEarlyThanEndTime" xml:space="preserve">
+    <value>Please make sure the start time is earlier than the end time.</value>
+  </data>
+  <data name="MakeSureStartEndStopDiff" xml:space="preserve">
+    <value>Please make sure the start and end stops are different.</value>
+  </data>
+  <data name="NoSortedPTSTYet" xml:space="preserve">
+    <value>There're no sorted plan sub trips yet.</value>
+  </data>
+  <data name="PromptPTSTNotSaved" xml:space="preserve">
+    <value>The Plan Routed Sub Trips are not saved, are you sure to quit?</value>
+  </data>
+  <data name="PromptToDelAllPTST" xml:space="preserve">
+    <value>Are you sure to delete all the created plan sub trips on this window?</value>
+  </data>
+  <data name="PromptToDelPTST" xml:space="preserve">
+    <value>Are you sure to delete? </value>
+  </data>
+  <data name="PTSTAlreadyAtBottom" xml:space="preserve">
+    <value>The selected plan sub trip(s) are already at the end.</value>
+  </data>
+  <data name="PTSTAlreadyAtTop" xml:space="preserve">
+    <value>The selected plan sub trip(s) are already at the very beginning.</value>
+  </data>
+  <data name="SelectPTSTBeforeDel" xml:space="preserve">
+    <value>Please select an existing plan sub trip before deleting.</value>
+  </data>
+  <data name="SelectPTSTBeforeEdit" xml:space="preserve">
+    <value>Please select an existing plan sub trip before editing.</value>
+  </data>
+  <data name="SelectPTSTBeforeMove" xml:space="preserve">
+    <value>Please select one or more plan sub trip(s) before moving.</value>
+  </data>
+  <data name="SelectSortedPTSTBeforeMove" xml:space="preserve">
+    <value>Please select an sorted plan sub trip first.</value>
+  </data>
+  <data name="SelectSortedPTSTToMoveDown" xml:space="preserve">
+    <value>Please select an sorted plan sub trip to move down.</value>
+  </data>
+  <data name="SelectSortedPTSTToMoveUp" xml:space="preserve">
+    <value>Please select an sorted plan sub trip to move up.</value>
+  </data>
+  <data name="SelectUnSortedPTSTBeforeMove" xml:space="preserve">
+    <value>Please select an unsorted plan sub trip first.</value>
+  </data>
+  <data name="ToCompleteStartEndStop" xml:space="preserve">
+    <value>Please complete both start and end stop.</value>
+  </data>
+  <data name="UnSortedPTSTRemain" xml:space="preserve">
+    <value>There're unsorted plan sub trips, please sort or delete them first.</value>
+  </data>
+  <data name="And" xml:space="preserve">
+    <value>and</value>
+  </data>
+  <data name="FailedUpdateDB" xml:space="preserve">
+    <value>are failed to update to database</value>
+  </data>
+  <data name="FollowingPlanTruckSubTrips" xml:space="preserve">
+    <value>The following plan truck sub trips:</value>
+  </data>
+  <data name="PlanSubTrip" xml:space="preserve">
+    <value>plan sub trip</value>
+  </data>
+  <data name="TimeOverLapBetween" xml:space="preserve">
+    <value>Time overlaps between</value>
+  </data>
+  <data name="PlsEditDelAftAdding" xml:space="preserve">
+    <value>Please finish "Adding" the trip before Edit / Delete it</value>
+  </data>
+  <data name="FullFillBeforeSave" xml:space="preserve">
+    <value>Please fill in all the blanks in blue color before saving.</value>
+  </data>
+  <data name="AddTruckJobTripFirst" xml:space="preserve">
+    <value>Please create a Truck Job Trip first.</value>
+  </data>
+  <data name="ChooseTruckJobFirst" xml:space="preserve">
+    <value>Please choose a Truck Job first.</value>
+  </data>
+  <data name="WaitTimeFromLaterThanWaitTimeTo" xml:space="preserve">
+    <value>Can't set the WaiTtimeFrom later than WaitTimeTo.</value>
+  </data>
+  <data name="SaveSubConDataSuccess" xml:space="preserve">
+    <value>Save Sub-Con data successfully!</value>
+  </data>
+  <data name="UnSavedSubConData" xml:space="preserve">
+    <value>You have unsaved input sub-con data, click 'Yes' to drop the changes, click 'No' to  finish saving first.</value>
+  </data>
+  <data name="MakeSureThereAreCompletedSubConJobTrips" xml:space="preserve">
+    <value>This page is for Completed Sub-Contractor Job Trips, please set your Sub-Contractor Job Trips(if there're) to complete first.</value>
+  </data>
+  <data name="StartTimeLaterThanEndTime" xml:space="preserve">
+    <value>Can't set start time be later than end time.</value>
+  </data>
+  <data name="CantModifyCompleteJob" xml:space="preserve">
+    <value>Can't modify this job because it's completed.</value>
+  </data>
+  <data name="SureToSetJobComplete" xml:space="preserve">
+    <value>Are you sure to set this Truck Job to Complete?</value>
+  </data>
+  <data name="NoCompletedSubConTruckJobTrips" xml:space="preserve">
+    <value>There's no completed TruckJobTrip carried out by Sub-Contractor yet.</value>
+  </data>
+  <data name="TruckJobWillBeUnderSubCon" xml:space="preserve">
+    <value>All the truck job trips will be under sub contractor, do you confirm?</value>
+  </data>
+  <data name="ExistSubconDataWillClear" xml:space="preserve">
+    <value>You've changed subcontractor code, the old subcontractor related data will be cleared, do you confirm?</value>
+  </data>
+  <data name="NoJobTripsYet" xml:space="preserve">
+    <value>There's no truck job trips in this truck job yet.</value>
+  </data>
+  <data name="TruckJobWillByOWNTRANSPORT" xml:space="preserve">
+    <value>You set sub-contractor code to blank, means all truck job trips will be carried out by own transport, do you confirm?</value>
+  </data>
+  <data name="SubConDataInComplete" xml:space="preserve">
+    <value>These truck job trips' sub con data are not completed:</value>
+  </data>
+  <data name="AlreadyUnderPlanner" xml:space="preserve">
+    <value>are already under planner, you can't modify the sub-con code when there're some trips under planner.</value>
+  </data>
+  <data name="FollowingJobTrips" xml:space="preserve">
+    <value>The following job trips: </value>
+  </data>
+  <data name="ConfirmSetJobToComplete" xml:space="preserve">
+    <value>All the data related with this job will not be able to modify after you set the job to complete, do you confirm?</value>
+  </data>
+  <data name="ConfirmUpdateJobTripStatus" xml:space="preserve">
+    <value>Are you sure to update JobTrip Statu(s)?</value>
+  </data>
+  <data name="InvalidTimeFormat" xml:space="preserve">
+    <value>Please input valid time, using 24hours format.</value>
+  </data>
+  <data name="InputCorrectTimeFormat" xml:space="preserve">
+    <value>Please use time format HHmm, such as: 0330, or 1205.</value>
+  </data>
+  <data name="CantModifyActDataBeforeTripComplete" xml:space="preserve">
+    <value>You can only modify the actual weight/volume/start/end time after the job trip is completed.</value>
+  </data>
+  <data name="SelectPlanTruckTripJobBeforeModify" xml:space="preserve">
+    <value>Please select a plan truck job trip job before modifying.</value>
+  </data>
+  <data name="InvalidTimeInput" xml:space="preserve">
+    <value>Error dectected, please check if the time format is HHmm, such as 0330 or 1505.</value>
+  </data>
+  <data name="WaitTimeSettingError" xml:space="preserve">
+    <value>Wait Time from should not be earlier than pick up time, and wait time to should not be later than deliver time.</value>
+  </data>
+  <data name="AllPlanTruckSubTripJobsMustBeCompleteFirst" xml:space="preserve">
+    <value>There're still truck jobs unfinished at the latest end stop, all preceding truck jobs must be ended at or before the latest end stop before you can drag-drop to add another truck job.</value>
+  </data>
+  <data name="CompleteCriteriaBeforeSelect" xml:space="preserve">
+    <value>Please complete all criteria before selecting.</value>
+  </data>
+  <data name="InputDataNotCompleteForLog" xml:space="preserve">
+    <value>Input data is not complete for selecting logs.</value>
+  </data>
+  <data name="NoPropertyLogged" xml:space="preserve">
+    <value>No property logged yet.</value>
+  </data>
+  <data name="SelectPropertyToShow" xml:space="preserve">
+    <value>Please select at least one property before showing logs.</value>
+  </data>
+  <data name="NoExistingData" xml:space="preserve">
+    <value>No existing data.</value>
+  </data>
+  <data name="CompulsoryField" xml:space="preserve">
+    <value>Field can't be blank.</value>
+  </data>
+  <data name="StartEndStopMustBeSame" xml:space="preserve">
+    <value>The start/end stop has to be the same with the plan sub trip you're dropping to.</value>
+  </data>
+  <data name="SelectMainAndSubModule" xml:space="preserve">
+    <value>Please select both main module and sub module first.</value>
+  </data>
+  <data name="VehicleIDAlreadyExists" xml:space="preserve">
+    <value>This vehicle id already exists, please add vehicle with another id.</value>
+  </data>
+  <data name="NoteNoSubConDisplay" xml:space="preserve">
+    <value>Please note that truck job trips with a sub contrator will not be pulled out into this form. </value>
+  </data>
+  <data name="SetStatusto" xml:space="preserve">
+    <value>Set Status to:</value>
+  </data>
+  <data name="AddAnotherJob" xml:space="preserve">
+    <value>Add Another Job</value>
+  </data>
+  <data name="DeleteSelectedJob" xml:space="preserve">
+    <value>Delete Selected Job</value>
+  </data>
+  <data name="SetSelectedJobToCompleted" xml:space="preserve">
+    <value>Set the Selected Job to Completed</value>
+  </data>
+  <data name="TransferTheWholeSubPlanToAnotherDriver" xml:space="preserve">
+    <value>Transfer the Whole SubPlan to another Driver</value>
+  </data>
+  <data name="FillSubConFieldFirst" xml:space="preserve">
+    <value>Please fill the sub-con related fields first.</value>
+  </data>
+  <data name="TruckJobTripWithoutTruckJobTripSubCon" xml:space="preserve">
+    <value>This Job has no trips under sub-contractor.</value>
+  </data>
+  <data name="UseDifferentDriver" xml:space="preserve">
+    <value>Please choose a driver other than the original driver to shift to.</value>
+  </data>
+  <data name="DriverAlreadyHasPlanSubTrips" xml:space="preserve">
+    <value>Sorry, the target driver already has existing planSubTrips.</value>
+  </data>
+  <data name="CannotReplaceDriverHasCompletedTrips" xml:space="preserve">
+    <value>Sorry, cannot replace this driver because he has completed some job trips already.</value>
+  </data>
+  <data name="ChooseDriverBeforeReplacing" xml:space="preserve">
+    <value>Pleace choose the driver you want to replace by clicking a column on the scheduler first.</value>
+  </data>
+  <data name="TheChosenDriverHasNoSubPlans" xml:space="preserve">
+    <value>The chosen driver has no job trips yet. This button is to shift the job trips from the chosen driver to another driver.</value>
+  </data>
+  <data name="SelectSESIFirst" xml:space="preserve">
+    <value>Please select a "Job No" first at the top left cornor.</value>
+  </data>
+  <data name="NoValidQuotationForThisCustomer" xml:space="preserve">
+    <value>There is no quotation for this customer. If you press OK, then you have to key in prices during invoicing and when keying in charges. Alternatively you can Cancel this import and create a quotation for this customer with prices for the sizes of the containers for this job and import again.</value>
+  </data>
+  <data name="CreateHauDeptFirst" xml:space="preserve">
+    <value>Please create a Haulier department first.</value>
+  </data>
+  <data name="Warning1Leg" xml:space="preserve">
+    <value>You choosed 1-Leg. For 1-Leg, if it's an Export job, containers will be default to send from container yard directly to port; For Import, the containers will be sent from port directly to container yard.</value>
+  </data>
+  <data name="CompulsoryFieldNeeded" xml:space="preserve">
+    <value>    Please re-check the data on SeaFreight side,Mother Vessel, Mother Voyage No, Empty Container To, can't be blank;
+    QtyOf40, QtyOf20 cannot both be  0; 
+    For a SeaExport job, Carrier Booking  Ref No,  Empty Container From, Delivery To must be filled in; 
+    For a SeaImport job, PickUpPlace can't be blank.</value>
+  </data>
+  <data name="SeaFreightFieldNeeded" xml:space="preserve">
+    <value>The ShipperName, Consignee, ShippingLine, ETA / ETD must be filled correctly at SeaFreight side before import to Haulier Side, please recheck those fields. Operation canceled.</value>
+  </data>
+  <data name="WanningFieldsEmpty" xml:space="preserve">
+    <value>All the compulsory fields are filled, but be aware that some of these fields: BookingRefNo, Vessel, Voyage is not filled in. The job is importing now.</value>
+  </data>
+  <data name="TransportInfoInValid" xml:space="preserve">
+    <value>Please check the following:
+(1) ContainerYard and port can't be blank
+(2) ContainerYard cannot be the same as StuffingAt, UnstuffingAt or Port; 
+(3) StuffingAt cannot be the same as UnstuffingAt. 
+Operation canceled.</value>
+  </data>
+  <data name="TheDefaultImPortCodeIsNotSetCorrectly" xml:space="preserve">
+    <value>The [DEFAULT_IMPORT_PORT_CODE] value is not set correctly in table: [TPT_SPECIAL_DATA_Tbl], operation canceled.</value>
+  </data>
+  <data name="IncompleteQuotation" xml:space="preserve">
+    <value>This job has some containers which their container sizes are not in the quotation transport rates. If you press OK, this job will be set to "No quotation" and you then have to set the prices when creating invoices and key in charges. If you still want to BillByTransport, you can Cancel this import, and complete the quotation first so that every container has its charge in it; Or, you can choose to BillBySeaFreight by clicking Cancel.</value>
+  </data>
+  <data name="CompulsoryFiledsMissing" xml:space="preserve">
+    <value>The following fields: {0} are compulsory but not filled in.</value>
+  </data>
+  <data name="Container20And40Both0" xml:space="preserve">
+    <value>20 and 40 foot Container number canot both be 0.</value>
+  </data>
+  <data name="CantSetToNotBillableWhenHaveQuotation" xml:space="preserve">
+    <value>If you want to create a not billable job, you must choose "No Quotation". Click OK, the system will set the job to "No Quotation" for you, or Click Cancel, the system will set the job to "Is Billable".</value>
+  </data>
+  <data name="NoNeedQuotationForANotbillableJob" xml:space="preserve">
+    <value>You've set the job to Not Billable, it's not necessary to have a quotation for a not billable job. Do you intend to create a billable job?  Click Yes to set the job to "IsBillable" or click "No" to set the Job to "No Quotation".</value>
+  </data>
+  <data name="NoValidChargeForThisContainer" xml:space="preserve">
+    <value>No valid charge or transport rate in quotation for the selected container code. Operation cancelled.</value>
+  </data>
+  <data name="DefaultPortCantBeBlank" xml:space="preserve">
+    <value>Cant set the default port to blank for an Sea-Import job.</value>
+  </data>
+  <data name="AddFromPlanning" xml:space="preserve">
+    <value>Added from Planning</value>
+  </data>
+  <data name="ImportedFromSeaFreight" xml:space="preserve">
+    <value>Imported from Sea Freight</value>
+  </data>
+  <data name="WarnJobTripWithSameStops" xml:space="preserve">
+    <value>The same stops is only allowed for shifting job. </value>
+  </data>
+  <data name="ContainerCodeFirst" xml:space="preserve">
+    <value>Please select a container code on the left first.</value>
+  </data>
+  <data name="WarnPlanDataLostIfNotSave" xml:space="preserve">
+    <value>If you have not save the plan, all data after last save, will be lost. </value>
+  </data>
+  <data name="WarnPlanModifiedByOtherUser" xml:space="preserve">
+    <value>This plan date was modified by someone, please refresh the plan before editing to avoid data lost. </value>
+  </data>
+  <data name="WarnRefreshPlanData" xml:space="preserve">
+    <value>This will refresh all data from database, your data after you last saved will not be save. </value>
+  </data>
+  <data name="AllConHaveNo" xml:space="preserve">
+    <value>All container have container numbers.</value>
+  </data>
+  <data name="NoSampleTrips" xml:space="preserve">
+    <value>Please create sample trips first.</value>
+  </data>
+  <data name="NotAllConHaveNo" xml:space="preserve">
+    <value>There are {0} containers in SeaJob, and {1}  have numbers.</value>
+  </data>
+  <data name="SuccessSavedStatus" xml:space="preserve">
+    <value>Success, {0} trips set from {1} to {2}.</value>
+  </data>
+  <data name="SelectTOJobFirst" xml:space="preserve">
+    <value>Please select a TransferOut Job Number first.</value>
+  </data>
+  <data name="NotAllowSaveInJob" xml:space="preserve">
+    <value>Unable to save booking . Another user has added this job to haulage booking .</value>
+  </data>
+</root>

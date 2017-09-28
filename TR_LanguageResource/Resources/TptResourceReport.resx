@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ErrCriteriaNoRecordFound" xml:space="preserve">
+    <value>No records. Please choose another search criteria </value>
+  </data>
+  <data name="ErrNoBookingConfirmationFound" xml:space="preserve">
+    <value>No Booking Confirmation found in this job. You may select another job. </value>
+  </data>
+  <data name="ErrNoDeliveryNoteFound" xml:space="preserve">
+    <value>No Delivery Note found in this job. You may select another job. </value>
+  </data>
+  <data name="RptBookingConfirmation" xml:space="preserve">
+    <value>Booking Confirmation Report </value>
+  </data>
+  <data name="RptCollectionAdvice" xml:space="preserve">
+    <value>Collection Advice Report </value>
+  </data>
+  <data name="RptCompanyStamp" xml:space="preserve">
+    <value>Company Stamp </value>
+  </data>
+  <data name="RptContainerDueDate" xml:space="preserve">
+    <value>Container Due Date Report </value>
+  </data>
+  <data name="RptContainerMovedDetails" xml:space="preserve">
+    <value>Container Moved Details Report </value>
+  </data>
+  <data name="RptCustomerByJobValue" xml:space="preserve">
+    <value>Customure By Job Value Report </value>
+  </data>
+  <data name="RptDeliveredTo" xml:space="preserve">
+    <value>Delivered To</value>
+  </data>
+  <data name="RptDeliveryNote" xml:space="preserve">
+    <value>Delivery Note Report</value>
+  </data>
+  <data name="RptDeliveryOrder" xml:space="preserve">
+    <value>Delivery Order Report</value>
+  </data>
+  <data name="RptHualierJob" xml:space="preserve">
+    <value>Haulier Job Report</value>
+  </data>
+  <data name="RptJobSummary" xml:space="preserve">
+    <value>Job Summary Report</value>
+  </data>
+  <data name="RptJobTripDetails" xml:space="preserve">
+    <value>Job Trip Details Report</value>
+  </data>
+  <data name="RptJobTripsByCust" xml:space="preserve">
+    <value>Job Trips By Customer Report</value>
+  </data>
+  <data name="RptJobTripSubCon" xml:space="preserve">
+    <value>Job Trips Sub Con Report</value>
+  </data>
+  <data name="RptJobValueByCust" xml:space="preserve">
+    <value>Job Value By Customer Report</value>
+  </data>
+  <data name="RptJobWithInvoice" xml:space="preserve">
+    <value>Job With Invoice Report</value>
+  </data>
+  <data name="RptPage" xml:space="preserve">
+    <value>Page</value>
+  </data>
+  <data name="RptPlanTripByDate" xml:space="preserve">
+    <value>Plan Trip By Date Report</value>
+  </data>
+  <data name="RptReceivedBy" xml:space="preserve">
+    <value>Received By</value>
+  </data>
+  <data name="RptReportDate" xml:space="preserve">
+    <value>Report Date</value>
+  </data>
+  <data name="RptSubTotal" xml:space="preserve">
+    <value>Sub Total</value>
+  </data>
+  <data name="RptTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="RptUnbilledJobs" xml:space="preserve">
+    <value>Unbilled Jobs Report</value>
+  </data>
+  <data name="RptNoRecordFoundtoPrint" xml:space="preserve">
+    <value>No Record found to print. </value>
+  </data>
+  <data name="RptJobDetail" xml:space="preserve">
+    <value>Job Details</value>
+  </data>
+  <data name="RptCustomerSignature" xml:space="preserve">
+    <value>Customer Signature </value>
+  </data>
+  <data name="RptDate" xml:space="preserve">
+    <value>Report Date </value>
+  </data>
+  <data name="RptDeliveredBy" xml:space="preserve">
+    <value>Delivered By </value>
+  </data>
+  <data name="RptDeliveredDate" xml:space="preserve">
+    <value>Delivered Date </value>
+  </data>
+  <data name="RptDeliveredFrom" xml:space="preserve">
+    <value>Delivered From </value>
+  </data>
+  <data name="RptDesignation" xml:space="preserve">
+    <value>Designation </value>
+  </data>
+  <data name="RptReceivedDate" xml:space="preserve">
+    <value>Received Date </value>
+  </data>
+  <data name="RptNoOfTrips" xml:space="preserve">
+    <value>No. Of Trips </value>
+  </data>
+  <data name="RptNoOfJobs" xml:space="preserve">
+    <value>No. of Jobs </value>
+  </data>
+  <data name="RptCompletedJobsbyDateAndCustomer" xml:space="preserve">
+    <value>Completed Jobs by Date and Customer </value>
+  </data>
+  <data name="RptDateCompleted" xml:space="preserve">
+    <value>Date Completed </value>
+  </data>
+  <data name="RptCompletedJobsbyDateAndDriver" xml:space="preserve">
+    <value>Completed Jobs by Date and Driver Report </value>
+  </data>
+  <data name="ErrNoAccessRight" xml:space="preserve">
+    <value>Don't have rights to view this report. </value>
+  </data>
+  <data name="RptDatePrinted" xml:space="preserve">
+    <value>Date/Time Printed</value>
+  </data>
+</root>
